@@ -362,43 +362,134 @@ function artId(a) { return (a.link||"")+(a.title||"").slice(0,18); }
 function isBreaking(a) { try { return a.published && Date.now()-new Date(a.published)<BREAK_WIN_MS; } catch { return false; } }
 
 /* ══════════════════════════════════════
-   JSON 로드
+   JSON 로드 — 안정성 강화
+   1) 항상 ?t= 캐시버스터로 최신 버전 요청
+   2) 최소 기사 수(MIN_VALID) 미달 → 불완전 데이터로 판단, 직전 백업 유지
+   3) 성공한 데이터는 localStorage에 백업
+   4) 완전 실패 시 백업 데이터로 표시 (에러 대신 경고 배지)
 ══════════════════════════════════════ */
+const BACKUP_KEY = "news_backup_v1";
+const MIN_VALID  = 10;   // 전체 기사 이 수 미만이면 불완전으로 간주
+
+function saveBackup(data) {
+  try { localStorage.setItem(BACKUP_KEY, JSON.stringify({ts: Date.now(), data})); } catch {}
+}
+
+function loadBackup() {
+  try {
+    const raw = localStorage.getItem(BACKUP_KEY);
+    if (!raw) return null;
+    const {ts, data} = JSON.parse(raw);
+    return {data, ageMin: Math.round((Date.now()-ts)/60000)};
+  } catch { return null; }
+}
+
+function validateData(data) {
+  if (!data || !data.categories) return false;
+  const total = CAT_KEYS.reduce((s,k)=>s+(data.categories[k]?.articles?.length||0), 0);
+  return total >= MIN_VALID;
+}
+
 async function loadNews(force = false) {
   setStatus("loading","로딩 중...");
-  if (force) {
+
+  // 첫 로드이거나 force일 때만 스피너 표시
+  // (백그라운드 갱신은 현재 화면 유지)
+  const showSpinner = force || !newsData;
+  if (showSpinner) {
     document.getElementById("spinner").style.display="block";
     document.getElementById("err-screen").style.display="none";
     document.querySelectorAll(".section").forEach(s=>s.style.display="none");
   }
 
+  // ① 백업이 있으면 즉시 표시 (스피너 없애기)
+  if (showSpinner && !newsData) {
+    const backup = loadBackup();
+    if (backup && validateData(backup.data)) {
+      applyData(backup.data, true, backup.ageMin);
+    }
+  }
+
+  // ② 항상 최신 JSON fetch (캐시 무시)
   try {
-    const url = JSON_URL + (force ? "?t="+Date.now() : "");
-    const resp = await fetch(url);
+    const resp = await fetch(JSON_URL + "?t=" + Date.now(), {
+      cache: "no-store",   // CDN 캐시 완전 무시
+      headers: {"Cache-Control": "no-cache, no-store"}
+    });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
 
-    // 신규 기사 탐지
-    const allArts = CAT_KEYS.flatMap(k => data.categories?.[k]?.articles || []);
-    newIds = new Set(allArts.map(artId).filter(id => !prevArticleIds.has(id)));
-    prevArticleIds = new Set(allArts.map(artId));
-    newsData = data;
+    // ③ 데이터 유효성 검사 — 불완전하면 기존 화면 유지
+    if (!validateData(data)) {
+      console.warn("불완전한 JSON (기사 수 미달) — 이전 데이터 유지");
+      // 현재 데이터가 없으면 백업 사용
+      if (!newsData) {
+        const backup = loadBackup();
+        if (backup && validateData(backup.data)) {
+          applyData(backup.data, true, backup.ageMin);
+        } else {
+          showError("데이터를 불러오는 중입니다. 잠시 후 새로고침해 주세요.");
+        }
+      } else {
+        // 기존 데이터 유지 + 경고만 표시
+        setStatus("live", `${CAT_KEYS.reduce((s,k)=>s+(newsData.categories?.[k]?.articles?.length||0),0)}건 (갱신 중...)`);
+        document.getElementById("spinner").style.display="none";
+        if (showSpinner) {
+          document.querySelectorAll(".section").forEach(s=>{s.style.display="none"; s.classList.remove("active");});
+          const sec=document.getElementById(`sec-${activeTab}`);
+          if(sec){sec.style.display="block";sec.classList.add("active");}
+        }
+      }
+      startCountdown();
+      return;
+    }
 
-    document.getElementById("spinner").style.display="none";
-    renderAll();
-    setStatus("live", `${allArts.length}건${newIds.size ? ` (+${newIds.size} 신규)`:""}`);
-    startCountdown();
+    // ④ 정상 데이터 — 적용 & 백업 저장
+    saveBackup(data);
+    applyData(data, false, 0);
 
   } catch(e) {
-    document.getElementById("spinner").style.display="none";
-    const el = document.getElementById("err-screen");
-    el.style.display="block";
-    el.innerHTML=`<div style="font-size:36px;margin-bottom:12px">📭</div>
-      <h2>뉴스를 불러올 수 없습니다</h2>
-      <p>GitHub Actions가 아직 실행되지 않았거나 data/news.json이 없습니다.</p>
-      <p style="margin-top:8px;font-size:12px;color:var(--muted)">Actions 탭 → 워크플로우 수동 실행 후 새로고침하세요</p>`;
-    setStatus("","오류");
+    console.error("JSON 로드 실패:", e);
+    // 백업으로 폴백
+    const backup = loadBackup();
+    if (backup && validateData(backup.data)) {
+      applyData(backup.data, true, backup.ageMin);
+      setStatus("live", `백업 데이터 (${backup.ageMin}분 전)`);
+    } else if (!newsData) {
+      showError("data/news.json을 찾을 수 없습니다.<br>Actions 탭에서 워크플로우를 수동 실행해 주세요.");
+    } else {
+      setStatus("live", `네트워크 오류 — 이전 데이터 표시 중`);
+      document.getElementById("spinner").style.display="none";
+    }
+    startCountdown();
   }
+}
+
+function applyData(data, isBackup, ageMin) {
+  const allArts = CAT_KEYS.flatMap(k => data.categories?.[k]?.articles || []);
+  newIds = new Set(allArts.map(artId).filter(id => !prevArticleIds.has(id)));
+  prevArticleIds = new Set(allArts.map(artId));
+  newsData = data;
+
+  document.getElementById("spinner").style.display="none";
+  document.getElementById("err-screen").style.display="none";
+  renderAll(isBackup, ageMin);
+
+  const label = isBackup
+    ? `${allArts.length}건 (백업 ${ageMin}분 전)`
+    : `${allArts.length}건${newIds.size ? ` (+${newIds.size} 신규)`:""}`;
+  setStatus("live", label);
+  startCountdown();
+}
+
+function showError(msg) {
+  document.getElementById("spinner").style.display="none";
+  const el = document.getElementById("err-screen");
+  el.style.display="block";
+  el.innerHTML=`<div style="font-size:36px;margin-bottom:12px">📭</div>
+    <h2>뉴스를 불러올 수 없습니다</h2>
+    <p>${msg}</p>`;
+  setStatus("","오류");
 }
 
 /* ══════════════════════════════════════
@@ -448,7 +539,7 @@ function fullArtHtml(a) {
 /* ══════════════════════════════════════
    렌더링
 ══════════════════════════════════════ */
-function renderAll() {
+function renderAll(isBackup = false, ageMin = 0) {
   if (!newsData) return;
   const cats = newsData.categories || {};
 
@@ -464,7 +555,7 @@ function renderAll() {
   const statsHtml = `<div class="stats-bar">
     <strong>${totalFiltered}</strong>건
     ${CAT_KEYS.map(k=>`<span>${cats[k]?.label?.split(" ")[0]||k} <strong>${catCounts[k].length}</strong></span>`).join("")}
-    <span class="json-badge">✓ JSON ${newsData.updated ? dateAbs(parseDate(newsData.updated)) : ""}</span>
+    ${isBackup ? `<span class="cache-badge">⚠ 백업 데이터 (${ageMin}분 전)</span>` : `<span class="json-badge">✓ JSON ${newsData.updated ? dateAbs(parseDate(newsData.updated)) : ""}</span>`}
   </div>`;
 
   // 전체 탭 (2열 그리드)
