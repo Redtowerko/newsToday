@@ -1,34 +1,803 @@
 {
-  "updated": "2026-04-15T00:32:01.959804+00:00",
+  "updated": "2026-04-15T00:56:22.053240+00:00",
   "categories": {
     "국내경제": {
       "label": "🇰🇷 국내경제",
-      "articles": []
+      "articles": [
+        {
+          "title": "韓 부자 48만명…\"고수익 투자처 1위는 주식\" - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1OQ2VCM2NmZ19zREdPN1VYNV82eENodmFMU0I5aFdCSjVOR25rNFlQUm1IODNMSWxwS1hFM2pYTV81YW9VNjJTdHBrNU1JaklSUWZwZUZjN3pQd9IBVEFVX3lxTE9jUzlPSGZ3QlZMODFhRURWNWhzRjFlUEJPN3ZLNzJOejBsdWFTWmhDaHFYdHY4cXBTVldZc00xVHZRVFo2bnhrUHVMT0tYYmtGRTFqMw?oc=5",
+          "published": "Sun, 14 Dec 2025 08:00:00 GMT",
+          "description": "韓 부자 48만명…\"고수익 투자처 1위는 주식\"&nbsp;&nbsp;한국경제",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "지분율 다시 15% 근접…삼양사, JB금융 주식 또 팔았다 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE01OGNvaV9BM1lvaVVIZjdjeU82bk1OUVZJRDM0Q3ZHVFAxNDFNU3VZRWRxYk1GUUExZVZQQnZ4ekI5TFhxOG5MZlFYX3lZMmtYUFRmTF9oRUhXQdIBVEFVX3lxTE84VGw1bFk1WWpwdGZwemNycW1lS1FMUS1qY3JwZ0xfbncyTkdxZWNwRk1jLWFGd3EzRUkzU214YWphODJSRzNXbzlMYnZuenloNkpVeQ?oc=5",
+          "published": "Wed, 04 Feb 2026 08:00:00 GMT",
+          "description": "지분율 다시 15% 근접…삼양사, JB금융 주식 또 팔았다&nbsp;&nbsp;한국경제",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "한국 시스템반도체 산업의 발전을 위한 제언 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBMdGVPRW1fc183NUtWYkVROUFfNFRIcm9aanJib2lGU0lsNmcyS3Vydko3TEhwM3hFdUF2Qk94RFloVVdodUx4aUQxcGhOcmZGRnFPWmlHNUFBd9IBVEFVX3lxTFA4eUlfQ0ZsNmEtdFplUVgteTFCU0lTOHZMa1NOb1VZRjBKR1hmM2ptLWQxQjRHWWdabGVJekc2NXlETklPOEx3MUdYSGZfT19TekpORA?oc=5",
+          "published": "Tue, 27 Jan 2026 08:00:00 GMT",
+          "description": "한국 시스템반도체 산업의 발전을 위한 제언&nbsp;&nbsp;한국경제",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "축구, 야구, 농구까지… LA는 온통 '스포츠 성지순례지' - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1GRWF2dEJMendFdDBaZWUxc0JBZWJYNWRyUkpTVUZNWnp3VGZWV3IwWWhrWHJZeTRxWS12SEMxNnJXVHFLd1RxNnpQQi1UU0c4TmpNaTNCeUxtUdIBVEFVX3lxTE1JY3FhOTVqLUwzYUVsT21mM25SVkdyRjJESXVDVXBHVk5BVV9QeS05Z0lXcldwOFRZNzM4MXlEaGlMMnVQX2NHbUhPUHQwSEdzZHpkbA?oc=5",
+          "published": "Tue, 31 Mar 2026 07:00:00 GMT",
+          "description": "축구, 야구, 농구까지… LA는 온통 '스포츠 성지순례지'&nbsp;&nbsp;한국경제",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "이재명 대통령 \"대한민국 국민, 웬만한 사람은 다 전과 있어\" - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5BLUMxam11MEtMaklGRDFEMVVGRW02TWJ3aWZIeUZNM3ZqVnR3U3FIYklKS08zUmdaR0g0T1dkRk0xMzBQczNtMnZ3MDI5cnp1QjFQWmxGRDI0d9IBVEFVX3lxTE5rb25hODhZdndvSjlld0tpbXF2TGdrdHhjTGN0eTFUenZZRTJvY1dmQ01RLU1XZk1qMU1zUUhBYjZ5YUZwS3hNOE1ycHZySWZoTW5LOQ?oc=5",
+          "published": "Tue, 14 Apr 2026 04:51:27 GMT",
+          "description": "이재명 대통령 \"대한민국 국민, 웬만한 사람은 다 전과 있어\"&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "\"한국 비축기지 쓰겠다\"…중동 산유국들, 러브콜 '쇄도' - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5DbnJfeDd5bm5fc21KVVJLaXZwZnV3UkhaVGpXLTZyRC1HbjRpNDBfV2dKTXVFSk9QLWwwYXFZTFVVLXl5X2VuZGVuaVc0Y1NxM25iOHc4c3V6d9IBVEFVX3lxTE8zaE1qdW9rQkY2R1lQSUk5U1JuOVFTTjlva2kwZlNkU2NKTml5R2tMS0ZiREswYmdwSm9KMDR0UGViYU10UkxhRHdZN2JFUFprYjdZdQ?oc=5",
+          "published": "Tue, 14 Apr 2026 03:51:17 GMT",
+          "description": "\"한국 비축기지 쓰겠다\"…중동 산유국들, 러브콜 '쇄도'&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "韓·美·EU \"바이오시밀러 3상 건너뛴다\"…삼성에피스·셀트리온 수혜 보나 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5WN0JVOFB5ZkxNd1dZRzMyZUZDVVBpdF9POTY4cFcxektoQ3pUWDY3X3dhWUk5Y25ac21Bd1BWeEE5NEhKLVZ6aEk4RXBzSmJNWVFlZmdqNTZFQdIBVEFVX3lxTE5jZXF2UVNMeW54dDkwMVExUmJuRDQ5d3gzZTdtNGRtV0F1M1ViOW9UeEFKb1JqSVBfcVlwTFZRdVBtUXV4R3l2clQ4QVcxd1NFLWlnQw?oc=5",
+          "published": "Tue, 14 Apr 2026 06:47:19 GMT",
+          "description": "韓·美·EU \"바이오시밀러 3상 건너뛴다\"…삼성에피스·셀트리온 수혜 보나&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "휴온스바이오파마, 이정희 신임 대표 선임…“해외 시장 공략 가속화” - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBlbEV4aXRwMl9GaVZpaE54SmRrZU1YMzhfdUZtaDJpZHdtclpyNzFzVkoxZE05dm1VWHpBVDdET1F3OU1XYll2dFRmSkM1cTdZdl9nUGhMM2lpUdIBVEFVX3lxTFBWcHM5blk3UW9tbXVvc3FnVUc3eVJDT0U5OElrazBuT0lzME4ydHFaV1RpQnFUSzNxR2phSnhpMVBpaU9MMGVZZ2xxeWlnYXlwbDRUcw?oc=5",
+          "published": "Tue, 14 Apr 2026 01:44:55 GMT",
+          "description": "휴온스바이오파마, 이정희 신임 대표 선임…“해외 시장 공략 가속화”&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "韓, 주목할 만한 AI모델 5개 보유…그 중 4개가 LG 엑사원 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBUV0Fycnp6dEVJWjhyQU1rdHBibDdId3NTVkFRdWE5ZVpkOGZxSUNaSE41X090d3IxUTBwazUzNW5RZGIyNWFIOFhWYTNydWNRLWFrLVY3X3NzQdIBVEFVX3lxTFBxZVVVamkyR1JxWm93NUJxNFJnbWpQUlk2S3RlZUpHX3ByQ1VjaEN3eGdEWXFnLWF1bGNMUUlueWpBTmZHYXV6VlFyN2hDakRycVpZbQ?oc=5",
+          "published": "Tue, 14 Apr 2026 08:42:45 GMT",
+          "description": "韓, 주목할 만한 AI모델 5개 보유…그 중 4개가 LG 엑사원&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "파마리서치, ‘ASLS Korea 2026’참가…에스테틱 포트폴리오 경쟁력 입증 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE90QjYzUlNpUUhvVktfbUc4OHAycy1oVENOSWhUNVYxd0UxcFE5VTF3NVdFTXRqcXRSTmMwNFZ6VTB0S1lzaE9PQlNGOW5zNFdMMnd2TWRvMmtNZ9IBVEFVX3lxTFB4RkJfSURnZjhSSk5QY0tKWGQ2MDhkc083b19kX1VDdzFPeV8tUWMtby1wbHNqaEFOR1VGRW1PRW52cnctVzB3RWZNWGtZYWpFeVlvZw?oc=5",
+          "published": "Tue, 14 Apr 2026 02:09:47 GMT",
+          "description": "파마리서치, ‘ASLS Korea 2026’참가…에스테틱 포트폴리오 경쟁력 입증&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "5년 만에 되풀이된 '보금자리론 쏠림'…고민 깊어지는 금융당국 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB3eTBEMUdLZDFERUVkb3ZqeVdVWUhPTFpUUV8wYzlGTGE2QjRhYVFFZWNvWkxzZ29wOTI5SElQUzNiV0N1RkYzd3JsdXlEUU5qeWd6d21WR3hMQdIBVEFVX3lxTE5rVTAtQ0tncjI0Smx6RVZzcHZDUDJNT1RaZkNxQ2x5VkZMbFhwWDhfWjZfSW4tNEVUczdfWk5zWGkxSkxzRkd5OENLZ1NGbUxmcHNvZQ?oc=5",
+          "published": "Tue, 14 Apr 2026 08:57:00 GMT",
+          "description": "5년 만에 되풀이된 '보금자리론 쏠림'…고민 깊어지는 금융당국&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "\"단품보단 코스 요리\"…가정의 달 '외식 풍경' 달라졌다 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE13VnFaQ0lxeGdlaUt4OUZndS1teXBmSGZuODlaWTh2WVpKMEtDNXN5eUhncTNveFA5aHFzNzh3SHVYdXdUR3lEaWYxUXpxYUVCX3N6SkpKT05ZQdIBVEFVX3lxTFA1REZJN2kydE42TExVMFNuTk1YSXFrc1pVYUNLYm1Wd2k3ZVlmNkdnUFJVWTcxOTVqQ2c2OXVJMnlQN2trMUZ2ajRaNF81ZzNMM1lWZg?oc=5",
+          "published": "Tue, 14 Apr 2026 02:45:09 GMT",
+          "description": "\"단품보단 코스 요리\"…가정의 달 '외식 풍경' 달라졌다&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "웹툰엔터, 글로벌 조직 재편…배민 출신 수혈·C레벨 개편 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1CQm9ZTmdjUFktZVc4eW5yTEhOWWRtOVpnYU5tbzhfZ3JqVVB1OUtsdnBHdUxDNW81ellHbDlqY1p4T1RvaWxKSEhtWDhOMDk1N1J4aFpoa1JIQdIBVEFVX3lxTE45VWFPVGtNYWR6QndTT1ItbjY5ejBoV0NsVDJvS010MmtPazNBSkM3WldKX3prS19NYkk1V0VhM2RPNVk4NWdjOWluTGMyS3BmVjJZNQ?oc=5",
+          "published": "Tue, 14 Apr 2026 01:03:43 GMT",
+          "description": "웹툰엔터, 글로벌 조직 재편…배민 출신 수혈·C레벨 개편&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "제테마, 잼버 중국 공식 론칭 학술 세미나 성료…현지 사업 확대 기대 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE82aDlTM3oxdnBlOC1vUUxfdmFhNV8tcXJ4Vl9iYXV3eTUyb2VmcnFfck9GbUhueWw2cmFvN1ljS3VwaGJKRjloSnhPUWtNSjhSX1VpMGVJMmdod9IBVEFVX3lxTFBySkpjajhDMlpXZ2k5OVpUTWtwemstY1gwbkhZeHdzRERfNWVuN2dXU1NhUU9KaXNESkRHaWYycWtuZ0NwNG5WYkhuZFNCMU8yWndyQg?oc=5",
+          "published": "Tue, 14 Apr 2026 06:51:51 GMT",
+          "description": "제테마, 잼버 중국 공식 론칭 학술 세미나 성료…현지 사업 확대 기대&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "'과잉 생산' 밀어붙이던 중국인데…\"제발 멈춰달라\" SOS [차이나 워치] - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9XcUZqVDlSUExtc0xrSzBDQkprY1F0c1JKTEdUQWVFeDJlV2V2MjIxbnpFcjNQVW16WWVGaG5WcVBjN00xVnJ5WnYzRVRwRmtUYVNXRDlHR1VmZ9IBVEFVX3lxTFA0bnVIWENmZXNQMHNIRkNBT2ZPRm9kR283a1JKbFBEOTV5enNCLUFTRkNQaU5QdW1tT0o3OU9DUTFwR0pPWjNuRU5CUTFZcVltWWZ3Rg?oc=5",
+          "published": "Tue, 14 Apr 2026 03:03:25 GMT",
+          "description": "'과잉 생산' 밀어붙이던 중국인데…\"제발 멈춰달라\" SOS [차이나 워치]&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "\"비만 온다던데\"…회색도시가 자꾸 생각나는 이유 [박은새의 유별난 브랜딩] - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBzTVJmdlZCWU5vQzRyNGhWM0xxaHBZbEhKeXFuR3M4ZnQ0b2VYdWNrWktjQmU2WmlEMHRmSWlyMTVXRUR4SHF6QUF3UVBVSUNacmlUSnZsbWZyQdIBVEFVX3lxTE4teFhKTF9ETXRvcXE1XzA1YzBoUDNZc1ljRnB3QXBBV0RQVUtwX1pyaURXMUFlTEVmYXRJdWZTRFE2ZDlIYi1weUdkWkhQMFhLbW9MOA?oc=5",
+          "published": "Tue, 14 Apr 2026 09:42:00 GMT",
+          "description": "\"비만 온다던데\"…회색도시가 자꾸 생각나는 이유 [박은새의 유별난 브랜딩]&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "“삼양바이오팜 ‘SENS’…초기단계 기술이전 가능” - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0zZkNaTFNaNlVoelltSjhPSXhGZE5kS2J2alV6ZExUTEVEQkU0R3I5U0YzWHlmSWlMS2NWUlJXZzlhTEdtZHJVbl9QMHlhSThzRVpkc3RQdXlIZ9IBVEFVX3lxTE1YTzM5bzBrQmtSNVRaQlBkcEpqaXpkSXVSdm5OY1lnOGRwaEpaYmdJZF9YdWZDRjdTaVR1U2dUaHY2UTdyLXhPOC0yZjEyVXJReGd2Qg?oc=5",
+          "published": "Tue, 14 Apr 2026 05:56:40 GMT",
+          "description": "“삼양바이오팜 ‘SENS’…초기단계 기술이전 가능”&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "오가노이드사이언스 “동물실험 줄어드는 시대…오가노이드로 신약·수익 동시에 노린다” - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1OUENCNlhRWURRcG9LQzhfY1BYZm1aUS10M1M0UUpiWjdzeFV1dHd5UmNVcEZUeDJ5blZ6NlpOMndSWVUyQjN3NVk5Q2Z3Yl9CVUhPQmdpMldDd9IBVEFVX3lxTFBYRTl1R0pvdUdzSTVGNVhEb0FlaXhhXzdlSHk1Q29ZN29pTlFJbV9yRG5FQ3RaYjFHNGdxdWVYeHFFY2hnbUFGWDNIcTF0N1htSld3Tg?oc=5",
+          "published": "Tue, 14 Apr 2026 01:59:53 GMT",
+          "description": "오가노이드사이언스 “동물실험 줄어드는 시대…오가노이드로 신약·수익 동시에 노린다”&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "롯데백화점, '롯데 키즈 오케스트라 2026' 모집…17일부터 접수 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9ieFZ6bE5HVDdTVlhBbERGX0Q1eDJrZUxOekJ4ak10UHNvalMwMkRDZU1LM25YSGtqTEtNejZtMjNaUEFEVjVqU3BsYW45elJCYlJwNGptdUxBZ9IBVEFVX3lxTE9kQkpiRFc5X29oTnRzWi1SOE91S0x3WWtQeVJPRUpCMW5RRHBCbHBRb09RdWpnRHlERXBlUWJqRGNhZXRIMFBoVTRQbDYyUnFMVzVJOA?oc=5",
+          "published": "Tue, 14 Apr 2026 23:59:46 GMT",
+          "description": "롯데백화점, '롯데 키즈 오케스트라 2026' 모집…17일부터 접수&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        },
+        {
+          "title": "상승 마감한 코스피·코스닥 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9FQ3Z5M29WYWwxYmo3Ymx3SDhSclZfUGs2UGdlejVwV3VKTTRfaEhZTVdTcHRHYlFNdkVzZnQtQWhIMy1td1JFbzdoMFFHcGlIdzlRRE0wcWwzZ9IBVEFVX3lxTE9CMGx0TWI4Z0FqMDJjUXdaMEs4WEU0X0hUUGx6YzZIajllVjZvR2ZTaEdmZnRfYUllb2txSmQ3UFRzeFBjXzh6Vk1xSngzS0R5dHRlbg?oc=5",
+          "published": "Tue, 14 Apr 2026 08:17:57 GMT",
+          "description": "상승 마감한 코스피·코스닥&nbsp;&nbsp;한국경제",
+          "source": "한국경제"
+        }
+      ]
     },
     "세계경제": {
       "label": "🌐 세계경제",
-      "articles": []
+      "articles": [
+        {
+          "title": "관세청, 중부권 반도체산업 육성 및 수출지원 확대 - 한국관세신문",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5HXy1yUHNSdjlIclAtdVdTQ3VZUmt5c1pYRkRCZzg4MmdCVDRWRndlTkZERlZyZUdNZnFrZHhQZzB3Q1h6UW8zZTNFOVpucEx4cENDQVlLZjViUWxTOHNMbHZhREstUdIBa0FVX3lxTE92OWQzY0M1MElyc1BqcC1Ta0c4RUdwcThNajBoZXlqWVU4OWt2ZnpGcTZsU004X3ZvYzRoc2J4eVp4MWlaNGlkQVItQkhDeU1tcFBVaWZvVXFkc0JsbEtvSmk5VHI2QmE3UDRv?oc=5",
+          "published": "Thu, 26 Mar 2026 07:00:00 GMT",
+          "description": "관세청, 중부권 반도체산업 육성 및 수출지원 확대&nbsp;&nbsp;한국관세신문",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "IMF says Iran war \"halted\" global economic momentum, expects hotter inflation - Axios",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE93SlNHSlRuUkpkZUpPV19vMUswUXNNOHMzVTk3N2NQMVpsbEdYSWxFX3Ayd01LbTd2QXBZNG81QkJjRV9nbXlzb1BLVVNhQTFCWGhFRUxMbkJrX3pFMlNSZU5kQWp1M05Qanc4?oc=5",
+          "published": "Tue, 14 Apr 2026 19:17:57 GMT",
+          "description": "IMF says Iran war \"halted\" global economic momentum, expects hotter inflation&nbsp;&nbsp;AxiosMiddle East War Will Slow Global Economic Growth, I.M.F. Warns&nbsp;&nbsp;The New York TimesJoint Statement on 13 April by the Heads of the International En",
+          "source": "Google-Business"
+        },
+        {
+          "title": "US wholesale prices surged 4% last month after the war in Iran sent energy prices flying - AP News",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMExiWDQyWGpOQ1VHbUNFTnoydVlOOF8zeHBpTU1wNWc4QUo4WThodzRIeElGVk83M0FibmwzTlktT2txY2JpcnpsOUxJNDlSQ0Y1RHpISGFPSHNFWFpLdThQWFM1VWt0QzdxWHF0WUQ2MWJUNlFQNUJwSEtBNHdNSjNwUnBxRWljdHRoZWFYbVJSVzZXVW51d1hUQWhxYXc?oc=5",
+          "published": "Tue, 14 Apr 2026 17:36:00 GMT",
+          "description": "US wholesale prices surged 4% last month after the war in Iran sent energy prices flying&nbsp;&nbsp;AP NewsWholesale prices rose 0.5% in March, much less than expected despite war impact&nbsp;&nbsp;CNBCWholesale inflation rose in March to three year-",
+          "source": "Google-Business"
+        },
+        {
+          "title": "Lagarde Warns the Iran War is Straining the Global Economy - Bloomberg.com",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQblVxblRhZDRlZVpOSkVmcjZkMGVNd2NCYTZYT3htN2F0RW9iUVFEOGN2QkE4ZXA0RlcydnFmeTZLNGF0MDlRWXNqa3BLd0t0VEp4S1FGTFBiaTllaXZnWFllVVlyNmRpY0xmV1dkRmRXSzF5Vml2cDJ0ckY3QmkxcXBILTZsazBPbS1udTllU2NHUmZJaTZYc2xBU2J0aVE4bXBibWctWmI5VlM5eFpyRkln?oc=5",
+          "published": "Tue, 14 Apr 2026 20:31:29 GMT",
+          "description": "Lagarde Warns the Iran War is Straining the Global Economy&nbsp;&nbsp;Bloomberg.com",
+          "source": "Bloomberg"
+        },
+        {
+          "title": "Bessent says core inflation is going down, Fed will need to cut rates - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQNWxKdmstdlM0X25GVjNBektibzZ5REpqVU9xZ1ZxaEZxalBpZHJsMWFoeWZrOHNwQVNsWVB2ckRSQzBQUXdjelJzZGprY0ZIZllQS2J4QTFNV1ltOS00dmZMUDFoVC1jdHVWRHhUdmpsX21EeHU0aEZ1d2pBSDdFWjB0UjVQYU1fd3J5cnNPUHVBVmhnZlBFcTZNRDliU19aQmtkR3VZMEt4Y0RYd1VXemQtaENQMkI2ME1wbDBZMmlTSkE0SnA3ZzhEYWVNSWxzS3o1X1VsRl9kRTdFc2s3NDY5UDN3QVRzbnhnNzZubTY5VTA?oc=5",
+          "published": "Tue, 14 Apr 2026 17:28:10 GMT",
+          "description": "Bessent says core inflation is going down, Fed will need to cut rates&nbsp;&nbsp;Reuters",
+          "source": "Reuters"
+        },
+        {
+          "title": "Bessent disparages IMF, World Bank forecasts, says US will quickly cycle through higher prices - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOanEybndLUVJHU3BsOG04bWdsT0d1VmdzN3ljdGpkaXFZbWRSSklNbnBVSm9zcFlYbVE1LTNPQTZlYmdVZXpqQjJuU3FhR2gwSUNhZGk1WEo4NUhWa1U3ak5DdGZXMGhKYnl0VlI1YXZOaFFPQU9jTEtEbV95RTZZd3ZNeGUyQ3J5Q2M4aGljbFE1SGt3TTJvSS15blpSR3pIUldTSlZZamFGMXMzSDZoTTg1TnRkX1lONmZ6Rl9LVnM?oc=5",
+          "published": "Tue, 14 Apr 2026 18:49:02 GMT",
+          "description": "Bessent disparages IMF, World Bank forecasts, says US will quickly cycle through higher prices&nbsp;&nbsp;Reuters",
+          "source": "Reuters"
+        },
+        {
+          "title": "Citadel's Ken Griffin says Iran war threatens global recession - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQYS1MRlVKc0h4LXdqUnlsZkU0cmVKUkdZQUxvckZBX1pIVHZUSTQzTjBOMkQ0dUNrVTNpdmpNXzd3Z3J0QUVlcmw0NWRpaDBVeHR6b0ZOYnJ5SnNFTWZkdHQwS1NYSk0zU25ObmRnNlVrbkFLZzZDaDBDRUs0STVJM0FrNGtTQm9NZVhkMXRjWHNRT1dTUHV1a3FYbTlqRXhIdE5CcnFELUxwNWZWempzT2plUWU?oc=5",
+          "published": "Tue, 14 Apr 2026 18:45:36 GMT",
+          "description": "Citadel's Ken Griffin says Iran war threatens global recession&nbsp;&nbsp;Reuters",
+          "source": "Reuters"
+        },
+        {
+          "title": "Long Iran war may require painful central bank tightening, IMF chief economist says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPS2ptSTRvNDdrSEJFOGhpNXFHSmJoOVRqQmYwbUJudzBRQzAwLVIycUpzME1xMHJwa2pvdE9BeGUyVHJEU2ZhTm5xMEJjdy13UUxuM19wMXpkMWFKU1JmdmEycWNnY0t1Tk1qV0Z0ZDItSk5pTWNLbEF5MmpBVlJTQUl4bVF4c2ZHaU12a0o5ZWxyUE8xYXZrNWxkZl81X1VzQ25JQWJxT3lPYlc2UUFoaXo3MjU2bVdLNzBDcTNzVGRpellLUWtJRTlR?oc=5",
+          "published": "Tue, 14 Apr 2026 17:57:59 GMT",
+          "description": "Long Iran war may require painful central bank tightening, IMF chief economist says&nbsp;&nbsp;Reuters",
+          "source": "Reuters"
+        },
+        {
+          "title": "IMF warns Middle East war driving up financial stability risks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdEszbUJFRmYwczVmbnk1a0ZncWhkSWMyVlhZVmNBMlFGdE9SbWdYamdwWjEwS2w5OUs3ODBIeks2WWNIa2k5OWo4eXc1dDQ0cEZKekpkM3NPd0x3VnJVLTBYbUprU0poMmpXcG9Wc2hXM3dXRGV2NGVIU3pRanJNVWgtQmFobXBnNVVmSVVYMVljWkZRUTFWWk1GNXJucldVZTliYUZlT1RZc1FTOG9yZTNyeERqcGFjR04yRVFhTV9VN1RZakZYZjhyR2YzNGFKZHBkLQ?oc=5",
+          "published": "Tue, 14 Apr 2026 14:22:10 GMT",
+          "description": "IMF warns Middle East war driving up financial stability risks&nbsp;&nbsp;Reuters",
+          "source": "Reuters"
+        }
+      ]
     },
     "금융": {
       "label": "💹 금융",
-      "articles": []
+      "articles": [
+        {
+          "title": "[수능에 나오는 경제·금융] 한도 묶여 주식 팔 수도…코스피 상승에 '찬물' 우려 - 생글생글",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8tbHNOQkVsTjUweVhhQjBwelVLek5NWFFUaWJ3by1TZVhoZmxnWGl5WS1YQ2duR1k4c1duZjVRZ25rZkFUNVFUdTk3cWlEaEpVbml2bjAwdUVKemc?oc=5",
+          "published": "Mon, 17 Nov 2025 08:00:00 GMT",
+          "description": "[수능에 나오는 경제·금융] 한도 묶여 주식 팔 수도…코스피 상승에 '찬물' 우려&nbsp;&nbsp;생글생글",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "“지금 샀다간 물린다”…코인·금·주식 동반 하락 경고 - 헤럴드경제",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1ndzY2Z1I5U1NFWFZoOWtieTRIRU4tY19NcXJleVVxak43RlZxbDZfSlZrQjgtQUdvTEVadkdXUzJaY05tczZTMEtiYUJJLXNFTkJiZFB3?oc=5",
+          "published": "Sat, 21 Mar 2026 07:00:00 GMT",
+          "description": "“지금 샀다간 물린다”…코인·금·주식 동반 하락 경고&nbsp;&nbsp;헤럴드경제",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "예금 떠나 주식으로 머니무브…대형 증권사, 은행 추월하나 - 한겨레",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE91TmN6UnAxT2daWHo0Tk16SlNEMWVUSGxxNWlFM1QwODFEWUVRa3lNYkt5NUtQVVlFRGtMRXFVUzJDVWFRd3Jjd0E4Ti14UWlkeURMWFRIMU1TZjBJY2xLU2pqRFl5cDg?oc=5",
+          "published": "Mon, 23 Mar 2026 07:00:00 GMT",
+          "description": "예금 떠나 주식으로 머니무브…대형 증권사, 은행 추월하나&nbsp;&nbsp;한겨레",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "삼성증권, 국내주식 투자지원금 이벤트 실시 - 익산열린신문",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9VVS1NZEE2Qy0zT0ZWamM3SjgtbHc0Z1pyY1ZmRXhOdDZ2bUZqSnpjMXBBMUNZVHZqR1hTV2kzZUNRb2FIMW1fTUxjZ1A1dHF2a0hYOVBzc2daU0hyZGJiRkZ3aw?oc=5",
+          "published": "Mon, 06 Apr 2026 02:05:32 GMT",
+          "description": "삼성증권, 국내주식 투자지원금 이벤트 실시&nbsp;&nbsp;익산열린신문",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "국민연금, 주식투자 비중 사상 첫 50% 돌파 - 한국부동산뉴스",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE42blFhVGlzLTNrMXNObG42WTNOUnRxX2F3WGtUV090Xy1GMVl1N3NMNWdjWkxSdFJYWjZaNGx1THJvZ05lSUp5VHlfLXcxUjQ2WTJQbXcwdXNlUXUtLUNlTDBjOFpwd2tTU2M4?oc=5",
+          "published": "Mon, 03 Nov 2025 08:00:00 GMT",
+          "description": "국민연금, 주식투자 비중 사상 첫 50% 돌파&nbsp;&nbsp;한국부동산뉴스",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "iM증권, 주간거래 재개 기념 ‘미국 주식 거래 이벤트’ - 인더스트리뉴스",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1uV2xMNHB5ZndsQ3lFQkVvc0s1dEtEdXdRUENMY001VzkycUUzVHhvMGRORF9XQnRTVmVFQ0tFQnA5eGFpYVpHcXpnNmRzeml1R0lBeWdrUDJJSmNiSk5MVFRod2N0RTIyb0xQdGhhc0pDZw?oc=5",
+          "published": "Wed, 12 Nov 2025 08:00:00 GMT",
+          "description": "iM증권, 주간거래 재개 기념 ‘미국 주식 거래 이벤트’&nbsp;&nbsp;인더스트리뉴스",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "한국 부자들이 달라졌다…‘일편단심’ 부동산서 주식·금·코인으로 - 매일경제",
+          "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1CaEI5ZldodUp2eFdwdExPNnBKa1hkUFpYWjBzb0ZRVi1vOU9UU3lHa0NSbWV0U2phWlVqWjE5MDFYTGdQX2U2M1R2M0VRSFJGRDBBUg?oc=5",
+          "published": "Sun, 14 Dec 2025 08:00:00 GMT",
+          "description": "한국 부자들이 달라졌다…‘일편단심’ 부동산서 주식·금·코인으로&nbsp;&nbsp;매일경제",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "지수 따라가니 안전?···'주식 장바구니' ETF의 함정 - 여성경제신문",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5Fc0dHTVZpYWY3cThscHBaa2NjRjZLTXBPREVWZE4tQl9hakdyUVFxVVotTGxfNWlEUndGNTh2anFUSHFPRkFQYlY1NGsyQzZnVHV3MzRSRWtGVlU1eVcwMmNFN296dVBPSDVUTXdobUxXN0HSAXdBVV95cUxQYk5FQmlQYS1OeDUzWFN6MEVUVGhIMkQ3TjQ5amFFaE1naWJ4LTVmVk5MNGhibUpKYTZuMGs2OTBONTdaQnlENmc0THVnMzgxalk5TzIxUUdFRVpiS0l5MlE3OWJsWTJZSUg0NTNLUEVjYzA0dkR6dw?oc=5",
+          "published": "Thu, 05 Mar 2026 08:00:00 GMT",
+          "description": "지수 따라가니 안전?···'주식 장바구니' ETF의 함정&nbsp;&nbsp;여성경제신문",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "경제·금융 수장 \"주식시장 외국인 유입 등 활기…금융시장 안정적\" - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5wV205OTNieGNPc2pEcWRlVFBfaUlBVnJDVk1ncDRwWUJOYVdVTkF5OEZLNmdrR3ptUXZWS2dxdE1lN2U4VXFKSU9mejBrQ1JVdlRr?oc=5",
+          "published": "Thu, 08 Jan 2026 08:00:00 GMT",
+          "description": "경제·금융 수장 \"주식시장 외국인 유입 등 활기…금융시장 안정적\"&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "주식 '역대급 폭락'에…김 총리 \"금융당국, 액션플랜 마련하라\" - v.daum.net",
+          "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBuX09ia0xWZllRY0tYS1pPSHp1bm1YVE5QakhBMm43WjNjX05lb21ZUGdFWmVMaC0zejQ4YTZUWnlXV3l4aVQzeTJjZU1qaE0?oc=5",
+          "published": "Wed, 04 Mar 2026 08:00:00 GMT",
+          "description": "주식 '역대급 폭락'에…김 총리 \"금융당국, 액션플랜 마련하라\"&nbsp;&nbsp;v.daum.net",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "주식 고액자산가 올 들어 삼성전자·알파벳 대거 쇼핑 - 헤럴드경제",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9uQnNMZ1hIYmt5ZXQ5c0tXcWxyRXFaR1poa3JnQWloRHJQSzdvM2pkd25EcDRCOWlEUWUyNERXVjZ3ZFE0S2taQXVWVU1OTU5XSVV4MXJ3?oc=5",
+          "published": "Mon, 16 Feb 2026 08:00:00 GMT",
+          "description": "주식 고액자산가 올 들어 삼성전자·알파벳 대거 쇼핑&nbsp;&nbsp;헤럴드경제",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "미래에셋생명, 자사주 6296만주 소각...발행주식 31.8% 감소 - 인더스트리뉴스",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE93NzBuUmJXV2x3TFBHTTNDemY5eDJIdllEY1YxX3poUE5EUGt5bVd6Ull6V3hGX2hMRy13S3pBbnpKdURUeDMyNVB3bUpyY2NCSVJxc2U4TFVIRVgzUXdnQ2wybWlpTTRNd0ZOUzBZX2xMZw?oc=5",
+          "published": "Thu, 05 Mar 2026 08:00:00 GMT",
+          "description": "미래에셋생명, 자사주 6296만주 소각...발행주식 31.8% 감소&nbsp;&nbsp;인더스트리뉴스",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "경제·금융 수장 “주식시장 외국인 유입 등 활기…금융시장 안정적” - 매일경제",
+          "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5NV3ZTR2FDekpIVTBwVTRqakI5WTdYLXdOajhwLXVFaWQ2R3k2OFFOME1RU1BUZW9PZkEyTjBrTTV0d2kyWWRyRno4OXBDSzV1SHlnUQ?oc=5",
+          "published": "Thu, 08 Jan 2026 08:00:00 GMT",
+          "description": "경제·금융 수장 “주식시장 외국인 유입 등 활기…금융시장 안정적”&nbsp;&nbsp;매일경제",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "[수능에 나오는 경제·금융] 연기금 영향력 막강…주식시장 왜곡 우려도 - 생글생글",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9CNnhWcldvYm5vUzlKQk1VQVJYcGpXMTVqQXJ6ZVkzcjB5QWdCSmxLV1JKVFVlS1pNNzEwcERQbHNOSktvNmNyUEtKR1Bzc2c2eGdKNmF5MnBaNWc?oc=5",
+          "published": "Mon, 09 Jun 2025 07:00:00 GMT",
+          "description": "[수능에 나오는 경제·금융] 연기금 영향력 막강…주식시장 왜곡 우려도&nbsp;&nbsp;생글생글",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "NH농협금융, 오늘부터 ‘내 주식 갖기’ 캠페인 전개 - 인더스트리뉴스",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBtWFlKM0xERHAwTHVVNzRRQXZMMFpVOHFWUzFNZUhxX09kVWxXdkMzaWtLN2RaLTdjZVZOb1hNZm1JTHBBb0FJUDN1ZHNRWE5zVnVpX3Y3WldJa2ZTYzlUd1lCTU1nRl9MZTJhWFhmcXFnZw?oc=5",
+          "published": "Fri, 15 Aug 2025 07:00:00 GMT",
+          "description": "NH농협금융, 오늘부터 ‘내 주식 갖기’ 캠페인 전개&nbsp;&nbsp;인더스트리뉴스",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "신한투자증권, 국내주식 온라인 ‘수수료 제로베이스’ 이벤트 - 인더스트리뉴스",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1XTUNxY0FpNGhzajJqOEpydWNSUm5MaTg1Y2xaTVVneDVEVEUzQS1ndEt6anliUkU0UXdDektuelY0UEZvYXdjZ3phcHVsSGM3RklXaF82TmwyQ1NsZzFPVnVFR1oyYTZFbWZqVlhLT2tNdw?oc=5",
+          "published": "Mon, 12 Jan 2026 08:00:00 GMT",
+          "description": "신한투자증권, 국내주식 온라인 ‘수수료 제로베이스’ 이벤트&nbsp;&nbsp;인더스트리뉴스",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "토스증권, 추석부터 미국주식 배당금 ‘공휴일 지급’ 정례화 - 인더스트리뉴스",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1KU0JCeHpZS0xicTdYWmt1MEw2cU1qMWpiV3BtbGpBQ0dUZ0psbnJycGNGWFRRZ1pZTS1mRzVBLXc1ejFUWjdnaXZPOE9UV2o2R1FqV3lJdEtDanRUdlhZOGg2WFBpVEhQdXUxYkp5OV9VQQ?oc=5",
+          "published": "Thu, 02 Oct 2025 07:00:00 GMT",
+          "description": "토스증권, 추석부터 미국주식 배당금 ‘공휴일 지급’ 정례화&nbsp;&nbsp;인더스트리뉴스",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "금융당국 기조 반영…메리츠증권, 미국 주식 무료 수수료 '중단' - 인더스트리뉴스",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5PalB4R05XTXJrYndJNEdYY0s4S3V6STZoLXo2ZkxHMnRpd0xPbmxuNk12aTR3Nm9LUnl3eEZkdjBCUVF4RlZtQzVlN0hFNVlOUnh0OE8zdlBaemVSN1JzeUNNNGd4VERzM0VnMENnb1d2UQ?oc=5",
+          "published": "Mon, 05 Jan 2026 08:00:00 GMT",
+          "description": "금융당국 기조 반영…메리츠증권, 미국 주식 무료 수수료 '중단'&nbsp;&nbsp;인더스트리뉴스",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "외국인, 새해 코스피서 ‘조·방·원’ 샀다…보유주식 비중 5년9개월來 ‘최대’ - 헤럴드경제",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE00ZUphVmxzbF9XanZRenpwbDZnTVAyWkNic2pxUlBDTUl5d1F2OUZZWVh2cGc4eFN1YkhuMFRjcVV4NXh3OThlUWtRNU1RYWxsbFdadEFB?oc=5",
+          "published": "Sun, 25 Jan 2026 08:00:00 GMT",
+          "description": "외국인, 새해 코스피서 ‘조·방·원’ 샀다…보유주식 비중 5년9개월來 ‘최대’&nbsp;&nbsp;헤럴드경제",
+          "source": "구글뉴스-경제"
+        },
+        {
+          "title": "국민연금, 사상 첫 주식 비중 50% 돌파 - 인더스트리뉴스",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1jYkkxbTUzaVY5ZUg2RXA5RlNNVGc2c2hvVldGQW1KSHNlRHVMd1JVaW96UU9fT29BZ09DaVNuYVV2LVN2Q2tZSlhGalBiOXVnZDNOem00aUF2bWJmeTdUTEtoSkJxVlo5SFlzUno5cnc5UQ?oc=5",
+          "published": "Mon, 03 Nov 2025 08:00:00 GMT",
+          "description": "국민연금, 사상 첫 주식 비중 50% 돌파&nbsp;&nbsp;인더스트리뉴스",
+          "source": "구글뉴스-경제"
+        }
+      ]
     },
     "산업": {
       "label": "🏭 산업",
-      "articles": []
+      "articles": [
+        {
+          "title": "초호황 韓 반도체 … 강소기업은 태부족 - 매일경제",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1kelpTZWxVdUp0TUNjcjBIdXNsVkR4WU42SDRhU3JheVFkaXBQTV9kTkJKN0hVaElBekFUQmYycUwyMWZZSU43WmE0VlNIdEd4WExrb2pB?oc=5",
+          "published": "Sun, 12 Apr 2026 08:15:00 GMT",
+          "description": "초호황 韓 반도체 … 강소기업은 태부족&nbsp;&nbsp;매일경제",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "반도체 산업 인력 교육은 시장 수요에 맞춰 진행됩니다. - Vietnam.vn",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNUHBHck85N2V1alRrdk9mLWxDeFVLR19PbndSZkZEZTNLbzFMY1FwVkE3NHVmeU9sY3MzSEV4WXB5M0FNODR0TXZyb1o3T2E0TVF0VUxOb0NhbkUzZDg2NU5icllWN2FwV2NCSDhxYnhZX01OVXlPaEZWd3BvOGxIS2tCOA?oc=5",
+          "published": "Mon, 13 Apr 2026 07:41:39 GMT",
+          "description": "반도체 산업 인력 교육은 시장 수요에 맞춰 진행됩니다.&nbsp;&nbsp;Vietnam.vn",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "[더인사이트] HBM에 흥한 한미반도체 …\"시장 사이클·고객 의존 리스크 상존\" - 중앙이코노미뉴스",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE94TmthYlByTDhNbDZJUFpkX0ZFVl91aE9DUzNVQzFPZzBDSHZUckI5dV9IV3RNVlpZdy1Xa2x3NkI2TXNOX0xXYzlYaXRtQ1NHVllzQkkwMXdLUGNHZjBvaDFMX2VUQXNDckgwOGh0dTAydw?oc=5",
+          "published": "Wed, 15 Apr 2026 00:47:35 GMT",
+          "description": "[더인사이트] HBM에 흥한 한미반도체 …\"시장 사이클·고객 의존 리스크 상존\"&nbsp;&nbsp;중앙이코노미뉴스",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "‘허리’ 없는 K반도체…중국·대만은 다르다 - 뉴스토마토",
+          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5zVm1jZTZCbDA1dWo4S29OWmlMWlBGZzlZVlhySHRrdF85Ni1oWVlFb3lsbW5TLUV0OFlmY09XODF6bXdSN3JmQjJZMHBPdXVQNzRLS0R4Vi1OSGF5dFpuUQ?oc=5",
+          "published": "Mon, 13 Apr 2026 05:01:39 GMT",
+          "description": "‘허리’ 없는 K반도체…중국·대만은 다르다&nbsp;&nbsp;뉴스토마토",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "산업통상부, 반도체･배터리 분야 등 8개 기업 사업재편 승인 - 시사일보",
+          "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBZMmQ5V0FXQl9KMzVjRXk5MlFFNDl6ZXVNWXFWbTZTU3Njb19zT1NwVkRueGl4SkpBYUpUZjNNQWlfbUREbHVDVm1DT0k?oc=5",
+          "published": "Tue, 14 Apr 2026 10:27:00 GMT",
+          "description": "산업통상부, 반도체･배터리 분야 등 8개 기업 사업재편 승인&nbsp;&nbsp;시사일보",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "경기도와 차세대융합기술연구원, 반도체 산업 전문인력 양성에 사활 - 경기신문",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1wWXFSRUVJa3MzWHdjZ3VuOVZBek5IMGROMTJxWko3bmo1UVFQUFFmOTFwV05lTUhQQ2xFZnpheHoxZ1FnQUxiMnFFc3BjSGFzaDRnUmxXQW55NnpaaURhOWhB?oc=5",
+          "published": "Sun, 12 Apr 2026 06:15:06 GMT",
+          "description": "경기도와 차세대융합기술연구원, 반도체 산업 전문인력 양성에 사활&nbsp;&nbsp;경기신문",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "딥엑스, ‘피지컬 AI 인프라 기업’ 선언…엔비디아 대체 플랫폼·삼성 2나노 차세대 칩 공개 - 플래텀(Platum)",
+          "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9kMlRiOW13Xzk3eWtCQmY1ZGhsa21aWnpuSlk0SXVyWkpWdFlJRmprMWl1eTNJSm05aEh6NFp1dGxKRm5pYmxJTQ?oc=5",
+          "published": "Tue, 14 Apr 2026 03:56:23 GMT",
+          "description": "딥엑스, ‘피지컬 AI 인프라 기업’ 선언…엔비디아 대체 플랫폼·삼성 2나노 차세대 칩 공개&nbsp;&nbsp;플래텀(Platum)",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "수원특례시 2026 차세대 반도체 패키징 산업전 공동관 참가기업 모집 > 뉴스 - 더코리아",
+          "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE5nMktOeXRPSUZrUWY1cERJbVkxT2xIbkxLSEZ3VHhmcVJ2bFlKZGQ4LXU5eGtYQTZ4ZTJNTXdUQW5pYzA?oc=5",
+          "published": "Tue, 14 Apr 2026 12:35:00 GMT",
+          "description": "수원특례시 2026 차세대 반도체 패키징 산업전 공동관 참가기업 모집 > 뉴스&nbsp;&nbsp;더코리아",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "반도체 분야로 몰리는 취준생…\"공정 실습 대기자만 1만명 이상\" - 뉴시스",
+          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9VU0t5NzZ1UndDbkdtWEdiYnY3RnY1MjRUbEgyWmlkal96UWlXa3ptQ0hIYzF0WlBnZFg1M3NBOER5Wko3SlBsa1daRWhWTlM2VTVDLW5nejlNU0sydVl5SNIBeEFVX3lxTE1ROUNteWNzRTZCVnowTXhVa1JxRWt1QjJMb0RXWWJBTXR5ZW5jaVZZS0pzN0lCSzczcXY2SklvOWVOVWdYTXFDS0p0ekxlcFE2bVBzSEJnaXRBdDJ1SlJQQzZIV2MxR1ZwYWR0MUtKTUxtS1B5OGQxag?oc=5",
+          "published": "Tue, 14 Apr 2026 06:15:03 GMT",
+          "description": "반도체 분야로 몰리는 취준생…\"공정 실습 대기자만 1만명 이상\"&nbsp;&nbsp;뉴시스",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "괴산 시스템반도체 AI분석센터 개관…\"반도체 산업 도약 거점\" - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1XdURxSUxhYzRSLUdtd2RFUVVLaHpJd0NTTUgya0FJZ2lhZTg2RGZybl8tSVV6eTNFaU9mZWl2eU5wUEhxdWVEVjBVenpHb3ZhY19mQkR3ODVWN3fSAWBBVV95cUxOMUdvQWxiaU9CcFJaamZ4ZENROUJYNkkxOWN2cXc1WWVzMDg0eVZOb19aMWpSNkVCSEpMSDY3RWhCcDZnM2d3dzZQOTg3RzNqMmstQnVLTHd4QTVScFZPMnQ?oc=5",
+          "published": "Thu, 09 Apr 2026 07:00:31 GMT",
+          "description": "괴산 시스템반도체 AI분석센터 개관…\"반도체 산업 도약 거점\"&nbsp;&nbsp;연합뉴스",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "구미 반도체 산업 한눈에…구미시, '특화단지 추진단 홈페이지' 본격 운영 - 포커스데일리",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBzYkp2ZXBWRVNDZkpjSmxCWFpMWTFmUzRIbEFiUEs5WEhlazk1Z2xPMV9DMEZpTDZpZ1BjWVA3TndGak5fMG9wX1J4emxWZE9laGh1bVRLWExaMHozRGptMjZIekwwQQ?oc=5",
+          "published": "Wed, 08 Apr 2026 21:35:18 GMT",
+          "description": "구미 반도체 산업 한눈에…구미시, '특화단지 추진단 홈페이지' 본격 운영&nbsp;&nbsp;포커스데일리",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "중기부, '모두의 챌린지 팹리스' 로 팹리스 스타트업의 성장 전폭 지원 - GNN 뉴스통신",
+          "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE5ITzNCUVNpdE5kZEFGUGFkRG1acWZENVhCMl9ON1ZCM3k0aDUxbE5LQXFKT2xZSDRaazZXdmxaSG5vanc?oc=5",
+          "published": "Tue, 14 Apr 2026 01:47:00 GMT",
+          "description": "중기부, '모두의 챌린지 팹리스' 로 팹리스 스타트업의 성장 전폭 지원&nbsp;&nbsp;GNN 뉴스통신",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "반도체 산업의 구조적 성장과 M&A 동향 분석 - PwC",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPTy1kbTRmdmZPWFlDazNHcHpEb2FLU1YtYXJxaF9Sa3VLaGNIQXFRaW4wcFQxeUlYWXFBV0FSLWFfTXZ4Q2FsckhzdHJxdV9iLTVXbzhCWVN1aGxGUW5kQ0F0ZFVkaUQ1R2JKTURHQ2lYOU0tamJrODMzdUZyTHhpLUNJTQ?oc=5",
+          "published": "Tue, 14 Oct 2025 09:21:49 GMT",
+          "description": "반도체 산업의 구조적 성장과 M&amp;A 동향 분석&nbsp;&nbsp;PwC",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "\"야근 10분마다 칼같이 수당\"…日반도체기업에 공대생들 몰린 이유 [인터뷰] - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5TTWFmQ1ZGdmNfSklhTkU5T2xJNXpFVEVVNzJpZlF6ci13T1pGVURobnA4TzlXU3pPUVlyLUV0bmZybEVxSEk5akRyUFVRQUo5dHY0?oc=5",
+          "published": "Tue, 14 Apr 2026 05:18:00 GMT",
+          "description": "\"야근 10분마다 칼같이 수당\"…日반도체기업에 공대생들 몰린 이유 [인터뷰]&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "팹리스도 '모두의 챌린지'...스타트업 MPW 등 지원 - 지디넷코리아",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE10ektxY1FrLTlGMEE5SG1wcG9CQ2tPWlNaTVpkUUFMdEpxNlZfcnFvbnlYcTZ2cElfNFhoOGR0ZUtuMVVLYWpnNkJLbVQtek5KREhQQkln?oc=5",
+          "published": "Mon, 13 Apr 2026 23:39:49 GMT",
+          "description": "팹리스도 '모두의 챌린지'...스타트업 MPW 등 지원&nbsp;&nbsp;지디넷코리아",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "김민현 한미반도체 사장, 부회장으로 승진 - IT조선",
+          "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9RMXdfMVFSdVQxbzBoQW4wSkZ1ajctOGd3RHYxT1NvM1ZHOHhwWDFkb0lDSkhzQzhwd0l4NmR1UHR5eE1heEtHMlFFb1lwN0FHNElRZUlrNktMVVZTR1FkcFFWSTVqazNtaE1NMzFnaV_SAXRBVV95cUxPMHNXc1dSLXFqUDgxRUNkcDV2VURNc2plUGpDZ1pCdC1MQVp1NHZITXJ3c2hfZElSVS1wLWtqbHotMVhET2FkT1JTSGJaV19ObmxkVFpTS21QNi10bWFxeE9GZC1uQ0xZMGNLampfTGxPN2xNTA?oc=5",
+          "published": "Tue, 14 Apr 2026 02:01:10 GMT",
+          "description": "김민현 한미반도체 사장, 부회장으로 승진&nbsp;&nbsp;IT조선",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "딥엑스, '피지컬 AI 인프라 기업' 전환…삼성 2나노 적용 AI 칩 내년 양산 - ebn.co.kr",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ORXVHN2FucVFUdWZtM0lDMVZjY3p2VnRES3pmN09rN3pIb0FSdjUyeFl4R0NuZWdScUEyd3NPRVdpNWhDNWRlUkJmMVJWaS1hOEFMdXd2dUlvajBpTzNObXdRVnNzb3po?oc=5",
+          "published": "Tue, 14 Apr 2026 02:17:49 GMT",
+          "description": "딥엑스, '피지컬 AI 인프라 기업' 전환…삼성 2나노 적용 AI 칩 내년 양산&nbsp;&nbsp;ebn.co.kr",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "SK하이닉스, WMEC 선정… 국내 반도체 기업 유일 - seoulwire.com",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA4TkplU2RIYkJlLUd2dkRZczNCc0F2c1JiZG1Lakl2LVVWR04wUUNLWGFycVBSOUJDYmxncFJCNkN0ckJyd1hZZnRpbjUxY3hJaHhUd014N3JrdmlyOWUzUGdNOF9kcFc3dVFZ?oc=5",
+          "published": "Wed, 01 Apr 2026 07:52:58 GMT",
+          "description": "SK하이닉스, WMEC 선정… 국내 반도체 기업 유일&nbsp;&nbsp;seoulwire.com",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "경기도, 반도체 실무형 인재 양성…참여 대학·기업 모집 - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE0xdzJFWm9oUTU0Q01KeW15a2VUN2RENjZTM3F6MnE3RGJ3Mk00NGRhU2Y3eUt6Y2V5eUR5YTVtejVYZy1ZQ3NhRjJDMjB2WDhIU1E0?oc=5",
+          "published": "Sun, 12 Apr 2026 03:31:00 GMT",
+          "description": "경기도, 반도체 실무형 인재 양성…참여 대학·기업 모집&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-산업"
+        },
+        {
+          "title": "삼성·TSMC가 2나노 늪에 빠진 사이... 일본, '빛의 반도체'로 판 뒤집었다 - 글로벌이코노믹",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQldSZG9BemhmMDY2MzZPLXNLRURfZTVLQ1hzUnp0a281ZU1XX1Etejk4YzQzNG4yNG9RUkZ3Q3ZOM2s0YV91U3FBbW5WREJ3Z1lNcll0bExMd0NRQTJEcmc1MFdRUmxuZm5NSWczR2RzejVDcUd2M01qa3RSc29RRzRnUjk5OUE?oc=5",
+          "published": "Sun, 29 Mar 2026 07:00:00 GMT",
+          "description": "삼성·TSMC가 2나노 늪에 빠진 사이... 일본, '빛의 반도체'로 판 뒤집었다&nbsp;&nbsp;글로벌이코노믹",
+          "source": "구글뉴스-산업"
+        }
+      ]
     },
     "엔터": {
       "label": "🎬 엔터",
-      "articles": []
+      "articles": [
+        {
+          "title": "'단종' 박지훈, 영화·아이돌·드라마 1위 싹쓸이 '압도적 브랜드평판'…'왕사남' 신드롬 입증 [종합] - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5mc3FwUHhrdHdheUNRZkxUSVBxQ1h6T3VWU0MyUmJrVHFxMnVjbi1WZlJGbXAzY0ZhbGJldXlSLUVMV1oweG5VSzFTQzk0aXlmTC1F?oc=5",
+          "published": "Wed, 25 Mar 2026 07:00:00 GMT",
+          "description": "'단종' 박지훈, 영화·아이돌·드라마 1위 싹쓸이 '압도적 브랜드평판'…'왕사남' 신드롬 입증 [종합]&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "[포토] 아이돌네이션 김혜수, 파격 드레스 - MBC",
+          "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9yNWpMWllTN3Y0SURBMmQwcVYyLWZYRmhsY3VmTlJlMnpWRUJiYmh6bFd1ZmVHbnR1LTZNYmtkeFNJVmotR28xeHZ4LWk?oc=5",
+          "published": "Wed, 17 Sep 2025 07:00:00 GMT",
+          "description": "[포토] 아이돌네이션 김혜수, 파격 드레스&nbsp;&nbsp;MBC",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "'숏폼 드라마' 인기, 심상치 않다…스타·감독들도 전격 진출 [SS연예프리즘] - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE92c2d6MVlQS3lBbktWeDhDWXFBWS1jVk9fUURWSEtGNWNPSzRCZ0VINVAwc3NZdHpuR3V2ZDB0RDZYcWxTdlVuQk9uZWlYdElFV1dn?oc=5",
+          "published": "Tue, 10 Mar 2026 07:00:00 GMT",
+          "description": "'숏폼 드라마' 인기, 심상치 않다…스타·감독들도 전격 진출 [SS연예프리즘]&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "[잇슈 연예] 제니 출연 드라마 ‘디 아이돌’ 첫 회 반응은? - KBS 뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5OSFAtNm9rNVZ0TF9lOFZ0VTlOYUpZOURaRlFzRmwwc1NaUFRTUTlXUEdPUzhJcFM1QUJrMEpEdDFyb1dkNF9wMWNQZWZhRUZidERNWjVJMFM1MGM?oc=5",
+          "published": "Tue, 06 Jun 2023 07:00:00 GMT",
+          "description": "[잇슈 연예] 제니 출연 드라마 ‘디 아이돌’ 첫 회 반응은?&nbsp;&nbsp;KBS 뉴스",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "아이돌 옆에서 시선 빼앗던 경호원 ‘인생역전’ 근황…드라마 같은 배우 데뷔 - v.daum.net",
+          "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBlR1NJRHpjUGY0VkttQ01ZNUJwb0lzUWxmcE95UEFiUVFNVjQwWkFIZnZSNG15c0JFeDNQdjJXV3dleEpYNERhVE9FQURaZmM?oc=5",
+          "published": "Fri, 16 May 2025 07:00:00 GMT",
+          "description": "아이돌 옆에서 시선 빼앗던 경호원 ‘인생역전’ 근황…드라마 같은 배우 데뷔&nbsp;&nbsp;v.daum.net",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "첫방부터 대박 터졌다…아이돌 출연으로 입소문 탄 韓日 합작 드라마 - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5kMVhrUnRhS2VmWXJDX2ZNN0NfVUlrQmk5dGNUZE1mXzRzdTFBR3VWZXprX0hENDUwaTJ5NU05NWk5dnZSY1BtM3o4ckFNMzZkTDhZ?oc=5",
+          "published": "Thu, 15 Jan 2026 08:00:00 GMT",
+          "description": "첫방부터 대박 터졌다…아이돌 출연으로 입소문 탄 韓日 합작 드라마&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "드라마 ‘디 아이돌’ 시즌 2가 무산됐다 - W Korea",
+          "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQbnpuSnd5UXRnSmp0d3hJcWlUMWZLVlp5cDAxaExCOTRUam02VHBRdlcybjRXUFM5RkxFZlpVamxqNXdlZTBGWVc3bGcxSjNZek8wZ1JuTFNtQjQxSnVPUEZzMFoteHg4SFVKM0NwZExlYlNlWlJyUl9PZmt4OWNkY0UxYkFUN3ZiSUEtNENiTXFlU0NHNlhzLV9vUXNxQ2JnYmRDRkk1NW9rUEVycVpOYTZVWVdOVGEzbWdScTBsV0h6MjZOdW5sd1Uyd0wza1FRZ3pHaE9pVVBnZnhoeTVwUHhyWkxjOEd2MURzNThWc3YxU1pWejZWVWxTUQ?oc=5",
+          "published": "Tue, 29 Aug 2023 07:00:00 GMT",
+          "description": "드라마 ‘디 아이돌’ 시즌 2가 무산됐다&nbsp;&nbsp;W Korea",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "드라마 ‘아이돌아이’ OST 라인업 공개 - rnx.kr",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBCX3dvX2J3ZWRhRkZKOXJnM0RFcjByMGF2N01IbG1vcy1EdFlraHgwcnI5U2Q3czREVEJXMjJveFo4X09lUEpIQnlLWmZtWjVJakNaN0tfY2xfUmJpNG4zbHlMSQ?oc=5",
+          "published": "Thu, 11 Dec 2025 08:00:00 GMT",
+          "description": "드라마 ‘아이돌아이’ OST 라인업 공개&nbsp;&nbsp;rnx.kr",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "민서, 웹툰 원작 드라마 ‘이미테이션’ 캐스팅…아이돌 보컬 리아 役 - ilyoseoul.co.kr",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBKd1lnZ1ZsQnZHcnZXX0E3SkZmTzlvWDAyV2txbGt0RERqdTFOZ1M4MTZWdUtrRFpIeElKaUNBSkNueGtEb3YzeEJmRVJvOUs5aFVNME5QRl9TTy1UWVRoZkZ3Y1p3eklabjdmd0xzNA?oc=5",
+          "published": "Mon, 19 Oct 2020 07:00:00 GMT",
+          "description": "민서, 웹툰 원작 드라마 ‘이미테이션’ 캐스팅…아이돌 보컬 리아 役&nbsp;&nbsp;ilyoseoul.co.kr",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "배우 강민아, 드라마 '공감세포' 출연…전직 아이돌 역할 - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5KV05ZRkFLcnRZcVB5STJwOGkzOWlyMkstLXRRSTlNZTV3aTlmNjFiYXFXZUt5RzA4VEtLbU9qc0JFX1lZZ2pIb0hnOGZzT2dOdXAw?oc=5",
+          "published": "Wed, 25 Feb 2026 08:00:00 GMT",
+          "description": "배우 강민아, 드라마 '공감세포' 출연…전직 아이돌 역할&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "배우 박정우, 새 드라마 '아이돌아이' 출연 확정 - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5FVjg1aDcxTEctWGlCYVA4U3AwQ0N2WW5oQ1ExSDhkQXFLMlpmSWFuSlZTNm10QnhyNjRxQ3M4aXdjZHpZWjZPdF9Da3RyVmozVllj?oc=5",
+          "published": "Wed, 24 Sep 2025 07:00:00 GMT",
+          "description": "배우 박정우, 새 드라마 '아이돌아이' 출연 확정&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "김재영, 정상급 아이돌 되더니…日 시청자까지 사로잡는다 - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5NWng2blRKZGpkRy0yejFPUEtQa1VFZ1h2T2tDM21NTHpzXzQ1eDg2WUNmNXRDVVpSdUpwQko3RDBCa1VlV09kbTdMUjZXTmRvaVhV?oc=5",
+          "published": "Wed, 17 Dec 2025 08:00:00 GMT",
+          "description": "김재영, 정상급 아이돌 되더니…日 시청자까지 사로잡는다&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "오메가엑스 예찬, 영화 '메이드 인 이태원' 합류 - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1DRFkxZGVmRXk5YlB0M0xrc21lRXcwNXkwdzBtNGNsM1Jvck9ia1VTcWs4LVhwWUIyMWJGQTJoaDlqbVNlLTVqX3ZBWmZrVWNFV3FJ?oc=5",
+          "published": "Wed, 17 Sep 2025 07:00:00 GMT",
+          "description": "오메가엑스 예찬, 영화 '메이드 인 이태원' 합류&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "카카오엔터, 웰메이드 드라마·예능·영화로 백상 석권 - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9sbXpPUnpUN3I1a1FkVTNCeENMdmdWemRvcnhwWXg2SDRWYmxOMW0zdUI4RHZNNE5hVVFqNUhiU1lFWTN4dFJ4VV9UWlJXdjJ5Vmlyc1N1RFNVWE43ZmMxOQ?oc=5",
+          "published": "Wed, 07 May 2025 07:00:00 GMT",
+          "description": "카카오엔터, 웰메이드 드라마·예능·영화로 백상 석권&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "박지훈, 아이돌서 배우로 우뚝…육각형 스타 행보 - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB3WUx0UTdzbk96R29WNjlwVUhDWEpLek42UWpLeGc0dFhlRVpKVnZBZkt5dlliTVpzX2sxZmhhZ3JGbzBCNS1qSjBNQ1NXYUo2Tmg0?oc=5",
+          "published": "Fri, 17 Jan 2025 08:00:00 GMT",
+          "description": "박지훈, 아이돌서 배우로 우뚝…육각형 스타 행보&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "“끔찍하고 잔인” 제니 드라마 ‘디 아이돌’ 혹평받은 이유 봤더니 - 헤럴드경제",
+          "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9leVRwXzJYQTY5SzhwNm1kQTladTBoU3pPVGUtTzBWckF4VFNCVVRBRXkyZS1Ib0k4QkdKMXlUU2R0cERoMTV1WF9jMTZveVdTQnA2bw?oc=5",
+          "published": "Thu, 25 May 2023 07:00:00 GMT",
+          "description": "“끔찍하고 잔인” 제니 드라마 ‘디 아이돌’ 혹평받은 이유 봤더니&nbsp;&nbsp;헤럴드경제",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "[스경연예연구소] 지지 않은 아이즈원(IZ*ONE), 드라마에서도 ‘위아 원(We are One)’ - 스포츠경향",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE13WE1tX3R6Ny1BRjBFUkd6STcxOVo1VnRQTzhRd0JFbEtKTzRvejhhd0RDUl9RcFFybnVUN1lOTGx4UE1vYnBsMFFTTHl3ejlrWmVyTzc0cWhjZS1zMkHSAWNBVV95cUxPcnpJeUtkZkVQSFFGdWdrY0NYUDd1Q1k3M1lTalVORW0xV2ttRVVoYmxnRVMwcDRDYk82dDQtSnFlUzc2UGJxdGdsOWY4Z01uTnVVdVpmZEZ2SWN6cEE5MTVkUUk?oc=5",
+          "published": "Wed, 05 Mar 2025 08:00:00 GMT",
+          "description": "[스경연예연구소] 지지 않은 아이즈원(IZ*ONE), 드라마에서도 ‘위아 원(We are One)’&nbsp;&nbsp;스포츠경향",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "무대가 좁은 아이돌…드라마·영화로 영역 확장 - 영남일보",
+          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9oMFNweDRTbjdBUEp0Y05hc0dXVXd3SlJwNzFxdjkzSDcyUy00Q05fazllVUJpdy15LVVDa2pUTzRoeXRCMmF0bjY4Si1KMzFfRHhqRjlXRlJwa2Z3TnFCSUxEMWxEOXNDUGVpTldjWDVJR0JC?oc=5",
+          "published": "Mon, 19 Sep 2016 07:00:00 GMT",
+          "description": "무대가 좁은 아이돌…드라마·영화로 영역 확장&nbsp;&nbsp;영남일보",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "염승이, '남장 아이돌'로 파격 변신…장편 영화 첫 주연 도전[공식] - 네이트",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5weEZaeEViZktOSXJZOC1va09ubDU4WnVxWHdzMlRKMjczQTZSd0lucnpQNWU5aHloQ2RFMlFvYmNUT1hqX1B1WkUyN2ZjWW5TV2JJ?oc=5",
+          "published": "Wed, 19 Nov 2025 08:00:00 GMT",
+          "description": "염승이, '남장 아이돌'로 파격 변신…장편 영화 첫 주연 도전[공식]&nbsp;&nbsp;네이트",
+          "source": "구글뉴스-엔터"
+        },
+        {
+          "title": "외국인 연예인 국내 활동 급증 - 이투데이",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBHNkpyVHB2akVZQjdwaWdLMkRqOUNIc25jVW94TEstS1VoMXVkZmh6cjRIbnpIdUtpRGVONnBBMFhibFB3UEFBaTBuZ0ZQU1l2ZDNMRXI5Rm8?oc=5",
+          "published": "Thu, 28 Dec 2017 08:00:00 GMT",
+          "description": "외국인 연예인 국내 활동 급증&nbsp;&nbsp;이투데이",
+          "source": "구글뉴스-엔터"
+        }
+      ]
     },
     "스포츠": {
       "label": "⚽ 스포츠",
-      "articles": []
+      "articles": [
+        {
+          "title": "야구·축구·농구 한 번에... 캘리포니아로 스포츠 여행 가볼까 - 한스경제",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE96TWRHRFN6NFNSOXZWaDZJTkgxMFBjSUpsejhXenNwX29XWXphRkxyYjdTZHFvRzN5WkZ4Wm9TLWJQVExWaXRnVk5fUXN4aDBRdXYyTjVuTDk3aUdwV3ZXLUY2UVdmWlpaMVBv0gFvQVVfeXFMUFBleUNxV3dpMU9tTEVZdG9heDlzMUhEQmM1MDFJQlpyaFRKTDhobXJqTm5WOU5UOTZQc3RCQnIwdS0zdnRXQVJXU0FCd1J5WHcyUzBrQlpfeG5mODdBRF94T09ZMnNYY0ZUYVR4d3pB?oc=5",
+          "published": "Mon, 06 Apr 2026 04:58:30 GMT",
+          "description": "야구·축구·농구 한 번에... 캘리포니아로 스포츠 여행 가볼까&nbsp;&nbsp;한스경제",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "야구·농구·축구 한 번에… 마이리얼트립, 스포츠 직관 여행 프로모션 진행 - 전자신문",
+          "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBXLVZyWnJjcFA2WU1adFRUOHRzdHY4ZG96b2xza1VnX0Jxc2NtSnFGODJJcFdIYldJU1U2UGZnNmNiaVNrVmVJazFFQzY2Zw?oc=5",
+          "published": "Mon, 06 Apr 2026 01:38:08 GMT",
+          "description": "야구·농구·축구 한 번에… 마이리얼트립, 스포츠 직관 여행 프로모션 진행&nbsp;&nbsp;전자신문",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "마이리얼트립, 美 축구·야구·농구 직관 프로모션 진행 - 머니투데이 - mt.co.kr",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBYREI3X2hUZExIeTRzeWtXV2wzek0xaGRYallFcThtc2dmUVhFM0xhVE9Qa01YMjBaNlRHVHNCb09DS2FnZWRxVnRSV0ctR3V3dEViQW9TRkZRbWliWURnMTVXVWI0U2JtNUHSAW9BVV95cUxNb2p2Mkx2Y1lnbnhhcEZlSnIteVBldlZlRlBSWmhYSGhwSF9IZTBNdWRaSGEwd3ZZckJubjhscmYwLS05YWhhQVRlbWhsMTNSWFpINkNMQUhXZ2FvNTBzRXpySGlrcmFaMjdPN1NpbVk?oc=5",
+          "published": "Mon, 06 Apr 2026 10:00:00 GMT",
+          "description": "마이리얼트립, 美 축구·야구·농구 직관 프로모션 진행 - 머니투데이&nbsp;&nbsp;mt.co.kr",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "농구vs야구vs축구💰3대 프로스포츠 대격돌ㅣ머니그라운드 - kakaocorp.com",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9naGNjTGs4VEZaR1QxcENyckN2Y2lYbkxSeFlyZVNKdUFZUGJrSmxONW1uQkMxZy1XeFJnVVNhckR5eEFFX3NJc1cxREFNZ2N0dnhxVm1B?oc=5",
+          "published": "Thu, 29 Jan 2026 08:00:00 GMT",
+          "description": "농구vs야구vs축구💰3대 프로스포츠 대격돌ㅣ머니그라운드&nbsp;&nbsp;kakaocorp.com",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "中축구 닮아가는 韓야구…\"국내서 왕노릇, 힘든 해외도전 하겠나\" [뒤로가는 K스포츠] - 중앙일보",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MR3h5d0hpMHI1TndZMGxKVENad1lYX1lmVXo1aFVoXzhQdVc5UVhqOGRLeE5RaDRNbjFiWUlpVGNxMXg0WVJpM2E1WGdIWEZzdkoxMmRn?oc=5",
+          "published": "Sun, 15 Mar 2026 07:00:00 GMT",
+          "description": "中축구 닮아가는 韓야구…\"국내서 왕노릇, 힘든 해외도전 하겠나\" [뒤로가는 K스포츠]&nbsp;&nbsp;중앙일보",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "탁구→필드하키→럭비→NFL→배구→테니스→야구→크리켓→농구→축구!…전세계 스포츠 순위 나왔다 - 엑스포츠뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFB2d3laOVVPQVlqRzNmdWFnZFZWcThxdkM5OTlYR0JSN1ExcUkxQ0U3S3pCUVFiWWQ2ZnNqTk9JZ191R2xrN29jNFVscmVQS0x6a1g2SA?oc=5",
+          "published": "Wed, 25 Mar 2026 07:00:00 GMT",
+          "description": "탁구→필드하키→럭비→NFL→배구→테니스→야구→크리켓→농구→축구!…전세계 스포츠 순위 나왔다&nbsp;&nbsp;엑스포츠뉴스",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "'역사상 가장 위대한 스포츠팀 TOP 15' … 축구 6팀·농구 3팀, 1위는 '야구' - 뉴데일리",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFB0aWVpX0FXTFlXdktMdTZsdnNzaWxpN1RmczZJeUx6amF6Mks0RUxhdnNLcThxNFRTa0lYTkpHc2dPXzJaOUlvcXpOUF9hZDdEXzYwSnRNY0pPeERrT3FySENhVFZLamw0eXNPNm1sVlZmSjBCTWx0TElrSQ?oc=5",
+          "published": "Wed, 24 Dec 2025 08:00:00 GMT",
+          "description": "'역사상 가장 위대한 스포츠팀 TOP 15' … 축구 6팀·농구 3팀, 1위는 '야구'&nbsp;&nbsp;뉴데일리",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "삼성 4대 스포츠 ‘명암’… 축구-배구 추락, 야구-농구는 반등세 - 동아일보",
+          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1GY3B0WGZ6MHRBX1hqOEFDYUpxbENRUVRuckJ2c3pvS0owaHU2b2d5T1IzMmIzNks2WnpCRzV5bEZBLWs0RUFiTC1HYVRNaDRUYW1YTl9IWEtxd0lCMGFuSU9XY0Qyd3ZKc2x1b3hmNGlZRktB0gFmQVVfeXFMT2UzalF4REhIb0tGS0dmd0hwS3p0U2h2SHZaT1pET0NBd2xZcnNod3JucmxFSG9pYm1jc1ZCcnNBVDBxLUZKOXRfdUxuQ2NIRzVzWFBqS3VmS09nN3gyMGR2TzhvMWVB?oc=5",
+          "published": "Wed, 17 Dec 2025 08:00:00 GMT",
+          "description": "삼성 4대 스포츠 ‘명암’… 축구-배구 추락, 야구-농구는 반등세&nbsp;&nbsp;동아일보",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "[상생 스포츠 마케팅 ⑤BNK금융지주]프로야구·축구·농구…지역사회 인기 스포츠 ‘든든한 버팀목’ - 글로벌이코노믹",
+          "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdWtjV1ZxNWo0MkVpZUdVTzRsNDNRNnNyd29hZncwUUZfckdfZkpSVVJQMzdDRmN0QXlVUkMyLTlqZnFiNnV5MnBVRjJxay1rMGE1TFdmbjVTSjhLOFV4dm1sYm5vNE81MkVzcUFmN0lsTjhCMXRoYUZUYjA4TnVCV0R2YjM?oc=5",
+          "published": "Mon, 29 Dec 2025 08:00:00 GMT",
+          "description": "[상생 스포츠 마케팅 ⑤BNK금융지주]프로야구·축구·농구…지역사회 인기 스포츠 ‘든든한 버팀목’&nbsp;&nbsp;글로벌이코노믹",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "농구 4200만원·배구 4000만원·야구 3000만원, 축구는 2700만 원…4대 스포츠 중 K리그 최저연봉 '압도적 꼴찌' - v.daum.net",
+          "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE8yZF9BRmkwU3FJOHNEQ0tqQlZWNWlUWW5DaWFKRnZrVkp3NUJ2UDFFVnFqdnlMMFZYaklBSTdMV1FCUk15QlE?oc=5",
+          "published": "Wed, 04 Feb 2026 08:00:00 GMT",
+          "description": "농구 4200만원·배구 4000만원·야구 3000만원, 축구는 2700만 원…4대 스포츠 중 K리그 최저연봉 '압도적 꼴찌'&nbsp;&nbsp;v.daum.net",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "“축구·농구는 다 세계 최고 선수 나오는데” 일본의 푸념…오타니, WBC 투수 출전 무산에 ‘아쉬움’ - 스포츠경향",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFB0dElFT19OdlFyRjBaN2RGOWVVemRMdTR6TW9zeU9KVWRFRnl4Y2hXN21UaWRtSGlpM21ZLVM3Y0JsQjJwWjZ0Vi1CMmpvMkNJY0NES2lxTGtoYi1QRWfSAWNBVV95cUxPWlgtYTdCNzUwc25jbHpLMjg1SnZwWTV4R0UzYXI4VUIwTkxTUVZzQVUzT2I3b290cDMyaUowRVl6WXBfalJkY3l5dmx4NmlIQ2NnYko4V2RLVW9NMzExVHVqSG8?oc=5",
+          "published": "Mon, 02 Feb 2026 08:00:00 GMT",
+          "description": "“축구·농구는 다 세계 최고 선수 나오는데” 일본의 푸념…오타니, WBC 투수 출전 무산에 ‘아쉬움’&nbsp;&nbsp;스포츠경향",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "'와' 이런 일이! 축구(SOCCER), 미국서 야구 인기 밀어냈다!…'가장 좋아하는 스포츠' 설문 3위 등극→중계권 지출도 야구 제쳤다 - 네이트 스포츠",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5leDdjcm5UQkdPOFp3cjRCanBYVWZtRnlJdzRCSWxVTTZZZVRkQ1NnVDJPQUNCUTQwa21yd2MtYllIb21GYzM1Z3FIZktxS2d6cDJpSzJjbUExWVdQ?oc=5",
+          "published": "Sun, 04 Jan 2026 08:00:00 GMT",
+          "description": "'와' 이런 일이! 축구(SOCCER), 미국서 야구 인기 밀어냈다!…'가장 좋아하는 스포츠' 설문 3위 등극→중계권 지출도 야구 제쳤다&nbsp;&nbsp;네이트 스포츠",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "[알립니다] 야구·축구·농구·배구 미래스타들 한 자리에... '2025 퓨처스 스타대상' 시상식 24일 개최 - 머니투데이 - mt.co.kr",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1lOWFOWnVHeWdSMlRCd1g5SUVPWHRycHlrZGhVM3NxSllUOHJKdGpfSGV5QzBBUTJXQjRTMF91R0xHRUlkNDhrLWZKOWMwNS1XQWFpTm5pN1pnblNTYXMzanZGeDVjSzhNY1HSAW9BVV95cUxORjJPTWJxM0FXN3R3VXNhcUo0c0ZyN2dMd09uZW5OSHZDUm1VeDlnVnZnMlBab0pMSTBGMFNSRkJvM01PdnpUQ3U2a0Roc3dDQWZOZXpWbEkxTkFnSVlwZFdoSXdUQUtyRXhYZWNMYVk?oc=5",
+          "published": "Wed, 19 Nov 2025 08:00:00 GMT",
+          "description": "[알립니다] 야구·축구·농구·배구 미래스타들 한 자리에... '2025 퓨처스 스타대상' 시상식 24일 개최 - 머니투데이&nbsp;&nbsp;mt.co.kr",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "\"야구가 무슨 스포츠냐\" 김남일, 결국 사과했다…윤석민 보자마자 '무릎' 꿇고 \"부러워서 그랬다\" - 네이트 스포츠",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA5OVJiRlFnVFB4NXVkd1YxV0FMbU5PVVp1bERWMFhuVXl4NGpWMkU2aVNkM0ttcU16NzR3ZUJLdnJfNFFkX24yN0RoSzNZX19nTThvb2VyRTBWU0N2?oc=5",
+          "published": "Sat, 31 Jan 2026 08:00:00 GMT",
+          "description": "\"야구가 무슨 스포츠냐\" 김남일, 결국 사과했다…윤석민 보자마자 '무릎' 꿇고 \"부러워서 그랬다\"&nbsp;&nbsp;네이트 스포츠",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "축구·야구 유니폼 입은 농구선수…WKBL, ‘하이파이브’로 새 시즌 팡파르 - 인천일보",
+          "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBtOU9sVzVfT3JjSFNBNmw0ZkV4QVphemhUUU1mX0prc0JOUk5Fa1p4cno3eFpDU0NUbmg3QjZ0cmlKX3Jkb28yUzVWekFMRndBaGhxNEpER1ZuT0xhQnFRTDlGVUhkclVFejJhQms5d2E?oc=5",
+          "published": "Mon, 03 Nov 2025 08:00:00 GMT",
+          "description": "축구·야구 유니폼 입은 농구선수…WKBL, ‘하이파이브’로 새 시즌 팡파르&nbsp;&nbsp;인천일보",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "[단독] 야구·배구도 '안전' 탓에 경기 중 '드론' 안 띄우는데…농구는 왜? 심지어 '안전 가이드라인'도 없다 - 네이트 스포츠",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE52SS1RSjhjZVdETXExSGZocEREY0pIU3Nkc2NXQ0puMlVyVGk5Q3V6czVSNDFjWlM2NnBUdTVGNXFLSlk1ZE4tcnJURUE0LWJaVllENjJsVjhCZFk2?oc=5",
+          "published": "Tue, 16 Dec 2025 08:00:00 GMT",
+          "description": "[단독] 야구·배구도 '안전' 탓에 경기 중 '드론' 안 띄우는데…농구는 왜? 심지어 '안전 가이드라인'도 없다&nbsp;&nbsp;네이트 스포츠",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "또또또 해묵은 논쟁! 김남일 \"야구는 스포츠 아냐\" 발언 두고 팬들 사이서 갑론을박 - 일간스포츠",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9yLWd5ZklUcUJOVDBqOHlJdXhBVXYxOFZOVmhCeC10ajlxbkoxaG9yeTExcF9peGNZUlpHeGVxUHphR1Z5eVZKTldaMjFjc01oa3c2OFNIaTMxdzA?oc=5",
+          "published": "Wed, 28 Jan 2026 08:00:00 GMT",
+          "description": "또또또 해묵은 논쟁! 김남일 \"야구는 스포츠 아냐\" 발언 두고 팬들 사이서 갑론을박&nbsp;&nbsp;일간스포츠",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "[2025 스포츠 10대 뉴스] 프로야구 1200만 관중, 김연경 '라스트 댄스' - 일간스포츠",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1ReGJqSXBzTzBJRFJ5TV9kbkJwUlVJTVNuWGljbXVYVVFPRl82X2hTV0YwY3p4RTM2U0hqMHJtWk4tZXY1QXUzSDBOT2pvM05QS1EzekxTUUZqdmM?oc=5",
+          "published": "Wed, 31 Dec 2025 08:00:00 GMT",
+          "description": "[2025 스포츠 10대 뉴스] 프로야구 1200만 관중, 김연경 '라스트 댄스'&nbsp;&nbsp;일간스포츠",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "전 세계 스포츠팀 가치 평가 10년 연속 1위는 NFL 댈러스···축구 클럽 최고 순위 레알 마드리드는 20위 - 네이트 스포츠",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBiS0ItcHRkdEhQdy1IRFljTnhHQ2h1MXlyVTI5Uk84aG11bUZENDloT3B3VjU1T3h3OXJhZkxjTE5lX0s3UFF0ZW8xNnpsOHNiRGFJR2d6TElhVEVJ?oc=5",
+          "published": "Sat, 20 Dec 2025 08:00:00 GMT",
+          "description": "전 세계 스포츠팀 가치 평가 10년 연속 1위는 NFL 댈러스···축구 클럽 최고 순위 레알 마드리드는 20위&nbsp;&nbsp;네이트 스포츠",
+          "source": "구글뉴스-스포츠"
+        },
+        {
+          "title": "WKBL 여자 농구선수들이 축구·야구 유니폼 입은 이유 - 네이트 스포츠",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8wVmRkblB3YWZ6d1FuV1czdDRUQXhOQm5DYy1GdERsNGVrZ2JJNDh0eU1lMU0xbFFyYTlpRGNmdEZleTVsend4MHh0b2o3bmVqZU1RRzNkTW1SMU1h?oc=5",
+          "published": "Mon, 03 Nov 2025 08:00:00 GMT",
+          "description": "WKBL 여자 농구선수들이 축구·야구 유니폼 입은 이유&nbsp;&nbsp;네이트 스포츠",
+          "source": "구글뉴스-스포츠"
+        }
+      ]
     }
   },
   "stats": {
-    "total": 0,
-    "categorized": 0,
-    "uncategorized": 0
+    "total": 462,
+    "categorized": 109,
+    "uncategorized": 167
   }
 }
