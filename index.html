@@ -406,14 +406,72 @@ const ALL_SOURCES = [...SOURCES.domestic, ...SOURCES.foreign];
 
 /* ════════════════ 카테고리 ════════════════ */
 const CATS = {
-  "국내경제":{ label:"🇰🇷 국내경제", ko:["경제성장","GDP","물가","소비자물가","내수","기재부","무역수지","경상수지","소비심리","수출입"], en:[] },
-  "세계경제":{ label:"🌐 세계경제",  ko:["연준","미국경제","중국경제","글로벌 경제","IMF","세계은행","무역전쟁","관세","WTO","OECD"], en:["Federal Reserve","Fed rate","US economy","China economy","global economy","IMF","World Bank","recession","tariff","trade war"] },
-  "금융":    { label:"💹 금융",      ko:["주식","코스피","코스닥","채권","금리","환율","펀드","ETF","암호화폐","비트코인","기준금리","공모주","주가"], en:["stock market","S&P 500","Nasdaq","bond yield","interest rate","cryptocurrency","Bitcoin","ETF","earnings","IPO","forex"] },
-  "산업":    { label:"🏭 산업",      ko:["반도체","삼성전자","SK하이닉스","LG전자","현대차","배터리","전기차","인공지능","AI","스타트업","바이오","제약","클라우드","로봇"], en:["semiconductor","chip","electric vehicle","EV","artificial intelligence","AI chip","Apple","Google","Microsoft","Amazon","Tesla","startup","pharma","biotech"] },
-  "엔터":    { label:"🎬 엔터",      ko:["BTS","블랙핑크","드라마","영화","아이돌","K-POP","케이팝","음원","흥행","넷플릭스","콘서트","시청률","웹툰"], en:["K-pop","BTS","Korean drama","Netflix","Disney+","box office","Grammy","entertainment","streaming"] },
-  "스포츠":  { label:"⚽ 스포츠",    ko:["야구","축구","농구","배구","KBO","K리그","올림픽","월드컵","손흥민","류현진","김민재","EPL","NBA","MLB","골프","테니스"], en:["soccer","football","baseball","basketball","NBA","MLB","NFL","Premier League","Champions League","Olympics","golf","tennis","UFC"] },
+  "국내경제":{ label:"🇰🇷 국내경제", ko:[
+    // 정책·거시
+    "경제","물가","소비자물가","생산자물가","GDP","성장률","내수","기재부","재정","세수","국세","예산","추경",
+    "무역수지","경상수지","수출","수입","통상","산업부","중소기업","소상공인","자영업","최저임금",
+    "부동산","아파트","전세","월세","분양","청약","공시가","집값","주택","건설","재개발","재건축",
+    "고용","취업","실업","일자리","채용","인력","구직","노동","근로","임금","연봉","퇴직",
+    "물가상승","인플레","디플레","소비","내수","경기","경기침체","경기회복","소비심리","기업심리",
+    "금리","한국은행","기준금리","긴축","완화","통화","외환","달러","원달러","환율",
+    "코스피","코스닥","주가","증시","주식","상장","공모주","배당","펀드","ETF","채권",
+    "세금","부가세","소득세","법인세","종부세","취득세","양도세",
+    "공정위","금감원","금융위","기업결합","독점","담합","과징금",
+    "삼성","SK","LG","현대","롯데","한화","GS","두산","CJ","카카오","네이버","쿠팡",
+    "수출입은행","산업은행","기업은행","국책은행","국민연금","건강보험","고용보험",
+    "전기요금","가스요금","유류세","기름값","물가안정","장바구니","식료품","외식","배달",
+    "반도체","이차전지","배터리","전기차","수소","원전","태양광","신재생","탄소","온실가스",
+  ], en:[] },
+  "세계경제":{ label:"🌐 세계경제", ko:[
+    "연준","미국 경제","중국 경제","글로벌","IMF","세계은행","무역전쟁","관세","WTO","OECD",
+    "트럼프 관세","미중","G7","G20","달러 패권","달러 강세","달러 약세",
+    "이란","중동 전쟁","우크라이나","러시아 제재","유럽 경제","일본 경제","엔저",
+  ], en:[
+    "Federal Reserve","Fed rate","Fed cut","US economy","China economy","global economy",
+    "IMF","World Bank","recession","tariff","trade war","OECD","trade deficit",
+    "Trump tariff","US GDP","eurozone","Japan economy","Bank of Japan","ECB",
+    "Iran war","Middle East","Ukraine","sanctions","global growth","inflation",
+  ]},
+  "금융":{ label:"💹 금융", ko:[
+    "주식","코스피","코스닥","채권","금리","환율","펀드","ETF","암호화폐","비트코인","이더리움",
+    "기준금리","공모주","주가","증시","상장","배당","자산","투자","헤지펀드","PEF","VC",
+    "나스닥","다우","S&P","뉴욕증시","월가","선물","옵션","파생","ELS","DLS",
+  ], en:[
+    "stock market","S&P 500","Nasdaq","bond yield","interest rate","cryptocurrency",
+    "Bitcoin","ETF","earnings","IPO","forex","wall street","Fed funds","rate cut","rate hike",
+    "hedge fund","private equity","venture capital","dividend","bear market","bull market",
+  ]},
+  "산업":{ label:"🏭 산업", ko:[
+    "반도체","삼성전자","SK하이닉스","LG전자","현대차","기아","배터리","전기차","인공지능","AI",
+    "스타트업","바이오","제약","조선","철강","화학","통신","5G","클라우드","로봇","드론","우주",
+    "HBM","파운드리","TSMC","엔비디아","챗GPT","생성AI","자율주행","플랫폼","핀테크",
+    "쿠팡","카카오","네이버","카카오뱅크","토스","당근","배달의민족","야놀자",
+  ], en:[
+    "semiconductor","chip","TSMC","Nvidia","electric vehicle","EV","artificial intelligence",
+    "AI chip","Apple","Google","Microsoft","Amazon","Tesla","Meta","startup","pharma","biotech",
+    "cloud computing","data center","autonomous","robotics","generative AI","ChatGPT","OpenAI",
+  ]},
+  "엔터":{ label:"🎬 엔터", ko:[
+    "BTS","블랙핑크","드라마","영화","아이돌","K-POP","케이팝","음원","흥행","넷플릭스",
+    "콘서트","시청률","웹툰","게임","OTT","뮤지컬","공연","연기","수상","방탄","뉴진스","aespa",
+    "하이브","SM","JYP","YG","카카오엔터","CJ ENM","빌보드","그래미","아카데미","칸","골든글로브",
+  ], en:[
+    "K-pop","BTS","Korean drama","Netflix","Disney+","box office","Grammy","Oscar",
+    "entertainment","streaming","celebrity","Hollywood","Marvel","music chart",
+  ]},
+  "스포츠":{ label:"⚽ 스포츠", ko:[
+    "야구","축구","농구","배구","KBO","K리그","올림픽","월드컵","손흥민","류현진","김민재",
+    "오타니","EPL","프리미어리그","챔피언스리그","NBA","MLB","골프","테니스","수영","육상",
+    "국가대표","대한민국 축구","대한민국 야구","전국체전","아시안게임","UFC","격투기",
+  ], en:[
+    "soccer","football","baseball","basketball","NBA","MLB","NFL","Premier League",
+    "Champions League","Olympics","golf","tennis","UFC","World Cup","Wimbledon","Super Bowl",
+  ]},
 };
 const CAT_KEYS = Object.keys(CATS);
+
+// 국내 언론사 ID 목록 (국내 소스에서 온 미분류 기사 → 국내경제 fallback)
+const DOMESTIC_SRC_IDS = new Set(SOURCES.domestic.map(s=>s.id));
 
 /* ════════════════ 상태 ════════════════ */
 let allArticles  = [];
@@ -502,6 +560,12 @@ function classify(a) {
   return null;
 }
 
+// 국내 언론사 출처 여부 판별
+function isDomesticSource(a) {
+  const src = ALL_SOURCES.find(s=>s.name===a.source);
+  return src && DOMESTIC_SRC_IDS.has(src.id);
+}
+
 function dedup(arr) {
   const seen = new Set();
   return arr.filter(a => {
@@ -512,7 +576,26 @@ function dedup(arr) {
 
 function categorizeArticles(articles) {
   const cats = Object.fromEntries(CAT_KEYS.map(k=>[k,[]]));
-  articles.forEach(a => { const c=classify(a); if(c&&cats[c].length<MAX_PER_CAT) cats[c].push(a); });
+  const uncategorized = [];
+
+  articles.forEach(a => {
+    const c = classify(a);
+    if (c && cats[c].length < MAX_PER_CAT) {
+      cats[c].push(a);
+    } else if (!c) {
+      uncategorized.push(a);
+    }
+  });
+
+  // fallback: 국내 언론사 미분류 기사 → 국내경제 (정치·사회성 제외)
+  const EXCLUDE_KW = ["정치","선거","국회","대통령","여당","야당","검찰","법원","판결","범죄","사건","사고","화재","재난","날씨","기상"];
+  for (const a of uncategorized) {
+    if (!isDomesticSource(a)) continue;
+    const t = (a.title+" "+a.description).toLowerCase();
+    if (EXCLUDE_KW.some(k=>t.includes(k))) continue; // 정치·사회 제외
+    if (cats["국내경제"].length < MAX_PER_CAT) cats["국내경제"].push(a);
+  }
+
   return cats;
 }
 
