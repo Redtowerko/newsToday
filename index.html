@@ -191,6 +191,159 @@ main { max-width:1140px; margin:0 auto; padding:20px 20px 40px; }
 .tabs-inner.edit-mode .tab-btn.tab-drag-over { background:var(--accent-soft); border-color:var(--accent); }
 
 @media(max-width:500px){.header-right{gap:5px;} #next-refresh,#status-text{display:none;} .briefing-grid{grid-template-columns:1fr;}}
+
+/* ═══════════════════════════════════════
+   리더 패널 (슬라이드인 기사 뷰어)
+═══════════════════════════════════════ */
+#reader-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 1000;
+  animation: fadeIn .2s ease;
+}
+#reader-overlay.open { display: block; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+#reader-panel {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(680px, 100vw);
+  background: var(--card);
+  box-shadow: -8px 0 40px rgba(0,0,0,.18);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform .28s cubic-bezier(.4,0,.2,1);
+}
+#reader-panel.open { transform: translateX(0); }
+
+.reader-topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.reader-source-badge {
+  font-size: 11px; font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 3px 9px; border-radius: 12px;
+  white-space: nowrap;
+}
+.reader-meta-top {
+  font-size: 11px; color: var(--muted); flex: 1; min-width: 0;
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+.reader-btn {
+  background: none; border: 1px solid var(--border);
+  border-radius: 7px; padding: 5px 11px;
+  font-size: 12px; font-family: inherit; font-weight: 500;
+  color: var(--text); cursor: pointer; white-space: nowrap;
+  transition: background .12s;
+  flex-shrink: 0;
+}
+.reader-btn:hover { background: var(--hover); }
+.reader-close {
+  background: none; border: none; font-size: 20px; line-height: 1;
+  color: var(--muted); cursor: pointer; padding: 4px 6px;
+  border-radius: 6px; flex-shrink: 0;
+}
+.reader-close:hover { background: var(--hover); color: var(--text); }
+
+#reader-body {
+  flex: 1; overflow-y: auto;
+  padding: 28px 32px 48px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 리더 본문 스타일 */
+#reader-body h1 {
+  font-size: 22px; font-weight: 700; line-height: 1.4;
+  margin-bottom: 14px; color: var(--text);
+}
+.reader-article-meta {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  font-size: 12px; color: var(--muted);
+  margin-bottom: 24px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.reader-article-meta .r-author { font-weight: 600; }
+.reader-content {
+  font-size: 16px; line-height: 1.85;
+  color: #1f2937;
+}
+.reader-content p { margin-bottom: 1.2em; }
+.reader-content h2 { font-size: 18px; font-weight: 700; margin: 1.6em 0 .6em; }
+.reader-content h3 { font-size: 16px; font-weight: 700; margin: 1.4em 0 .5em; }
+.reader-content img {
+  max-width: 100%; height: auto;
+  border-radius: 8px; margin: 1em 0;
+  display: block;
+}
+.reader-content figure { margin: 1em 0; }
+.reader-content figcaption { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.reader-content a { color: var(--accent); text-decoration: none; }
+.reader-content a:hover { text-decoration: underline; }
+.reader-content blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 1em 0; padding: 8px 16px;
+  background: var(--accent-soft); border-radius: 0 6px 6px 0;
+  font-style: italic;
+}
+.reader-content ul, .reader-content ol {
+  padding-left: 1.5em; margin-bottom: 1em;
+}
+.reader-content li { margin-bottom: .4em; }
+.reader-content table {
+  width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 14px;
+}
+.reader-content th, .reader-content td {
+  border: 1px solid var(--border); padding: 8px 12px; text-align: left;
+}
+.reader-content th { background: var(--bg); font-weight: 700; }
+
+/* 로딩 / 에러 상태 */
+.reader-loading {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  height: 200px; gap: 16px; color: var(--muted);
+}
+.reader-spinner {
+  width: 32px; height: 32px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+.reader-error {
+  text-align: center; padding: 40px 20px; color: var(--muted);
+}
+.reader-error h3 { font-size: 15px; color: var(--text); margin-bottom: 8px; }
+.reader-error p { font-size: 13px; line-height: 1.7; }
+.reader-error a { color: var(--accent); }
+
+/* 글자 크기 조절 버튼 */
+.reader-font-controls {
+  display: flex; align-items: center; gap: 6px;
+}
+.font-btn {
+  background: none; border: 1px solid var(--border);
+  border-radius: 5px; width: 26px; height: 26px;
+  font-size: 13px; cursor: pointer; color: var(--text);
+  display: flex; align-items: center; justify-content: center;
+}
+.font-btn:hover { background: var(--hover); }
+
+@media(max-width:500px){
+  #reader-body { padding: 20px 16px 40px; }
+  #reader-body h1 { font-size: 18px; }
+  .reader-content { font-size: 15px; }
+  .reader-topbar { padding: 10px 12px; gap: 7px; }
+}
 </style>
 </head>
 <body>
@@ -568,7 +721,8 @@ function filterArticles(articles) {
 function artItemHtml(a, rank) {
   const isNew = newIds.has(artId(a));
   const {rel, abs} = formatDate(a.published);
-  return `<a class="art-item" href="${esc(a.link)}" target="_blank" rel="noopener">
+  const onclk = `openReader(${JSON.stringify(a.link)},${JSON.stringify(a.source||"")},${JSON.stringify(a.author||"")},${JSON.stringify(a.published||"")});return false;`;
+  return `<a class="art-item" href="${esc(a.link)}" onclick="${esc(onclk)}" target="_blank" rel="noopener">
     <span class="art-rank${rank<=3?' r'+rank:''}">${rank}</span>
     <div class="art-body">
       <div class="art-title">${esc(a.title)}</div>
@@ -586,7 +740,8 @@ function artItemHtml(a, rank) {
 function fullArtHtml(a) {
   const isNew = newIds.has(artId(a));
   const {rel, abs} = formatDate(a.published);
-  return `<a class="full-art" href="${esc(a.link)}" target="_blank" rel="noopener">
+  const onclk = `openReader(${JSON.stringify(a.link)},${JSON.stringify(a.source||"")},${JSON.stringify(a.author||"")},${JSON.stringify(a.published||"")});return false;`;
+  return `<a class="full-art" href="${esc(a.link)}" onclick="${esc(onclk)}" target="_blank" rel="noopener">
     ${isNew ? `<span class="full-art-new">NEW</span>` : ""}
     <div class="full-art-title">${esc(a.title)}</div>
     ${a.description ? `<div class="full-art-desc">${esc(a.description)}</div>` : ""}
@@ -982,6 +1137,163 @@ function renderBriefing(result, cats) {
 }
 
 /* ══════════════════════════════════════
+   리더 패널 — Readability.js 기반 뷰어
+══════════════════════════════════════ */
+
+// Readability.js CDN (Mozilla)
+const READABILITY_URL = "https://cdn.jsdelivr.net/npm/@mozilla/readability@0.5.0/Readability.min.js";
+let readabilityLoaded = false;
+let currentArticleUrl = "";
+let readerFontSize = 16;  // px 기본값
+
+// CORS 프록시 목록
+const READ_PROXIES = [
+  u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+  u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
+  u => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`,
+];
+
+async function loadReadability() {
+  if (readabilityLoaded) return true;
+  return new Promise(resolve => {
+    const s = document.createElement("script");
+    s.src = READABILITY_URL;
+    s.onload  = () => { readabilityLoaded = true; resolve(true); };
+    s.onerror = () => resolve(false);
+    document.head.appendChild(s);
+  });
+}
+
+async function fetchArticleHtml(url) {
+  for (const mk of READ_PROXIES) {
+    try {
+      const r = await fetch(mk(url), {
+        signal: AbortSignal.timeout(14000),
+        headers: { "Accept": "text/html" }
+      });
+      if (!r.ok) continue;
+      const txt = await r.text();
+      if (txt.length > 500) return txt;
+    } catch {}
+  }
+  return null;
+}
+
+// 기사 열기 — artItemHtml / fullArtHtml 에서 호출
+async function openReader(url, source, author, dateStr) {
+  currentArticleUrl = url;
+
+  // 패널 & 오버레이 열기
+  document.getElementById("reader-overlay").classList.add("open");
+  const panel = document.getElementById("reader-panel");
+  panel.classList.add("open");
+  document.body.style.overflow = "hidden";
+
+  // topbar 즉시 채우기
+  document.getElementById("reader-source").textContent = source || "출처 없음";
+  const metaParts = [author ? "✍ " + author : "", dateStr || ""].filter(Boolean);
+  document.getElementById("reader-meta-top").textContent = metaParts.join(" · ");
+
+  // 본문 로딩 상태
+  const body = document.getElementById("reader-body");
+  body.style.fontSize = readerFontSize + "px";
+  body.innerHTML = `<div class="reader-loading"><div class="reader-spinner"></div><span>기사 불러오는 중...</span></div>`;
+
+  // Readability 로드 (첫 번째 열기 시만)
+  const ok = await loadReadability();
+  if (!ok) {
+    showReaderError(url, "Readability 라이브러리를 불러오지 못했습니다.");
+    return;
+  }
+
+  // HTML fetch
+  const html = await fetchArticleHtml(url);
+  if (!html) {
+    showReaderError(url, "기사 원문을 가져오지 못했습니다.<br>CORS 프록시가 일시적으로 막혔을 수 있습니다.");
+    return;
+  }
+
+  // Readability 파싱
+  try {
+    const parser  = new DOMParser();
+    const doc     = parser.parseFromString(html, "text/html");
+    // 상대경로 이미지 → 절대경로 변환
+    const base = doc.createElement("base");
+    base.href = new URL(url).origin;
+    doc.head.prepend(base);
+
+    const reader  = new Readability(doc);
+    const article = reader.parse();
+
+    if (!article || !article.content || article.content.length < 100) {
+      showReaderError(url, "이 기사는 뷰어로 표시하기 어렵습니다.<br>원문에서 직접 확인해 주세요.");
+      return;
+    }
+
+    const {rel, abs} = formatDate(dateStr || "");
+    body.innerHTML = `
+      <h1>${esc(article.title || "")}</h1>
+      <div class="reader-article-meta">
+        <span class="r-author">${esc(article.byline || author || "")}</span>
+        ${rel ? `<span>${rel}</span>` : ""}
+        ${abs ? `<span>${abs}</span>` : ""}
+        <span>${esc(source || "")}</span>
+      </div>
+      <div class="reader-content">${article.content}</div>
+    `;
+
+    // 외부 링크 새 탭으로
+    body.querySelectorAll("a").forEach(a => {
+      a.target = "_blank"; a.rel = "noopener noreferrer";
+    });
+    // 이미지 로드 실패 시 숨김
+    body.querySelectorAll("img").forEach(img => {
+      img.onerror = () => img.style.display = "none";
+      img.loading = "lazy";
+    });
+
+    body.scrollTop = 0;
+
+  } catch(e) {
+    showReaderError(url, "파싱 중 오류가 발생했습니다: " + esc(e.message));
+  }
+}
+
+function showReaderError(url, msg) {
+  document.getElementById("reader-body").innerHTML = `
+    <div class="reader-error">
+      <div style="font-size:36px;margin-bottom:12px">😔</div>
+      <h3>기사를 불러올 수 없습니다</h3>
+      <p>${msg}</p>
+      <p style="margin-top:16px">
+        <a href="${esc(url)}" target="_blank" rel="noopener" style="font-weight:600">
+          원문 페이지에서 직접 열기 ↗
+        </a>
+      </p>
+    </div>`;
+}
+
+function closeReader() {
+  document.getElementById("reader-overlay").classList.remove("open");
+  document.getElementById("reader-panel").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function openOriginal() {
+  if (currentArticleUrl) window.open(currentArticleUrl, "_blank", "noopener,noreferrer");
+}
+
+function changeFontSize(delta) {
+  readerFontSize = Math.min(22, Math.max(13, readerFontSize + delta));
+  document.getElementById("reader-body").style.fontSize = readerFontSize + "px";
+}
+
+// ESC 키로 닫기
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeReader();
+});
+
+/* ══════════════════════════════════════
    초기화
 ══════════════════════════════════════ */
 loadSrcPrefs();
@@ -990,5 +1302,24 @@ loadApiKeyUi();
 rebuildTabsNav();   // 저장된 탭 순서 적용
 loadNews(false);
 </script>
+
+<!-- 리더 패널 -->
+<div id="reader-overlay" onclick="closeReader()"></div>
+<div id="reader-panel" role="dialog" aria-modal="true" aria-label="기사 뷰어">
+  <div class="reader-topbar">
+    <span class="reader-source-badge" id="reader-source">로딩 중...</span>
+    <span class="reader-meta-top" id="reader-meta-top"></span>
+    <div class="reader-font-controls">
+      <button class="font-btn" onclick="changeFontSize(-1)" title="글자 작게">A−</button>
+      <button class="font-btn" onclick="changeFontSize(1)"  title="글자 크게">A+</button>
+    </div>
+    <button class="reader-btn" id="reader-orig-btn" onclick="openOriginal()">원문 열기 ↗</button>
+    <button class="reader-close" onclick="closeReader()" title="닫기">✕</button>
+  </div>
+  <div id="reader-body">
+    <div class="reader-loading"><div class="reader-spinner"></div><span>기사 불러오는 중...</span></div>
+  </div>
+</div>
+
 </body>
 </html>
