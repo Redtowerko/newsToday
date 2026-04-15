@@ -1146,8 +1146,13 @@ let readabilityLoaded = false;
 let currentArticleUrl = "";
 let readerFontSize = 16;  // px 기본값
 
-// CORS 프록시 목록
+// ★ 본인 GAS 프록시 URL을 여기에 붙여넣으세요
+// (배포 후 복사한 /exec 주소)
+const GAS_PROXY_URL = "";   // 예: "https://script.google.com/macros/s/AKfy.../exec"
+
+// CORS 프록시 목록 — GAS가 설정되면 1순위로 사용
 const READ_PROXIES = [
+  ...(GAS_PROXY_URL ? [u => `${GAS_PROXY_URL}?url=${encodeURIComponent(u)}`] : []),
   u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
   u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
   u => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`,
