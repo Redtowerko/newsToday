@@ -1,0 +1,34 @@
+{
+  "updated": "2026-04-15T00:32:01.959804+00:00",
+  "categories": {
+    "국내경제": {
+      "label": "🇰🇷 국내경제",
+      "articles": []
+    },
+    "세계경제": {
+      "label": "🌐 세계경제",
+      "articles": []
+    },
+    "금융": {
+      "label": "💹 금융",
+      "articles": []
+    },
+    "산업": {
+      "label": "🏭 산업",
+      "articles": []
+    },
+    "엔터": {
+      "label": "🎬 엔터",
+      "articles": []
+    },
+    "스포츠": {
+      "label": "⚽ 스포츠",
+      "articles": []
+    }
+  },
+  "stats": {
+    "total": 0,
+    "categorized": 0,
+    "uncategorized": 0
+  }
+}
