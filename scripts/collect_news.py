@@ -1,130 +1,135 @@
 #!/usr/bin/env python3
 """
-뉴스 수집 및 분류 스크립트
-- 국내: knews-rss (GitHub)
-- 해외: Google News RSS (AP News, Bloomberg)
-매일 GitHub Actions에서 자동 실행됨
+뉴스 수집 스크립트 v2
+- requests + feedparser 사용 (더 안정적인 RSS 처리)
+- Google News RSS 경유로 국내외 기사 수집
 """
 
-import json
-import re
-import hashlib
-import urllib.request
-import urllib.error
+import json, re, hashlib, sys, os, subprocess
 from datetime import datetime, timezone
-from xml.etree import ElementTree as ET
 
-# ── 카테고리별 키워드 정의 ──────────────────────────────────────────────────
+def install(pkg):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", pkg])
+
+try:
+    import requests
+except ImportError:
+    print("requests 설치 중..."); install("requests"); import requests
+
+try:
+    import feedparser
+except ImportError:
+    print("feedparser 설치 중..."); install("feedparser"); import feedparser
+
+# ── 카테고리 키워드 ──────────────────────────────────────────────────────
 CATEGORIES = {
     "국내경제": {
-        "keywords": ["GDP", "경제", "성장률", "물가", "소비", "내수", "기재부", "국내총생산",
-                     "정부예산", "재정", "세금", "세수", "한국경제", "수출", "수입", "무역수지"],
         "label": "🇰🇷 국내경제",
-        "en_keywords": []
+        "keywords": ["경제성장", "GDP", "물가상승", "소비자물가", "내수", "기재부", "국내총생산",
+                     "정부예산", "재정", "세수", "한국경제", "무역수지", "경상수지",
+                     "산업생산", "소비심리", "수출입"],
+        "en_keywords": [],
     },
     "세계경제": {
-        "keywords": ["연준", "Fed", "미국경제", "중국경제", "글로벌", "IMF", "세계은행",
-                     "달러", "위안", "엔화", "무역전쟁", "관세", "WTO", "OECD"],
         "label": "🌐 세계경제",
-        "en_keywords": ["Fed", "economy", "GDP", "inflation", "recession", "trade", "tariff",
-                        "IMF", "World Bank", "global", "dollar", "yuan"]
+        "keywords": ["연준", "미국경제", "중국경제", "글로벌 경제", "IMF", "세계은행",
+                     "무역전쟁", "관세", "WTO", "OECD", "세계 경기"],
+        "en_keywords": ["Federal Reserve", "Fed rate", "US economy", "China economy",
+                        "global economy", "IMF", "World Bank", "recession", "tariff",
+                        "trade war", "OECD", "global growth", "inflation"],
     },
     "금융": {
-        "keywords": ["주식", "코스피", "코스닥", "채권", "금리", "환율", "펀드", "ETF",
-                     "증권", "투자", "자산", "암호화폐", "비트코인", "한국은행", "기준금리",
-                     "외환", "달러", "배당"],
         "label": "💹 금융",
-        "en_keywords": ["stock", "market", "S&P", "Nasdaq", "bond", "interest rate", "crypto",
-                        "Bitcoin", "Fed rate", "yield", "hedge fund", "ETF", "finance", "bank"]
+        "keywords": ["주식", "코스피", "코스닥", "채권", "금리", "환율", "펀드", "ETF",
+                     "증권", "투자", "암호화폐", "비트코인", "기준금리", "배당", "공모주",
+                     "상장", "주가", "외환"],
+        "en_keywords": ["stock market", "S&P 500", "Nasdaq", "bond yield", "interest rate",
+                        "cryptocurrency", "Bitcoin", "hedge fund", "ETF", "earnings",
+                        "IPO", "forex", "wall street", "Fed funds"],
     },
     "산업": {
-        "keywords": ["반도체", "삼성", "SK하이닉스", "LG", "현대", "기아", "배터리", "전기차",
-                     "AI", "인공지능", "IT", "스타트업", "바이오", "제약", "조선", "철강",
-                     "화학", "통신", "5G", "클라우드"],
         "label": "🏭 산업",
-        "en_keywords": ["semiconductor", "chip", "EV", "electric vehicle", "AI", "artificial intelligence",
-                        "tech", "Apple", "Google", "Microsoft", "Amazon", "Tesla", "startup", "pharma"]
+        "keywords": ["반도체", "삼성전자", "SK하이닉스", "LG전자", "현대차", "기아",
+                     "배터리", "전기차", "인공지능", "AI", "스타트업", "바이오",
+                     "제약", "조선", "철강", "화학", "통신", "5G", "클라우드", "로봇"],
+        "en_keywords": ["semiconductor", "chip", "electric vehicle", "EV", "artificial intelligence",
+                        "AI chip", "Apple", "Google", "Microsoft", "Amazon", "Tesla",
+                        "startup", "pharma", "biotech", "cloud computing"],
     },
     "엔터": {
-        "keywords": ["BTS", "블랙핑크", "드라마", "영화", "아이돌", "K-POP", "KPOP", "연예",
-                     "음악", "음원", "흥행", "OTT", "넷플릭스", "디즈니", "콘서트", "연기",
-                     "시청률", "웹툰", "게임"],
         "label": "🎬 엔터",
-        "en_keywords": ["K-pop", "BTS", "drama", "movie", "film", "Netflix", "entertainment",
-                        "music", "concert", "celebrity", "streaming", "box office"]
+        "keywords": ["BTS", "블랙핑크", "드라마", "영화", "아이돌", "K-POP", "케이팝",
+                     "연예인", "음원", "흥행", "넷플릭스", "콘서트", "시청률", "웹툰", "OTT"],
+        "en_keywords": ["K-pop", "BTS", "Korean drama", "Netflix", "Disney+",
+                        "box office", "Grammy", "entertainment", "streaming", "celebrity"],
     },
     "스포츠": {
-        "keywords": ["야구", "축구", "농구", "배구", "KBO", "K리그", "올림픽", "월드컵",
-                     "손흥민", "류현진", "김민재", "UFC", "EPL", "NBA", "MLB", "골프", "테니스",
-                     "마라톤", "수영"],
         "label": "⚽ 스포츠",
-        "en_keywords": ["soccer", "football", "baseball", "basketball", "NBA", "MLB", "NFL",
-                        "Premier League", "Champions League", "Olympics", "golf", "tennis", "UFC"]
-    }
+        "keywords": ["야구", "축구", "농구", "배구", "KBO", "K리그", "올림픽",
+                     "월드컵", "손흥민", "류현진", "김민재", "EPL", "NBA", "MLB", "골프", "테니스"],
+        "en_keywords": ["soccer", "football", "baseball", "basketball", "NBA", "MLB",
+                        "NFL", "Premier League", "Champions League", "Olympics",
+                        "golf", "tennis", "UFC", "World Cup"],
+    },
 }
 
-# ── RSS 피드 목록 ──────────────────────────────────────────────────────────
-DOMESTIC_FEEDS = [
-    # knews-rss 기반 주요 매체 (README에서 확인된 실제 피드)
-    ("조선일보", "https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml"),
-    ("한국경제", "https://www.hankyung.com/feed/economy"),
-    ("매일경제", "https://www.mk.co.kr/rss/30000001/"),
-    ("연합뉴스", "https://www.yna.co.kr/RSS/economy.xml"),
-    ("머니투데이", "https://api.mt.co.kr/mtview/a_m/economy/1/rss.xml"),
-    ("이데일리", "https://rss.edaily.co.kr/edaily/newlist/Economy.xml"),
-    ("SBS뉴스", "https://news.sbs.co.kr/news/SectionRssFeed.do?sectionId=01&plink=RSSREADER"),
-    ("KBS", "https://news.kbs.co.kr/rss/rss.do?sourceid=01&amp;isRss=Y&amp;sectionid=02"),
+# ── RSS 피드 ──────────────────────────────────────────────────────────────
+FEEDS = [
+    # 한국어 검색 기반 (Google News)
+    ("구글뉴스-경제",    "https://news.google.com/rss/search?q=%EA%B2%BD%EC%A0%9C+%EA%B8%88%EC%9C%B5+%EC%A3%BC%EC%8B%9D&hl=ko&gl=KR&ceid=KR:ko"),
+    ("구글뉴스-산업",    "https://news.google.com/rss/search?q=%EB%B0%98%EB%8F%84%EC%B2%B4+%EC%82%B0%EC%97%85+%EA%B8%B0%EC%97%85&hl=ko&gl=KR&ceid=KR:ko"),
+    ("구글뉴스-엔터",    "https://news.google.com/rss/search?q=%EC%97%B0%EC%98%88+%EB%93%9C%EB%9D%BC%EB%A7%88+%EC%98%81%ED%99%94+%EC%95%84%EC%9D%B4%EB%8F%8C&hl=ko&gl=KR&ceid=KR:ko"),
+    ("구글뉴스-스포츠",  "https://news.google.com/rss/search?q=%EC%95%BC%EA%B5%AC+%EC%B6%95%EA%B5%AC+%EB%86%8D%EA%B5%AC+%EC%8A%A4%ED%8F%AC%EC%B8%A0&hl=ko&gl=KR&ceid=KR:ko"),
+    ("구글뉴스-한국Top", "https://news.google.com/rss/headlines/section/geo/KR?hl=ko&gl=KR&ceid=KR:ko"),
+    # 언론사 직접 (Google News 경유)
+    ("조선일보",  "https://news.google.com/rss/search?q=when:24h+site:chosun.com&hl=ko&gl=KR&ceid=KR:ko"),
+    ("한국경제",  "https://news.google.com/rss/search?q=when:24h+site:hankyung.com&hl=ko&gl=KR&ceid=KR:ko"),
+    ("매일경제",  "https://news.google.com/rss/search?q=when:24h+site:mk.co.kr&hl=ko&gl=KR&ceid=KR:ko"),
+    ("연합뉴스",  "https://news.google.com/rss/search?q=when:24h+site:yna.co.kr&hl=ko&gl=KR&ceid=KR:ko"),
+    ("머니투데이","https://news.google.com/rss/search?q=when:24h+site:mt.co.kr&hl=ko&gl=KR&ceid=KR:ko"),
+    # 해외 (Google News 섹션)
+    ("Google-Business",     "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en"),
+    ("Google-Technology",   "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en"),
+    ("Google-Sports",       "https://news.google.com/rss/headlines/section/topic/SPORTS?hl=en-US&gl=US&ceid=US:en"),
+    ("Google-Entertainment","https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=en-US&gl=US&ceid=US:en"),
+    ("AP News",     "https://news.google.com/rss/search?q=when:24h+allinurl:apnews.com&hl=en-US&gl=US&ceid=US:en"),
+    ("Bloomberg",   "https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en"),
+    ("Reuters",     "https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com&hl=en-US&gl=US&ceid=US:en"),
 ]
 
-FOREIGN_FEEDS = [
-    ("AP News", "https://news.google.com/rss/search?q=when:24h+allinurl:apnews.com&hl=en-US&gl=US&ceid=US:en"),
-    ("Bloomberg", "https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en"),
-]
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/123.0.0.0 Safari/537.36"
+    ),
+    "Accept": "application/rss+xml, application/xml, text/xml, */*",
+    "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8",
+}
 
-# ── 유틸리티 함수 ──────────────────────────────────────────────────────────
-def fetch_rss(url: str, source: str) -> list[dict]:
-    """RSS XML을 가져와 기사 목록으로 파싱"""
-    headers = {
-        "User-Agent": "Mozilla/5.0 (compatible; NewsBot/1.0; +https://github.com)",
-        "Accept": "application/rss+xml, application/xml, text/xml",
-    }
+def fetch_feed(name, url):
     try:
-        req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            raw = resp.read()
-        root = ET.fromstring(raw)
+        resp = requests.get(url, headers=HEADERS, timeout=25, allow_redirects=True)
+        resp.raise_for_status()
+        feed = feedparser.parse(resp.content)
     except Exception as e:
-        print(f"  ⚠️  {source} 수집 실패: {e}")
+        print(f"  ⚠️  {name}: {e}")
         return []
 
-    ns = {"atom": "http://www.w3.org/2005/Atom"}
-    items = root.findall(".//item") or root.findall(".//atom:entry", ns)
     articles = []
-    for item in items[:30]:  # 피드당 최대 30건
-        title_el = item.find("title")
-        link_el  = item.find("link") or item.find("atom:link", ns)
-        pub_el   = item.find("pubDate") or item.find("atom:published", ns)
-        desc_el  = item.find("description") or item.find("atom:summary", ns)
-
-        title = title_el.text.strip() if title_el is not None and title_el.text else ""
-        link  = (link_el.text or link_el.get("href", "")).strip() if link_el is not None else ""
-        pub   = pub_el.text.strip() if pub_el is not None and pub_el.text else ""
-        desc  = re.sub(r"<[^>]+>", "", (desc_el.text or "")).strip() if desc_el is not None else ""
-
+    for entry in feed.entries[:30]:
+        title = entry.get("title", "").strip()
+        link  = entry.get("link", "").strip()
+        pub   = entry.get("published", entry.get("updated", ""))
+        desc  = re.sub(r"<[^>]+>", "", entry.get("summary", "")).strip()[:250]
         if title and link:
-            articles.append({
-                "title": title,
-                "link": link,
-                "published": pub,
-                "description": desc[:200],
-                "source": source,
-            })
-    print(f"  ✅ {source}: {len(articles)}건")
+            articles.append({"title": title, "link": link,
+                              "published": pub, "description": desc, "source": name})
+
+    print(f"  {'✅' if articles else '⚠️ '} {name}: {len(articles)}건")
     return articles
 
-
-def classify(article: dict) -> str | None:
-    """기사 제목+설명으로 카테고리 판별 (첫 번째 매치)"""
+def classify(article):
     text = (article["title"] + " " + article["description"]).lower()
     for cat, conf in CATEGORIES.items():
         kws = conf["keywords"] + conf.get("en_keywords", [])
@@ -132,46 +137,31 @@ def classify(article: dict) -> str | None:
             return cat
     return None
 
-
-def dedup(articles: list[dict]) -> list[dict]:
-    """URL 중복 + 제목 유사도 기반 중복 제거"""
-    seen_urls = set()
-    seen_hashes = set()
-    result = []
+def dedup(articles):
+    seen_urls, seen_hashes, result = set(), set(), []
     for a in articles:
         if a["link"] in seen_urls:
             continue
-        # 제목 앞 20자 해시로 유사 중복 감지
-        title_key = hashlib.md5(re.sub(r"\s+", "", a["title"])[:20].encode()).hexdigest()
-        if title_key in seen_hashes:
+        h = hashlib.md5(re.sub(r"\s+", "", a["title"])[:25].encode()).hexdigest()
+        if h in seen_hashes:
             continue
         seen_urls.add(a["link"])
-        seen_hashes.add(title_key)
+        seen_hashes.add(h)
         result.append(a)
     return result
 
-
-# ── 메인 ──────────────────────────────────────────────────────────────────
 def main():
-    now = datetime.now(timezone.utc).isoformat()
+    print("\n📡 뉴스 수집 시작...\n")
     all_articles = []
-
-    print("\n📡 국내 피드 수집 중...")
-    for name, url in DOMESTIC_FEEDS:
-        all_articles += fetch_rss(url, name)
-
-    print("\n📡 해외 피드 수집 중...")
-    for name, url in FOREIGN_FEEDS:
-        all_articles += fetch_rss(url, name)
+    for name, url in FEEDS:
+        all_articles += fetch_feed(name, url)
 
     print(f"\n총 수집: {len(all_articles)}건 → 중복 제거 중...")
     all_articles = dedup(all_articles)
-    print(f"중복 제거 후: {len(all_articles)}건")
+    print(f"중복 제거 후: {len(all_articles)}건\n")
 
-    # 카테고리별 분류
-    categorized: dict[str, list] = {k: [] for k in CATEGORIES}
+    categorized = {k: [] for k in CATEGORIES}
     uncategorized = []
-
     for a in all_articles:
         cat = classify(a)
         if cat:
@@ -179,34 +169,35 @@ def main():
         else:
             uncategorized.append(a)
 
-    # 카테고리별 최대 20건
     for cat in categorized:
         categorized[cat] = categorized[cat][:20]
 
     output = {
-        "updated": now,
+        "updated": datetime.now(timezone.utc).isoformat(),
         "categories": {
-            cat: {
-                "label": CATEGORIES[cat]["label"],
-                "articles": arts
-            }
+            cat: {"label": CATEGORIES[cat]["label"], "articles": arts}
             for cat, arts in categorized.items()
         },
         "stats": {
             "total": len(all_articles),
             "categorized": sum(len(v) for v in categorized.values()),
             "uncategorized": len(uncategorized),
-        }
+        },
     }
 
+    os.makedirs("data", exist_ok=True)
     with open("data/news.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ data/news.json 저장 완료")
+    print("✅ 저장 완료: data/news.json")
     for cat, data in output["categories"].items():
-        print(f"   {data['label']}: {len(data['articles'])}건")
-    print(f"   미분류: {len(uncategorized)}건")
+        cnt = len(data["articles"])
+        print(f"  {'✅' if cnt else '⚠️ '} {data['label']}: {cnt}건")
+    print(f"  미분류: {len(uncategorized)}건")
 
+    if output["stats"]["categorized"] == 0:
+        print("\n❌ 기사를 하나도 가져오지 못했습니다!")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
