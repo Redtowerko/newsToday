@@ -658,7 +658,22 @@ function dedup(arr) {
   });
 }
 
+// 기사 발행시각을 숫자(ms)로 변환 — 파싱 실패 시 0 (맨 뒤)
+function pubTime(a) {
+  try {
+    if (!a.published) return 0;
+    const t = new Date(a.published).getTime();
+    return isNaN(t) ? 0 : t;
+  } catch { return 0; }
+}
+
+// 최신순 정렬 (내림차순)
+function sortByTime(arr) {
+  return [...arr].sort((a, b) => pubTime(b) - pubTime(a));
+}
+
 function categorizeArticles(articles) {
+  // 전달받은 articles는 이미 시간순 정렬된 상태
   const cats = Object.fromEntries(CAT_KEYS.map(k=>[k,[]]));
   const uncategorized = [];
 
@@ -672,7 +687,6 @@ function categorizeArticles(articles) {
   });
 
   // fallback: 국내 언론사 출처 + 미분류 기사 → 국내경제
-  // 단, 정치·사회·사건사고는 제외
   const EXCLUDE_KW = [
     "정치","선거","국회","대통령","대선","총선","여당","야당","민주당","국민의힘",
     "검찰","법원","판결","재판","기소","구속","수사","경찰","범죄","사기","피의자",
@@ -798,7 +812,7 @@ async function fetchFresh(showSpinner) {
 
   const results = await Promise.allSettled(activeSrcs.map(fetchSource));
   const raw     = results.flatMap(r=>r.status==="fulfilled"?r.value:[]);
-  const deduped = dedup(raw);
+  const deduped = sortByTime(dedup(raw));  // 중복제거 후 최신순 정렬
 
   newIds      = new Set(deduped.map(articleId).filter(id=>!prevIds.has(id)));
   allArticles = deduped;
