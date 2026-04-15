@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 뉴스</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --border: #e0e4ea;
+    --text: #191f28;
+    --muted: #6b7685;
+    --accent: #03c75a;
+    --accent2: #1a73e8;
+    --tab-active: #191f28;
+    --tab-border: #191f28;
+    --tag-bg: #eef3ff;
+    --tag-text: #1a73e8;
+    --hover: #f2f4f6;
+    --shadow: 0 2px 12px rgba(0,0,0,.07);
+    --radius: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── 헤더 ── */
+  header {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 20px;
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .logo-dot { color: var(--accent); }
+
+  #updated-badge {
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--hover);
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  /* ── 탭 내비 ── */
+  .tabs {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+
+  .tabs-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    padding: 14px 18px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color .15s, border-color .15s;
+  }
+
+  .tab-btn:hover { color: var(--tab-active); }
+
+  .tab-btn.active {
+    color: var(--tab-active);
+    border-bottom-color: var(--tab-border);
+  }
+
+  /* ── 메인 컨테이너 ── */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 20px;
+  }
+
+  /* ── 섹션 ── */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ── 주요뉴스(전체) 레이아웃 ── */
+  .top-news {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 700px) {
+    .top-news { grid-template-columns: 1fr; }
+  }
+
+  .cat-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .cat-block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cat-label {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .cat-more {
+    font-size: 12px;
+    color: var(--muted);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .cat-more:hover { color: var(--accent2); }
+
+  /* ── 기사 아이템 ── */
+  .article-list { padding: 6px 0; }
+
+  .article-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: background .12s;
+  }
+
+  .article-item:hover { background: var(--hover); }
+
+  .article-rank {
+    min-width: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    padding-top: 1px;
+  }
+
+  .article-rank.top3 { color: var(--accent2); }
+
+  .article-title {
+    font-size: 14px;
+    line-height: 1.5;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .article-source {
+    font-size: 11px;
+    color: var(--muted);
+    min-width: fit-content;
+    padding-top: 2px;
+  }
+
+  /* ── 개별 카테고리 섹션 (목록형) ── */
+  .full-list-header {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .full-article-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: box-shadow .15s, border-color .15s;
+    box-shadow: var(--shadow);
+  }
+
+  .full-article-item:hover {
+    border-color: var(--accent2);
+    box-shadow: 0 4px 20px rgba(26,115,232,.12);
+  }
+
+  .full-article-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+
+  .full-article-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .full-article-desc {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ── 로딩 / 에러 ── */
+  .loading, .error-msg {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .loading::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent2);
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+    margin: 16px auto 0;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── 통계 바 ── */
+  .stats-bar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: var(--muted);
+    box-shadow: var(--shadow);
+  }
+
+  .stat-item strong { color: var(--text); font-weight: 700; margin-right: 4px; }
+
+  /* ── 새로고침 버튼 ── */
+  .refresh-btn {
+    background: var(--accent2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .refresh-btn:hover { opacity: .9; }
+
+  .empty-msg {
+    padding: 20px 18px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">📰 오늘의 뉴스<span class="logo-dot">.</span></a>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span id="updated-badge">불러오는 중...</span>
+      <button class="refresh-btn" onclick="loadNews(true)">새로고침</button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <div class="tabs-inner">
+    <button class="tab-btn active" data-tab="all" onclick="switchTab(this,'all')" role="tab">전체</button>
+    <button class="tab-btn" data-tab="국내경제" onclick="switchTab(this,'국내경제')" role="tab">🇰🇷 국내경제</button>
+    <button class="tab-btn" data-tab="세계경제" onclick="switchTab(this,'세계경제')" role="tab">🌐 세계경제</button>
+    <button class="tab-btn" data-tab="금융" onclick="switchTab(this,'금융')" role="tab">💹 금융</button>
+    <button class="tab-btn" data-tab="산업" onclick="switchTab(this,'산업')" role="tab">🏭 산업</button>
+    <button class="tab-btn" data-tab="엔터" onclick="switchTab(this,'엔터')" role="tab">🎬 엔터</button>
+    <button class="tab-btn" data-tab="스포츠" onclick="switchTab(this,'스포츠')" role="tab">⚽ 스포츠</button>
+  </div>
+</nav>
+
+<main>
+  <div id="loading" class="loading">뉴스 불러오는 중</div>
+  <div id="error" class="error-msg" style="display:none"></div>
+
+  <!-- 전체 탭 -->
+  <div id="sec-all" class="section active" style="display:none">
+    <div id="stats-bar" class="stats-bar"></div>
+    <div id="all-grid" class="top-news"></div>
+  </div>
+
+  <!-- 개별 카테고리 탭 -->
+  <div id="sec-국내경제" class="section" style="display:none"><div id="list-국내경제"></div></div>
+  <div id="sec-세계경제" class="section" style="display:none"><div id="list-세계경제"></div></div>
+  <div id="sec-금융" class="section" style="display:none"><div id="list-금융"></div></div>
+  <div id="sec-산업" class="section" style="display:none"><div id="list-산업"></div></div>
+  <div id="sec-엔터" class="section" style="display:none"><div id="list-엔터"></div></div>
+  <div id="sec-스포츠" class="section" style="display:none"><div id="list-스포츠"></div></div>
+</main>
+
+<script>
+const CAT_ORDER = ["국내경제","세계경제","금융","산업","엔터","스포츠"];
+let newsData = null;
+let activeTab = "all";
+
+function formatDate(iso) {
+  if (!iso) return "";
+  try {
+    const d = new Date(iso);
+    const pad = n => String(n).padStart(2,"0");
+    const now = new Date();
+    const diff = now - d;
+    if (diff < 3600000) return `${Math.floor(diff/60000)}분 전`;
+    if (diff < 86400000) return `${Math.floor(diff/3600000)}시간 전`;
+    return `${d.getMonth()+1}/${d.getDate()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  } catch { return iso.slice(0,10); }
+}
+
+function renderAll(data) {
+  // 통계 바
+  const s = data.stats;
+  document.getElementById("stats-bar").innerHTML = `
+    <span class="stat-item"><strong>${s.total}</strong>건 수집</span>
+    <span class="stat-item"><strong>${s.categorized}</strong>건 분류</span>
+    ${CAT_ORDER.map(k=>`<span class="stat-item"><strong>${data.categories[k]?.articles.length||0}</strong> ${data.categories[k]?.label||k}</span>`).join("")}
+  `;
+
+  // 2열 그리드 — 카테고리별 블록
+  const grid = document.getElementById("all-grid");
+  grid.innerHTML = "";
+  for (const cat of CAT_ORDER) {
+    const catData = data.categories[cat];
+    if (!catData) continue;
+    const arts = catData.articles.slice(0,5);
+    const block = document.createElement("div");
+    block.className = "cat-block";
+    block.innerHTML = `
+      <div class="cat-block-header">
+        <span class="cat-label">${catData.label}</span>
+        <a class="cat-more" href="#" onclick="switchTabByName('${cat}');return false;">전체보기 →</a>
+      </div>
+      <div class="article-list">
+        ${arts.length ? arts.map((a,i) => `
+          <a class="article-item" href="${esc(a.link)}" target="_blank" rel="noopener">
+            <span class="article-rank${i<3?" top3":""}">${i+1}</span>
+            <span class="article-title">${esc(a.title)}</span>
+            <span class="article-source">${esc(a.source)}</span>
+          </a>`).join("") : `<p class="empty-msg">기사가 없습니다.</p>`}
+      </div>`;
+    grid.appendChild(block);
+  }
+}
+
+function renderCat(cat, data) {
+  const catData = data.categories[cat];
+  const el = document.getElementById(`list-${cat}`);
+  if (!catData || !catData.articles.length) {
+    el.innerHTML = `<div class="error-msg">현재 "${catData?.label||cat}" 기사가 없습니다.</div>`;
+    return;
+  }
+  el.innerHTML = `
+    <h2 class="full-list-header">${catData.label} <span style="font-size:13px;font-weight:400;color:var(--muted)">총 ${catData.articles.length}건</span></h2>
+    ${catData.articles.map(a => `
+      <a class="full-article-item" href="${esc(a.link)}" target="_blank" rel="noopener">
+        <div class="full-article-title">${esc(a.title)}</div>
+        ${a.description ? `<div class="full-article-desc">${esc(a.description)}</div>` : ""}
+        <div class="full-article-meta">
+          <span>${esc(a.source)}</span>
+          ${a.published ? `<span>${formatDate(a.published)}</span>` : ""}
+        </div>
+      </a>`).join("")}
+  `;
+}
+
+function esc(s) {
+  return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function switchTab(btn, tab) {
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  document.querySelectorAll(".section").forEach(s => {
+    s.style.display = "none";
+    s.classList.remove("active");
+  });
+  const sec = document.getElementById(`sec-${tab}`);
+  if (sec) { sec.style.display = "block"; sec.classList.add("active"); }
+  activeTab = tab;
+}
+
+function switchTabByName(tab) {
+  const btn = document.querySelector(`[data-tab="${tab}"]`);
+  if (btn) switchTab(btn, tab);
+}
+
+async function loadNews(force = false) {
+  const loading = document.getElementById("loading");
+  const error = document.getElementById("error");
+  loading.style.display = "block";
+  error.style.display = "none";
+  document.querySelectorAll(".section").forEach(s => s.style.display = "none");
+
+  try {
+    const url = `data/news.json${force ? "?t=" + Date.now() : ""}`;
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    newsData = await resp.json();
+
+    // 업데이트 시간 표시
+    const upd = new Date(newsData.updated);
+    const pad = n => String(n).padStart(2,"0");
+    document.getElementById("updated-badge").textContent =
+      `${upd.getFullYear()}.${pad(upd.getMonth()+1)}.${pad(upd.getDate())} ${pad(upd.getHours())}:${pad(upd.getMinutes())} 업데이트`;
+
+    // 렌더링
+    renderAll(newsData);
+    for (const cat of CAT_ORDER) renderCat(cat, newsData);
+
+    loading.style.display = "none";
+    // 현재 활성 탭 복원
+    document.getElementById(`sec-${activeTab}`).style.display = "block";
+    document.getElementById(`sec-${activeTab}`).classList.add("active");
+
+  } catch (e) {
+    loading.style.display = "none";
+    error.style.display = "block";
+    error.innerHTML = `
+      <div style="font-size:40px;margin-bottom:12px">📭</div>
+      <p><strong>뉴스를 불러올 수 없습니다.</strong></p>
+      <p style="margin-top:8px;font-size:13px">GitHub Actions가 아직 한 번도 실행되지 않았거나, <code>data/news.json</code>이 없을 수 있습니다.</p>
+      <p style="margin-top:8px;font-size:13px">Actions 탭에서 워크플로우를 수동으로 실행해 주세요.</p>
+    `;
+  }
+}
+
+// 페이지 로드 시 실행
+loadNews();
+</script>
+</body>
+</html>
