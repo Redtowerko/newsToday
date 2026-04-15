@@ -7,7 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-/* ── 변수 ── */
 :root {
   --bg: #f0f2f5;
   --card: #ffffff;
@@ -17,504 +16,241 @@
   --accent: #2563eb;
   --accent-soft: #eff4ff;
   --breaking: #dc2626;
-  --breaking-soft: #fef2f2;
   --new-badge: #16a34a;
-  --tab-line: #2563eb;
   --hover: #f8f9fb;
   --radius: 12px;
-  --shadow: 0 1px 4px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.04);
+  --shadow: 0 1px 4px rgba(0,0,0,.07), 0 4px 16px rgba(0,0,0,.04);
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'Noto Sans KR', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  font-size: 14px;
-  line-height: 1.65;
-}
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; font-size: 14px; line-height: 1.65; }
 
 /* ── 속보 배너 ── */
-#breaking-bar {
-  background: var(--breaking);
-  color: #fff;
-  display: none;
-  align-items: center;
-  gap: 0;
-  font-size: 13px;
-  font-weight: 500;
-  overflow: hidden;
-  position: relative;
-  height: 36px;
-}
-
-.breaking-label {
-  background: #9b1c1c;
-  padding: 0 14px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: .5px;
-  flex-shrink: 0;
-}
-
-.breaking-ticker {
-  flex: 1;
-  overflow: hidden;
-  height: 100%;
-  position: relative;
-}
-
-.breaking-ticker-inner {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  white-space: nowrap;
-  animation: ticker 40s linear infinite;
-}
-
-@keyframes ticker {
-  0%   { transform: translateX(100vw); }
-  100% { transform: translateX(-100%); }
-}
-
-.breaking-ticker-inner a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 60px;
-}
+#breaking-bar { background: var(--breaking); color: #fff; display: none; align-items: center; height: 36px; overflow: hidden; }
+.breaking-label { background: #9b1c1c; padding: 0 14px; height: 100%; display: flex; align-items: center; white-space: nowrap; font-weight: 700; font-size: 12px; letter-spacing: .5px; flex-shrink: 0; }
+.breaking-ticker { flex: 1; overflow: hidden; height: 100%; position: relative; }
+.breaking-ticker-inner { display: flex; align-items: center; height: 100%; white-space: nowrap; animation: ticker 50s linear infinite; }
+@keyframes ticker { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
+.breaking-ticker-inner a { color: #fff; text-decoration: none; margin-right: 60px; }
 .breaking-ticker-inner a:hover { text-decoration: underline; }
 
 /* ── 헤더 ── */
-header {
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  box-shadow: 0 1px 0 var(--border);
-}
-
-.header-inner {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 54px;
-  gap: 16px;
-}
-
-.logo {
-  font-size: 19px;
-  font-weight: 900;
-  color: var(--text);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
-}
+header { background: var(--card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 200; }
+.header-inner { max-width: 1140px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 12px; }
+.logo { font-size: 18px; font-weight: 900; color: var(--text); text-decoration: none; flex-shrink: 0; }
 .logo-accent { color: var(--accent); }
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  color: var(--muted);
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-#status-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: #9ca3af;
-  display: inline-block;
-  transition: background .3s;
-}
+.header-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+#status-dot { width: 7px; height: 7px; border-radius: 50%; background: #9ca3af; display: inline-block; transition: background .3s; flex-shrink: 0; }
 #status-dot.live { background: var(--new-badge); animation: pulse 2s infinite; }
 #status-dot.loading { background: var(--accent); }
-
-@keyframes pulse {
-  0%,100% { opacity: 1; }
-  50% { opacity: .4; }
-}
-
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+#status-text { font-size: 12px; color: var(--muted); }
 #next-refresh { font-size: 11px; color: var(--muted); }
-
-.btn-sm {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 7px;
-  padding: 5px 12px;
-  font-size: 12px;
-  font-family: inherit;
-  font-weight: 500;
-  cursor: pointer;
-  transition: opacity .15s;
-}
+.btn-sm { background: var(--accent); color: #fff; border: none; border-radius: 7px; padding: 5px 11px; font-size: 12px; font-family: inherit; font-weight: 500; cursor: pointer; }
 .btn-sm:hover { opacity: .88; }
-
-.btn-outline {
-  background: none;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: 7px;
-  padding: 5px 12px;
-  font-size: 12px;
-  font-family: inherit;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background .15s;
-}
+.btn-outline { background: none; color: var(--accent); border: 1px solid var(--accent); border-radius: 7px; padding: 5px 11px; font-size: 12px; font-family: inherit; font-weight: 500; cursor: pointer; }
 .btn-outline:hover { background: var(--accent-soft); }
 
 /* ── 탭 ── */
-.tabs-wrap {
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 54px;
-  z-index: 190;
-}
-
-.tabs-inner {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  overflow-x: auto;
-  scrollbar-width: none;
-  gap: 2px;
-}
+.tabs-wrap { background: var(--card); border-bottom: 1px solid var(--border); position: sticky; top: 54px; z-index: 190; }
+.tabs-inner { max-width: 1140px; margin: 0 auto; padding: 0 20px; display: flex; overflow-x: auto; scrollbar-width: none; gap: 2px; }
 .tabs-inner::-webkit-scrollbar { display: none; }
-
-.tab-btn {
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 12px 16px;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--muted);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: color .15s, border-color .15s;
-  flex-shrink: 0;
-}
+.tab-btn { background: none; border: none; border-bottom: 2px solid transparent; padding: 12px 15px; font-family: inherit; font-size: 13.5px; font-weight: 500; color: var(--muted); cursor: pointer; white-space: nowrap; transition: color .15s, border-color .15s; flex-shrink: 0; }
 .tab-btn:hover { color: var(--text); }
-.tab-btn.active { color: var(--text); border-bottom-color: var(--tab-line); }
+.tab-btn.active { color: var(--text); border-bottom-color: var(--accent); }
+.tab-btn.ai-tab { color: #7c3aed; }
+.tab-btn.ai-tab.active { border-bottom-color: #7c3aed; color: #7c3aed; }
 
-/* ── 언론사 필터 패널 ── */
-#source-panel {
-  display: none;
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 20px;
-}
-
-.source-panel-inner {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-.source-panel-title {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.source-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-.source-chip {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 11px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  font-size: 12px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all .15s;
-  background: var(--bg);
-  color: var(--muted);
-  user-select: none;
-}
-.source-chip.selected {
-  background: var(--accent-soft);
-  border-color: var(--accent);
-  color: var(--accent);
-}
+/* ── 언론사 패널 ── */
+#source-panel { display: none; background: var(--card); border-bottom: 1px solid var(--border); padding: 14px 20px; }
+.source-panel-inner { max-width: 1140px; margin: 0 auto; }
+.source-panel-title { font-size: 12px; font-weight: 700; color: var(--muted); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+.source-type-label { font-size: 11px; font-weight: 700; color: var(--muted); margin: 10px 0 6px; text-transform: uppercase; letter-spacing: .5px; }
+.source-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.source-chip { display: flex; align-items: center; gap: 5px; padding: 5px 11px; border-radius: 20px; border: 1px solid var(--border); font-size: 12px; font-weight: 500; cursor: pointer; background: var(--bg); color: var(--muted); user-select: none; transition: all .15s; }
+.source-chip.selected { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
 .source-chip input { display: none; }
 
-.source-type-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--muted);
-  margin: 10px 0 6px;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-}
-
 /* ── 메인 ── */
-main {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 20px 20px 40px;
-}
-
+main { max-width: 1140px; margin: 0 auto; padding: 20px 20px 40px; }
 .section { display: none; }
 .section.active { display: block; }
 
-/* ── 상태 바 ── */
-.stats-bar {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  font-size: 12px;
-  color: var(--muted);
-  margin-bottom: 18px;
-  padding: 10px 14px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
+/* ── 통계 바 ── */
+.stats-bar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--muted); margin-bottom: 16px; padding: 9px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; }
 .stats-bar strong { color: var(--text); font-weight: 700; }
-#last-updated { margin-left: auto; font-size: 11px; }
+.cache-badge { margin-left: auto; font-size: 11px; background: #fef9c3; border: 1px solid #fde68a; color: #92400e; padding: 2px 8px; border-radius: 10px; }
+.fresh-badge { margin-left: auto; font-size: 11px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 2px 8px; border-radius: 10px; }
 
 /* ── 전체 그리드 ── */
-.all-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-}
+.all-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 @media (max-width: 680px) { .all-grid { grid-template-columns: 1fr; } }
 
-/* ── 카테고리 카드 ── */
-.cat-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-
-.cat-card-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 13px 16px 10px;
-  border-bottom: 1px solid var(--border);
-}
-
-.cat-card-title {
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.cat-more-btn {
-  font-size: 12px;
-  color: var(--accent);
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 500;
-  padding: 2px 6px;
-  border-radius: 4px;
-  transition: background .15s;
-}
+/* ── 카드 ── */
+.cat-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.cat-card-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 9px; border-bottom: 1px solid var(--border); }
+.cat-card-title { font-size: 14px; font-weight: 700; }
+.cat-more-btn { font-size: 12px; color: var(--accent); background: none; border: none; cursor: pointer; font-family: inherit; font-weight: 500; padding: 2px 6px; border-radius: 4px; }
 .cat-more-btn:hover { background: var(--accent-soft); }
 
-/* ── 기사 아이템 (순위형) ── */
-.art-list {}
-
-.art-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 9px 16px;
-  text-decoration: none;
-  color: inherit;
-  transition: background .12s;
-  border-bottom: 1px solid transparent;
-}
+/* ── 기사 아이템 ── */
+.art-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 16px; text-decoration: none; color: inherit; transition: background .12s; }
 .art-item:hover { background: var(--hover); }
-.art-item:last-child { border-bottom: none; }
-
-.art-rank {
-  min-width: 18px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #d1d5db;
-  padding-top: 1px;
-  flex-shrink: 0;
-}
-.art-rank.r1 { color: var(--accent); }
-.art-rank.r2 { color: #6366f1; }
-.art-rank.r3 { color: #8b5cf6; }
-
+.art-rank { min-width: 18px; font-size: 13px; font-weight: 700; color: #d1d5db; padding-top: 1px; flex-shrink: 0; }
+.art-rank.r1 { color: var(--accent); } .art-rank.r2 { color: #6366f1; } .art-rank.r3 { color: #8b5cf6; }
 .art-body { flex: 1; min-width: 0; }
-
-.art-title {
-  font-size: 13.5px;
-  line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.art-meta {
-  display: flex;
-  gap: 8px;
-  margin-top: 3px;
-  font-size: 11px;
-  color: var(--muted);
-  align-items: center;
-}
-
-.art-source {
-  font-weight: 500;
-}
-
-.new-dot {
-  width: 5px; height: 5px;
-  background: var(--new-badge);
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 6px;
-}
+.art-title { font-size: 13px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.art-meta { display: flex; gap: 8px; margin-top: 3px; font-size: 11px; color: var(--muted); }
+.art-source { font-weight: 500; }
+.new-dot { width: 5px; height: 5px; background: var(--new-badge); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
 
 /* ── 개별 카테고리 목록 ── */
-.full-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.full-title {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.full-count {
-  font-size: 13px;
-  color: var(--muted);
-  font-weight: 400;
-}
-
-.full-art {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 15px 18px;
-  margin-bottom: 8px;
-  box-shadow: var(--shadow);
-  transition: border-color .15s, box-shadow .15s;
-  position: relative;
-}
-.full-art:hover {
-  border-color: var(--accent);
-  box-shadow: 0 4px 20px rgba(37,99,235,.1);
-}
-
-.full-art-new {
-  position: absolute;
-  top: 15px; right: 15px;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--new-badge);
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  padding: 1px 7px;
-  border-radius: 10px;
-}
-
-.full-art-title {
-  font-size: 15.5px;
-  font-weight: 500;
-  line-height: 1.5;
-  margin-bottom: 5px;
-  padding-right: 50px;
-}
-
-.full-art-desc {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.6;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin-bottom: 7px;
-}
-
-.full-art-meta {
-  display: flex;
-  gap: 10px;
-  font-size: 11px;
-  color: var(--muted);
-}
+.full-header { display: flex; align-items: center; margin-bottom: 16px; gap: 8px; }
+.full-title { font-size: 20px; font-weight: 700; }
+.full-count { font-size: 13px; color: var(--muted); font-weight: 400; }
+.full-art { display: block; text-decoration: none; color: inherit; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 8px; box-shadow: var(--shadow); transition: border-color .15s, box-shadow .15s; position: relative; }
+.full-art:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(37,99,235,.1); }
+.full-art-new { position: absolute; top: 14px; right: 14px; font-size: 10px; font-weight: 700; color: var(--new-badge); background: #f0fdf4; border: 1px solid #bbf7d0; padding: 1px 7px; border-radius: 10px; }
+.full-art-title { font-size: 15px; font-weight: 500; line-height: 1.5; margin-bottom: 5px; padding-right: 50px; }
+.full-art-desc { font-size: 13px; color: var(--muted); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 6px; }
+.full-art-meta { display: flex; gap: 10px; font-size: 11px; color: var(--muted); }
 .full-art-meta .src { font-weight: 600; color: var(--accent); }
 
-/* ── 빈 상태 / 에러 ── */
-.empty { padding: 18px 16px; color: var(--muted); font-size: 13px; text-align: center; }
-
-.error-screen {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--muted);
-}
+/* ── 빈 상태 ── */
+.empty { padding: 16px; color: var(--muted); font-size: 13px; text-align: center; }
+.error-screen { text-align: center; padding: 50px 20px; color: var(--muted); }
 .error-screen h2 { font-size: 16px; color: var(--text); margin-bottom: 8px; }
-.error-screen p { font-size: 13px; margin-top: 6px; }
-
-/* ── 로딩 스피너 ── */
-.spinner-wrap {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--muted);
-  font-size: 14px;
-}
-.spinner {
-  width: 32px; height: 32px;
-  border: 3px solid var(--border);
-  border-top-color: var(--accent);
-  border-radius: 50%;
-  animation: spin .7s linear infinite;
-  margin: 0 auto 14px;
-}
+.spinner-wrap { text-align: center; padding: 60px 20px; color: var(--muted); font-size: 14px; }
+.spinner { width: 30px; height: 30px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 14px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── 반응형 ── */
+/* ═══════════════════════════════════
+   AI 브리핑 탭
+═══════════════════════════════════ */
+#sec-ai { display: none; }
+
+.ai-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px;
+}
+.ai-header-left h2 { font-size: 20px; font-weight: 700; }
+.ai-header-left p { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+.btn-generate {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: #fff; border: none; border-radius: 10px;
+  padding: 10px 20px; font-size: 14px; font-family: inherit;
+  font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;
+  transition: opacity .2s; flex-shrink: 0;
+}
+.btn-generate:hover { opacity: .88; }
+.btn-generate:disabled { opacity: .5; cursor: not-allowed; }
+
+/* API Key 입력 */
+.api-key-box {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 22px; margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+.api-key-box h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.api-key-box p { font-size: 12px; color: var(--muted); margin-bottom: 12px; line-height: 1.6; }
+.api-key-row { display: flex; gap: 8px; }
+.api-key-input {
+  flex: 1; border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 12px; font-size: 13px; font-family: inherit;
+  outline: none; transition: border-color .2s;
+}
+.api-key-input:focus { border-color: var(--accent); }
+.btn-save { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 8px 16px; font-size: 13px; font-family: inherit; font-weight: 500; cursor: pointer; }
+.api-saved-msg { font-size: 12px; color: var(--new-badge); margin-top: 8px; display: none; }
+
+/* 브리핑 생성 상태 */
+.briefing-loading {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 30px; text-align: center;
+  color: var(--muted); margin-bottom: 16px; box-shadow: var(--shadow);
+}
+.briefing-spinner { width: 28px; height: 28px; border: 3px solid var(--border); border-top-color: #7c3aed; border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 12px; }
+.briefing-loading p { font-size: 13px; }
+.briefing-loading .progress-text { font-size: 11px; color: var(--muted); margin-top: 6px; }
+
+/* 브리핑 카드 */
+.briefing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.briefing-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 22px;
+  box-shadow: var(--shadow); position: relative; overflow: hidden;
+}
+.briefing-card::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+.briefing-card.cat-국내경제::before { background: #2563eb; }
+.briefing-card.cat-세계경제::before { background: #0891b2; }
+.briefing-card.cat-금융::before { background: #16a34a; }
+.briefing-card.cat-산업::before { background: #d97706; }
+.briefing-card.cat-엔터::before { background: #db2777; }
+.briefing-card.cat-스포츠::before { background: #dc2626; }
+
+.briefing-cat-label {
+  font-size: 11px; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px;
+}
+.briefing-headline {
+  font-size: 16px; font-weight: 700; line-height: 1.4;
+  margin-bottom: 10px; color: var(--text);
+}
+.briefing-body {
+  font-size: 13.5px; color: #374151; line-height: 1.75;
+  margin-bottom: 14px;
+}
+.briefing-body p { margin-bottom: 8px; }
+.briefing-body p:last-child { margin-bottom: 0; }
+
+.briefing-sources {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.briefing-source-link {
+  font-size: 11px; color: var(--accent); text-decoration: none;
+  background: var(--accent-soft); padding: 2px 8px; border-radius: 10px;
+  transition: opacity .15s;
+}
+.briefing-source-link:hover { opacity: .75; }
+
+.briefing-meta {
+  margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border);
+  font-size: 11px; color: var(--muted); display: flex; justify-content: space-between;
+}
+
+/* 전체 브리핑 헤더 카드 */
+.briefing-summary-card {
+  background: linear-gradient(135deg, #1e1b4b 0%, #1e3a5f 100%);
+  border-radius: var(--radius); padding: 24px 26px;
+  margin-bottom: 20px; color: #fff; box-shadow: var(--shadow);
+}
+.briefing-summary-card h3 { font-size: 13px; font-weight: 500; opacity: .7; margin-bottom: 8px; }
+.briefing-summary-card p { font-size: 15px; line-height: 1.75; opacity: .95; }
+.briefing-summary-card .gen-time { font-size: 11px; opacity: .5; margin-top: 12px; }
+
+/* 빈 AI 안내 */
+.ai-intro {
+  background: var(--card); border: 1px dashed var(--border);
+  border-radius: var(--radius); padding: 40px; text-align: center;
+  color: var(--muted);
+}
+.ai-intro-icon { font-size: 40px; margin-bottom: 12px; }
+.ai-intro h3 { font-size: 16px; color: var(--text); margin-bottom: 8px; font-weight: 600; }
+.ai-intro p { font-size: 13px; line-height: 1.7; }
+
 @media (max-width: 500px) {
-  .header-right { gap: 6px; }
-  .logo { font-size: 16px; }
-  main { padding: 14px 12px 30px; }
+  .header-right { gap: 5px; }
+  #next-refresh, #status-text { display: none; }
+  .briefing-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -536,13 +272,13 @@ main {
       <span id="status-dot"></span>
       <span id="status-text">준비 중...</span>
       <span id="next-refresh"></span>
-      <button class="btn-outline" onclick="toggleSourcePanel()">📋 언론사 선택</button>
-      <button class="btn-sm" onclick="fetchAllNews(true)">🔄 새로고침</button>
+      <button class="btn-outline" onclick="toggleSourcePanel()">📋 언론사</button>
+      <button class="btn-sm" onclick="hardRefresh()">🔄 새로고침</button>
     </div>
   </div>
 </header>
 
-<!-- 언론사 필터 패널 -->
+<!-- 언론사 패널 -->
 <div id="source-panel">
   <div class="source-panel-inner">
     <div class="source-panel-title">
@@ -559,7 +295,7 @@ main {
   </div>
 </div>
 
-<!-- 카테고리 탭 -->
+<!-- 탭 -->
 <nav class="tabs-wrap">
   <div class="tabs-inner">
     <button class="tab-btn active" data-tab="all"    onclick="switchTab(this,'all')">전체</button>
@@ -569,391 +305,370 @@ main {
     <button class="tab-btn" data-tab="산업"           onclick="switchTab(this,'산업')">🏭 산업</button>
     <button class="tab-btn" data-tab="엔터"           onclick="switchTab(this,'엔터')">🎬 엔터</button>
     <button class="tab-btn" data-tab="스포츠"         onclick="switchTab(this,'스포츠')">⚽ 스포츠</button>
+    <button class="tab-btn ai-tab" data-tab="ai"    onclick="switchTab(this,'ai')">✨ AI 브리핑</button>
   </div>
 </nav>
 
-<!-- 메인 -->
 <main>
   <div id="spinner" class="spinner-wrap"><div class="spinner"></div>뉴스 불러오는 중...</div>
   <div id="err-screen" class="error-screen" style="display:none"></div>
 
-  <div id="sec-all"    class="section" style="display:none"></div>
-  <div id="sec-국내경제" class="section" style="display:none"></div>
-  <div id="sec-세계경제" class="section" style="display:none"></div>
-  <div id="sec-금융"   class="section" style="display:none"></div>
-  <div id="sec-산업"   class="section" style="display:none"></div>
-  <div id="sec-엔터"   class="section" style="display:none"></div>
-  <div id="sec-스포츠" class="section" style="display:none"></div>
+  <div id="sec-all"     class="section" style="display:none"></div>
+  <div id="sec-국내경제"  class="section" style="display:none"></div>
+  <div id="sec-세계경제"  class="section" style="display:none"></div>
+  <div id="sec-금융"    class="section" style="display:none"></div>
+  <div id="sec-산업"    class="section" style="display:none"></div>
+  <div id="sec-엔터"    class="section" style="display:none"></div>
+  <div id="sec-스포츠"  class="section" style="display:none"></div>
+
+  <!-- AI 브리핑 탭 -->
+  <div id="sec-ai" class="section" style="display:none">
+    <!-- API Key 설정 -->
+    <div class="api-key-box" id="api-key-box">
+      <h3>🔑 Anthropic API Key 설정</h3>
+      <p>AI 브리핑은 Claude API를 사용합니다. API 키는 브라우저에만 저장되며 외부로 전송되지 않습니다.<br>
+         <a href="https://console.anthropic.com/" target="_blank" style="color:var(--accent)">console.anthropic.com</a>에서 발급받으세요.</p>
+      <div class="api-key-row">
+        <input class="api-key-input" id="api-key-input" type="password" placeholder="sk-ant-..." autocomplete="off">
+        <button class="btn-save" onclick="saveApiKey()">저장</button>
+      </div>
+      <p class="api-saved-msg" id="api-saved-msg">✅ 저장되었습니다</p>
+    </div>
+
+    <!-- 브리핑 헤더 -->
+    <div class="ai-header">
+      <div class="ai-header-left">
+        <h2>✨ AI 뉴스 브리핑</h2>
+        <p id="ai-subtitle">최신 뉴스를 AI가 카테고리별로 요약해 드립니다</p>
+      </div>
+      <button class="btn-generate" id="btn-generate" onclick="generateBriefing()">
+        <span>✨</span> 브리핑 생성
+      </button>
+    </div>
+
+    <div id="briefing-area">
+      <div class="ai-intro">
+        <div class="ai-intro-icon">🤖</div>
+        <h3>AI 브리핑을 생성해보세요</h3>
+        <p>뉴스 탭에서 기사를 먼저 불러온 후,<br>
+           API Key를 입력하고 <strong>브리핑 생성</strong> 버튼을 눌러주세요.<br>
+           카테고리별 핵심 뉴스를 3~5줄로 요약해 드립니다.</p>
+      </div>
+    </div>
+  </div>
 </main>
 
 <script>
-/* ════════════════════════════════════════════════════
-   설정
-════════════════════════════════════════════════════ */
-const REFRESH_MS  = 5 * 60 * 1000;   // 5분
-const BREAKING_WINDOW_MS = 30 * 60 * 1000; // 30분 이내 = 속보
-const MAX_PER_CAT = 20;
+/* ════════════════ 설정 ════════════════ */
+const REFRESH_MS       = 5 * 60 * 1000;   // 5분
+const CACHE_TTL_MS     = 4 * 60 * 1000;   // 4분 캐시 유효
+const BREAKING_WIN_MS  = 30 * 60 * 1000;  // 30분 이내 = 속보
+const MAX_PER_CAT      = 20;
 
-/* CORS 프록시 목록 (순서대로 시도) */
 const PROXIES = [
-  url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-  url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-  url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+  u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+  u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
+  u => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`,
 ];
 
-/* 언론사 정의 */
+/* ════════════════ 언론사 ════════════════ */
 const SOURCES = {
   domestic: [
-    { id: "google-kr-econ",   name: "구글뉴스(경제)", url: "https://news.google.com/rss/search?q=%EA%B2%BD%EC%A0%9C+%EA%B8%88%EC%9C%B5&hl=ko&gl=KR&ceid=KR:ko" },
-    { id: "google-kr-biz",    name: "구글뉴스(산업)", url: "https://news.google.com/rss/search?q=%EB%B0%98%EB%8F%84%EC%B2%B4+%EC%82%B0%EC%97%85+%EA%B8%B0%EC%97%85&hl=ko&gl=KR&ceid=KR:ko" },
-    { id: "google-kr-enter",  name: "구글뉴스(엔터)", url: "https://news.google.com/rss/search?q=%EC%97%B0%EC%98%88+%EB%93%9C%EB%9D%BC%EB%A7%88+%EC%98%81%ED%99%94&hl=ko&gl=KR&ceid=KR:ko" },
-    { id: "google-kr-sports", name: "구글뉴스(스포츠)", url: "https://news.google.com/rss/search?q=%EC%95%BC%EA%B5%AC+%EC%B6%95%EA%B5%AC+KBO+NBA&hl=ko&gl=KR&ceid=KR:ko" },
-    { id: "google-kr-top",    name: "구글뉴스(한국톱)", url: "https://news.google.com/rss/headlines/section/geo/KR?hl=ko&gl=KR&ceid=KR:ko" },
-    { id: "chosun",           name: "조선일보", url: "https://news.google.com/rss/search?q=when:6h+site:chosun.com&hl=ko&gl=KR&ceid=KR:ko" },
-    { id: "hankyung",         name: "한국경제", url: "https://news.google.com/rss/search?q=when:6h+site:hankyung.com&hl=ko&gl=KR&ceid=KR:ko" },
-    { id: "mk",               name: "매일경제", url: "https://news.google.com/rss/search?q=when:6h+site:mk.co.kr&hl=ko&gl=KR&ceid=KR:ko" },
-    { id: "yna",              name: "연합뉴스", url: "https://news.google.com/rss/search?q=when:6h+site:yna.co.kr&hl=ko&gl=KR&ceid=KR:ko" },
-    { id: "mt",               name: "머니투데이", url: "https://news.google.com/rss/search?q=when:6h+site:mt.co.kr&hl=ko&gl=KR&ceid=KR:ko" },
-    { id: "edaily",           name: "이데일리", url: "https://news.google.com/rss/search?q=when:6h+site:edaily.co.kr&hl=ko&gl=KR&ceid=KR:ko" },
+    { id:"google-kr-econ",   name:"구글뉴스(경제)",  url:"https://news.google.com/rss/search?q=%EA%B2%BD%EC%A0%9C+%EA%B8%88%EC%9C%B5&hl=ko&gl=KR&ceid=KR:ko" },
+    { id:"google-kr-biz",    name:"구글뉴스(산업)",  url:"https://news.google.com/rss/search?q=%EB%B0%98%EB%8F%84%EC%B2%B4+%EC%82%B0%EC%97%85&hl=ko&gl=KR&ceid=KR:ko" },
+    { id:"google-kr-enter",  name:"구글뉴스(엔터)",  url:"https://news.google.com/rss/search?q=%EC%97%B0%EC%98%88+%EB%93%9C%EB%9D%BC%EB%A7%88+%EC%98%81%ED%99%94&hl=ko&gl=KR&ceid=KR:ko" },
+    { id:"google-kr-sports", name:"구글뉴스(스포츠)", url:"https://news.google.com/rss/search?q=%EC%95%BC%EA%B5%AC+%EC%B6%95%EA%B5%AC+KBO&hl=ko&gl=KR&ceid=KR:ko" },
+    { id:"google-kr-top",    name:"구글뉴스(한국Top)",url:"https://news.google.com/rss/headlines/section/geo/KR?hl=ko&gl=KR&ceid=KR:ko" },
+    { id:"chosun",           name:"조선일보",  url:"https://news.google.com/rss/search?q=when:6h+site:chosun.com&hl=ko&gl=KR&ceid=KR:ko" },
+    { id:"hankyung",         name:"한국경제",  url:"https://news.google.com/rss/search?q=when:6h+site:hankyung.com&hl=ko&gl=KR&ceid=KR:ko" },
+    { id:"mk",               name:"매일경제",  url:"https://news.google.com/rss/search?q=when:6h+site:mk.co.kr&hl=ko&gl=KR&ceid=KR:ko" },
+    { id:"yna",              name:"연합뉴스",  url:"https://news.google.com/rss/search?q=when:6h+site:yna.co.kr&hl=ko&gl=KR&ceid=KR:ko" },
+    { id:"mt",               name:"머니투데이",url:"https://news.google.com/rss/search?q=when:6h+site:mt.co.kr&hl=ko&gl=KR&ceid=KR:ko" },
+    { id:"edaily",           name:"이데일리",  url:"https://news.google.com/rss/search?q=when:6h+site:edaily.co.kr&hl=ko&gl=KR&ceid=KR:ko" },
   ],
   foreign: [
-    { id: "google-biz",       name: "Google(Business)", url: "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en" },
-    { id: "google-tech",      name: "Google(Tech)", url: "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en" },
-    { id: "google-sports-en", name: "Google(Sports)", url: "https://news.google.com/rss/headlines/section/topic/SPORTS?hl=en-US&gl=US&ceid=US:en" },
-    { id: "google-enter-en",  name: "Google(Entertainment)", url: "https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=en-US&gl=US&ceid=US:en" },
-    { id: "apnews",           name: "AP News", url: "https://news.google.com/rss/search?q=when:6h+allinurl:apnews.com&hl=en-US&gl=US&ceid=US:en" },
-    { id: "bloomberg",        name: "Bloomberg", url: "https://news.google.com/rss/search?q=when:6h+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en" },
-    { id: "reuters",          name: "Reuters", url: "https://news.google.com/rss/search?q=when:6h+allinurl:reuters.com&hl=en-US&gl=US&ceid=US:en" },
+    { id:"google-biz",      name:"Google(Business)",    url:"https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en" },
+    { id:"google-tech",     name:"Google(Tech)",        url:"https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en" },
+    { id:"google-sports-en",name:"Google(Sports)",      url:"https://news.google.com/rss/headlines/section/topic/SPORTS?hl=en-US&gl=US&ceid=US:en" },
+    { id:"google-enter-en", name:"Google(Entertainment)",url:"https://news.google.com/rss/headlines/section/topic/ENTERTAINMENT?hl=en-US&gl=US&ceid=US:en" },
+    { id:"apnews",          name:"AP News",   url:"https://news.google.com/rss/search?q=when:6h+allinurl:apnews.com&hl=en-US&gl=US&ceid=US:en" },
+    { id:"bloomberg",       name:"Bloomberg", url:"https://news.google.com/rss/search?q=when:6h+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en" },
+    { id:"reuters",         name:"Reuters",   url:"https://news.google.com/rss/search?q=when:6h+allinurl:reuters.com&hl=en-US&gl=US&ceid=US:en" },
   ]
 };
-
 const ALL_SOURCES = [...SOURCES.domestic, ...SOURCES.foreign];
 
-/* 카테고리 */
+/* ════════════════ 카테고리 ════════════════ */
 const CATS = {
-  "국내경제": {
-    label: "🇰🇷 국내경제",
-    ko: ["경제성장","GDP","물가","소비자물가","내수","기재부","국내총생산","재정","세수","한국경제","무역수지","경상수지","산업생산","소비심리","수출입","환율 원달러"],
-    en: [],
-  },
-  "세계경제": {
-    label: "🌐 세계경제",
-    ko: ["연준","미국경제","중국경제","글로벌 경제","IMF","세계은행","무역전쟁","관세","WTO","OECD","세계 경기"],
-    en: ["Federal Reserve","Fed rate","US economy","China economy","global economy","IMF","World Bank","recession","tariff","trade war","OECD","global growth","inflation"],
-  },
-  "금융": {
-    label: "💹 금융",
-    ko: ["주식","코스피","코스닥","채권","금리","환율","펀드","ETF","증권","투자","암호화폐","비트코인","기준금리","배당","공모주","상장","주가"],
-    en: ["stock market","S&P 500","Nasdaq","bond yield","interest rate","cryptocurrency","Bitcoin","ETF","earnings","IPO","forex","wall street","Fed funds"],
-  },
-  "산업": {
-    label: "🏭 산업",
-    ko: ["반도체","삼성전자","SK하이닉스","LG전자","현대차","기아","배터리","전기차","인공지능","AI","스타트업","바이오","제약","조선","철강","화학","통신","5G","클라우드","로봇"],
-    en: ["semiconductor","chip","electric vehicle","EV","artificial intelligence","AI chip","Apple","Google","Microsoft","Amazon","Tesla","startup","pharma","biotech","cloud computing"],
-  },
-  "엔터": {
-    label: "🎬 엔터",
-    ko: ["BTS","블랙핑크","드라마","영화","아이돌","K-POP","케이팝","연예인","음원","흥행","넷플릭스","콘서트","시청률","웹툰","OTT"],
-    en: ["K-pop","BTS","Korean drama","Netflix","Disney+","box office","Grammy","entertainment","streaming","celebrity"],
-  },
-  "스포츠": {
-    label: "⚽ 스포츠",
-    ko: ["야구","축구","농구","배구","KBO","K리그","올림픽","월드컵","손흥민","류현진","김민재","EPL","NBA","MLB","골프","테니스"],
-    en: ["soccer","football","baseball","basketball","NBA","MLB","NFL","Premier League","Champions League","Olympics","golf","tennis","UFC","World Cup"],
-  },
+  "국내경제":{ label:"🇰🇷 국내경제", ko:["경제성장","GDP","물가","소비자물가","내수","기재부","무역수지","경상수지","소비심리","수출입"], en:[] },
+  "세계경제":{ label:"🌐 세계경제",  ko:["연준","미국경제","중국경제","글로벌 경제","IMF","세계은행","무역전쟁","관세","WTO","OECD"], en:["Federal Reserve","Fed rate","US economy","China economy","global economy","IMF","World Bank","recession","tariff","trade war"] },
+  "금융":    { label:"💹 금융",      ko:["주식","코스피","코스닥","채권","금리","환율","펀드","ETF","암호화폐","비트코인","기준금리","공모주","주가"], en:["stock market","S&P 500","Nasdaq","bond yield","interest rate","cryptocurrency","Bitcoin","ETF","earnings","IPO","forex"] },
+  "산업":    { label:"🏭 산업",      ko:["반도체","삼성전자","SK하이닉스","LG전자","현대차","배터리","전기차","인공지능","AI","스타트업","바이오","제약","클라우드","로봇"], en:["semiconductor","chip","electric vehicle","EV","artificial intelligence","AI chip","Apple","Google","Microsoft","Amazon","Tesla","startup","pharma","biotech"] },
+  "엔터":    { label:"🎬 엔터",      ko:["BTS","블랙핑크","드라마","영화","아이돌","K-POP","케이팝","음원","흥행","넷플릭스","콘서트","시청률","웹툰"], en:["K-pop","BTS","Korean drama","Netflix","Disney+","box office","Grammy","entertainment","streaming"] },
+  "스포츠":  { label:"⚽ 스포츠",    ko:["야구","축구","농구","배구","KBO","K리그","올림픽","월드컵","손흥민","류현진","김민재","EPL","NBA","MLB","골프","테니스"], en:["soccer","football","baseball","basketball","NBA","MLB","NFL","Premier League","Champions League","Olympics","golf","tennis","UFC"] },
 };
 const CAT_KEYS = Object.keys(CATS);
 
-/* ════════════════════════════════════════════════════
-   상태
-════════════════════════════════════════════════════ */
-let allArticles  = [];          // 전체 수집 기사
-let prevIds      = new Set();   // 이전 갱신 기사 ID (NEW 표시용)
-let newIds       = new Set();   // 이번 갱신 신규 기사
-let selectedSrcs = new Set(ALL_SOURCES.map(s => s.id)); // 선택된 언론사
+/* ════════════════ 상태 ════════════════ */
+let allArticles  = [];
+let prevIds      = new Set();
+let newIds       = new Set();
+let selectedSrcs = new Set(ALL_SOURCES.map(s => s.id));
 let activeTab    = "all";
 let refreshTimer, countdownTimer, countdownSec;
 let sourcePanelOpen = false;
+let fromCache = false;
 
-/* ════════════════════════════════════════════════════
-   유틸
-════════════════════════════════════════════════════ */
-function esc(s) {
-  return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+/* ════════════════ 캐시 (localStorage) ════════════════ */
+const CACHE_KEY = "news_cache_v3";
+
+function saveCache(articles) {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), articles }));
+  } catch(e) { /* 용량 초과 시 무시 */ }
 }
 
-function timeAgo(dateStr) {
-  if (!dateStr) return "";
+function loadCache() {
   try {
-    const d = new Date(dateStr);
-    if (isNaN(d)) return "";
-    const diff = Date.now() - d.getTime();
-    if (diff < 60000)   return "방금";
-    if (diff < 3600000) return `${Math.floor(diff/60000)}분 전`;
-    if (diff < 86400000)return `${Math.floor(diff/3600000)}시간 전`;
-    const mo = d.getMonth()+1, da = d.getDate();
-    return `${mo}/${da}`;
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    const { ts, articles } = JSON.parse(raw);
+    if (Date.now() - ts > CACHE_TTL_MS) return null; // 4분 초과 → 무효
+    return { articles, age: Date.now() - ts };
+  } catch { return null; }
+}
+
+/* ════════════════ 유틸 ════════════════ */
+function esc(s) { return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+function timeAgo(str) {
+  if (!str) return "";
+  try {
+    const d = new Date(str); if(isNaN(d)) return "";
+    const diff = Date.now() - d;
+    if (diff < 60000)    return "방금";
+    if (diff < 3600000)  return `${Math.floor(diff/60000)}분 전`;
+    if (diff < 86400000) return `${Math.floor(diff/3600000)}시간 전`;
+    return `${d.getMonth()+1}/${d.getDate()}`;
   } catch { return ""; }
 }
 
-function articleId(a) {
-  return (a.link||"") + "|" + (a.title||"").slice(0,20);
-}
+function articleId(a) { return (a.link||"")+(a.title||"").slice(0,18); }
+function isBreaking(a) { try { return a.published && Date.now()-new Date(a.published)<BREAKING_WIN_MS; } catch { return false; } }
 
-function isBreaking(a) {
-  if (!a.published) return false;
-  try { return Date.now() - new Date(a.published).getTime() < BREAKING_WINDOW_MS; }
-  catch { return false; }
-}
-
-/* ════════════════════════════════════════════════════
-   RSS 파싱 (CORS 프록시 경유)
-════════════════════════════════════════════════════ */
+/* ════════════════ RSS 파싱 ════════════════ */
 async function fetchWithProxy(url) {
-  for (const makeProxy of PROXIES) {
+  for (const mk of PROXIES) {
     try {
-      const resp = await fetch(makeProxy(url), { signal: AbortSignal.timeout(12000) });
-      if (!resp.ok) continue;
-      const text = await resp.text();
-      if (text.length < 100) continue;
-      return text;
-    } catch { /* 다음 프록시 시도 */ }
+      const r = await fetch(mk(url), { signal: AbortSignal.timeout(12000) });
+      if (!r.ok) continue;
+      const t = await r.text();
+      if (t.length > 100) return t;
+    } catch {}
   }
   return null;
 }
 
-function parseRSS(xmlText, sourceName) {
+function parseRSS(xml, srcName) {
   try {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(xmlText, "application/xml");
-    const items = doc.querySelectorAll("item, entry");
-    const results = [];
-    items.forEach(item => {
-      const title = item.querySelector("title")?.textContent?.trim() || "";
-      let link = item.querySelector("link")?.textContent?.trim()
-               || item.querySelector("link")?.getAttribute("href")?.trim() || "";
-      const pub = item.querySelector("pubDate, published, updated")?.textContent?.trim() || "";
-      let desc = item.querySelector("description, summary")?.textContent?.trim() || "";
-      desc = desc.replace(/<[^>]+>/g, "").trim().slice(0, 250);
-
-      if (!title || !link) return;
-      results.push({ title, link, published: pub, description: desc, source: sourceName });
+    const doc = new DOMParser().parseFromString(xml, "application/xml");
+    return [...doc.querySelectorAll("item, entry")].slice(0,30).flatMap(item => {
+      const title = item.querySelector("title")?.textContent?.trim()||"";
+      const link  = item.querySelector("link")?.textContent?.trim()||item.querySelector("link")?.getAttribute("href")?.trim()||"";
+      const pub   = item.querySelector("pubDate,published,updated")?.textContent?.trim()||"";
+      const desc  = (item.querySelector("description,summary")?.textContent||"").replace(/<[^>]+>/g,"").trim().slice(0,250);
+      return title && link ? [{ title, link, published: pub, description: desc, source: srcName }] : [];
     });
-    return results;
   } catch { return []; }
 }
 
 async function fetchSource(src) {
   const xml = await fetchWithProxy(src.url);
-  if (!xml) return [];
-  return parseRSS(xml, src.name).slice(0, 30);
+  return xml ? parseRSS(xml, src.name) : [];
 }
 
-/* ════════════════════════════════════════════════════
-   분류
-════════════════════════════════════════════════════ */
-function classify(article) {
-  const text = (article.title + " " + article.description).toLowerCase();
-  for (const [cat, conf] of Object.entries(CATS)) {
-    const kws = [...conf.ko, ...conf.en];
-    if (kws.some(k => text.includes(k.toLowerCase()))) return cat;
+/* ════════════════ 분류 & 중복 제거 ════════════════ */
+function classify(a) {
+  const t = (a.title+" "+a.description).toLowerCase();
+  for (const [cat, c] of Object.entries(CATS)) {
+    if ([...c.ko,...c.en].some(k=>t.includes(k.toLowerCase()))) return cat;
   }
   return null;
 }
 
-function dedup(articles) {
+function dedup(arr) {
   const seen = new Set();
-  return articles.filter(a => {
-    const key = a.title.slice(0, 28).replace(/\s+/g, "");
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
+  return arr.filter(a => {
+    const k = a.title.slice(0,28).replace(/\s+/g,"");
+    return seen.has(k) ? false : (seen.add(k), true);
   });
-}
-
-/* ════════════════════════════════════════════════════
-   속보 배너
-════════════════════════════════════════════════════ */
-function renderBreaking(articles) {
-  const breaking = articles.filter(a => isBreaking(a) && newIds.has(articleId(a))).slice(0, 8);
-  const bar = document.getElementById("breaking-bar");
-  if (!breaking.length) { bar.style.display = "none"; return; }
-  bar.style.display = "flex";
-  document.getElementById("breaking-ticker-inner").innerHTML =
-    breaking.map(a => `<a href="${esc(a.link)}" target="_blank" rel="noopener">
-      [${esc(a.source)}] ${esc(a.title)}
-    </a>`).join("");
-}
-
-/* ════════════════════════════════════════════════════
-   렌더링
-════════════════════════════════════════════════════ */
-function getFiltered() {
-  return allArticles.filter(a => selectedSrcs.has(
-    ALL_SOURCES.find(s => s.name === a.source)?.id || "__none__"
-  ));
 }
 
 function categorizeArticles(articles) {
-  const cats = Object.fromEntries(CAT_KEYS.map(k => [k, []]));
-  articles.forEach(a => {
-    const cat = classify(a);
-    if (cat && cats[cat].length < MAX_PER_CAT) cats[cat].push(a);
-  });
+  const cats = Object.fromEntries(CAT_KEYS.map(k=>[k,[]]));
+  articles.forEach(a => { const c=classify(a); if(c&&cats[c].length<MAX_PER_CAT) cats[c].push(a); });
   return cats;
 }
 
-function renderStats(articles, cats) {
-  const total = articles.length;
-  const catd  = Object.values(cats).reduce((s, v) => s + v.length, 0);
-  const now = new Date();
-  const pad = n => String(n).padStart(2,"0");
-  return `
-    <div class="stats-bar">
-      <span><strong>${total}</strong>건 표시중</span>
-      ${CAT_KEYS.map(k => `<span>${CATS[k].label.split(" ")[0]} <strong>${cats[k].length}</strong></span>`).join("")}
-      <span id="last-updated">갱신: ${pad(now.getHours())}:${pad(now.getMinutes())}</span>
-    </div>`;
+/* ════════════════ 속보 ════════════════ */
+function renderBreaking(articles) {
+  const items = articles.filter(a=>isBreaking(a)&&newIds.has(articleId(a))).slice(0,8);
+  const bar = document.getElementById("breaking-bar");
+  if (!items.length) { bar.style.display="none"; return; }
+  bar.style.display = "flex";
+  document.getElementById("breaking-ticker-inner").innerHTML =
+    items.map(a=>`<a href="${esc(a.link)}" target="_blank">[${esc(a.source)}] ${esc(a.title)}</a>`).join("");
 }
 
-function artItemHtml(a, rank) {
+/* ════════════════ 렌더링 ════════════════ */
+function getFiltered() {
+  return allArticles.filter(a => {
+    const src = ALL_SOURCES.find(s=>s.name===a.source);
+    return src && selectedSrcs.has(src.id);
+  });
+}
+
+function statsHtml(articles, cats) {
+  const badge = fromCache
+    ? `<span class="cache-badge">캐시</span>`
+    : `<span class="fresh-badge">✓ 최신</span>`;
+  return `<div class="stats-bar">
+    <strong>${articles.length}</strong>건
+    ${CAT_KEYS.map(k=>`<span>${CATS[k].label.split(" ")[0]} <strong>${cats[k].length}</strong></span>`).join("")}
+    ${badge}
+  </div>`;
+}
+
+function artItemHtml(a, i) {
   const isNew = newIds.has(articleId(a));
-  return `
-    <a class="art-item" href="${esc(a.link)}" target="_blank" rel="noopener">
-      <span class="art-rank${rank<=3?' r'+rank:''}">${rank}</span>
-      <div class="art-body">
-        <div class="art-title">${esc(a.title)}</div>
-        <div class="art-meta">
-          <span class="art-source">${esc(a.source)}</span>
-          ${a.published ? `<span>${timeAgo(a.published)}</span>` : ""}
-        </div>
-      </div>
-      ${isNew ? `<div class="new-dot" title="새 기사"></div>` : ""}
-    </a>`;
+  return `<a class="art-item" href="${esc(a.link)}" target="_blank" rel="noopener">
+    <span class="art-rank${i<4?' r'+i:''}">${i}</span>
+    <div class="art-body">
+      <div class="art-title">${esc(a.title)}</div>
+      <div class="art-meta"><span class="art-source">${esc(a.source)}</span>${a.published?`<span>${timeAgo(a.published)}</span>`:""}</div>
+    </div>
+    ${isNew?`<div class="new-dot" title="새 기사"></div>`:""}
+  </a>`;
 }
 
 function fullArtHtml(a) {
   const isNew = newIds.has(articleId(a));
-  return `
-    <a class="full-art" href="${esc(a.link)}" target="_blank" rel="noopener">
-      ${isNew ? `<span class="full-art-new">NEW</span>` : ""}
-      <div class="full-art-title">${esc(a.title)}</div>
-      ${a.description ? `<div class="full-art-desc">${esc(a.description)}</div>` : ""}
-      <div class="full-art-meta">
-        <span class="src">${esc(a.source)}</span>
-        ${a.published ? `<span>${timeAgo(a.published)}</span>` : ""}
-      </div>
-    </a>`;
+  return `<a class="full-art" href="${esc(a.link)}" target="_blank" rel="noopener">
+    ${isNew?`<span class="full-art-new">NEW</span>`:""}
+    <div class="full-art-title">${esc(a.title)}</div>
+    ${a.description?`<div class="full-art-desc">${esc(a.description)}</div>`:""}
+    <div class="full-art-meta"><span class="src">${esc(a.source)}</span>${a.published?`<span>${timeAgo(a.published)}</span>`:""}</div>
+  </a>`;
 }
 
-function renderAll(filtered, cats) {
-  const sec = document.getElementById("sec-all");
-  const cardHtml = CAT_KEYS.map(cat => {
-    const arts = cats[cat].slice(0, 5);
-    return `
-      <div class="cat-card">
-        <div class="cat-card-head">
-          <span class="cat-card-title">${CATS[cat].label}</span>
-          <button class="cat-more-btn" onclick="switchTabByName('${cat}')">전체보기 →</button>
-        </div>
-        <div class="art-list">
-          ${arts.length
-            ? arts.map((a, i) => artItemHtml(a, i+1)).join("")
-            : `<div class="empty">기사가 없습니다</div>`}
-        </div>
-      </div>`;
-  }).join("");
-  sec.innerHTML = renderStats(filtered, cats) + `<div class="all-grid">${cardHtml}</div>`;
-}
-
-function renderCat(cat, arts) {
-  const sec = document.getElementById(`sec-${cat}`);
-  sec.innerHTML = `
-    <div class="full-header">
-      <div class="full-title">${CATS[cat].label} <span class="full-count">${arts.length}건</span></div>
-    </div>
-    ${arts.length
-      ? arts.map(a => fullArtHtml(a)).join("")
-      : `<div class="error-screen"><p>현재 기사가 없습니다</p></div>`}`;
-}
-
-function renderAll_tabs() {
+function renderAllTabs() {
   const filtered = getFiltered();
   const cats = categorizeArticles(filtered);
-  renderAll(filtered, cats);
-  CAT_KEYS.forEach(cat => renderCat(cat, cats[cat]));
+  const stats = statsHtml(filtered, cats);
+
+  // 전체 탭
+  const grid = CAT_KEYS.map(cat => {
+    const arts = cats[cat].slice(0,5);
+    return `<div class="cat-card">
+      <div class="cat-card-head">
+        <span class="cat-card-title">${CATS[cat].label}</span>
+        <button class="cat-more-btn" onclick="switchTabByName('${cat}')">전체보기 →</button>
+      </div>
+      <div>${arts.length ? arts.map((a,i)=>artItemHtml(a,i+1)).join("") : `<div class="empty">기사 없음</div>`}</div>
+    </div>`;
+  }).join("");
+  document.getElementById("sec-all").innerHTML = stats + `<div class="all-grid">${grid}</div>`;
+
+  // 개별 탭
+  CAT_KEYS.forEach(cat => {
+    const arts = cats[cat];
+    document.getElementById(`sec-${cat}`).innerHTML =
+      `<div class="full-header"><span class="full-title">${CATS[cat].label}</span><span class="full-count">${arts.length}건</span></div>` +
+      (arts.length ? arts.map(fullArtHtml).join("") : `<div class="error-screen"><p>기사가 없습니다</p></div>`);
+  });
 }
 
-/* ════════════════════════════════════════════════════
-   메인 수집 로직
-════════════════════════════════════════════════════ */
+/* ════════════════ 수집 로직 ════════════════ */
 async function fetchAllNews(force = false) {
+  // ① 캐시 확인 (force가 아닐 때)
+  if (!force) {
+    const cached = loadCache();
+    if (cached) {
+      allArticles = cached.articles;
+      fromCache   = true;
+      newIds      = new Set();
+      finishRender(`캐시 (${Math.round(cached.age/1000)}초 전)`);
+      // 백그라운드에서 실제 갱신
+      fetchFresh(false);
+      return;
+    }
+  }
+  fromCache = false;
   setStatus("loading", "수집 중...");
   document.getElementById("spinner").style.display = "block";
   document.getElementById("err-screen").style.display = "none";
-  document.querySelectorAll(".section").forEach(s => s.style.display = "none");
+  document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+  await fetchFresh(true);
+}
 
-  const activeSrcs = ALL_SOURCES.filter(s => selectedSrcs.has(s.id));
-  if (!activeSrcs.length) {
-    showError("선택된 언론사가 없습니다. 언론사 선택 버튼을 눌러 선택해 주세요.");
-    return;
-  }
+async function fetchFresh(showSpinner) {
+  const activeSrcs = ALL_SOURCES.filter(s=>selectedSrcs.has(s.id));
+  if (!activeSrcs.length) { showError("선택된 언론사가 없습니다"); return; }
 
-  // 이전 ID 저장
   prevIds = new Set(allArticles.map(articleId));
 
-  // 병렬 수집
-  const results = await Promise.allSettled(activeSrcs.map(src => fetchSource(src)));
-  const raw = results.flatMap(r => r.status === "fulfilled" ? r.value : []);
+  const results = await Promise.allSettled(activeSrcs.map(fetchSource));
+  const raw     = results.flatMap(r=>r.status==="fulfilled"?r.value:[]);
   const deduped = dedup(raw);
 
-  // 신규 기사 탐지
-  newIds = new Set(deduped.map(articleId).filter(id => !prevIds.has(id)));
+  newIds      = new Set(deduped.map(articleId).filter(id=>!prevIds.has(id)));
   allArticles = deduped;
+  fromCache   = false;
 
-  document.getElementById("spinner").style.display = "none";
+  if (showSpinner) document.getElementById("spinner").style.display = "none";
 
   if (!allArticles.length) {
-    showError("기사를 불러오지 못했습니다. CORS 프록시가 일시적으로 응답하지 않을 수 있습니다. 잠시 후 새로고침해 주세요.");
+    if (showSpinner) showError("기사를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.");
     return;
   }
 
-  renderAll_tabs();
-  renderBreaking(allArticles);
-  document.getElementById(`sec-${activeTab}`).style.display = "block";
-  document.getElementById(`sec-${activeTab}`).classList.add("active");
-
+  saveCache(allArticles);
   const newCount = newIds.size;
-  setStatus("live", `${allArticles.length}건${newCount ? ` (+${newCount} 신규)` : ""}`);
+  finishRender(`${allArticles.length}건${newCount?` (+${newCount} 신규)`:""}`);
+}
+
+function finishRender(statusText) {
+  renderAllTabs();
+  renderBreaking(allArticles);
+  document.getElementById("spinner").style.display = "none";
+  document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+  const sec = document.getElementById(`sec-${activeTab}`);
+  if (sec) { sec.style.display="block"; sec.classList.add("active"); }
+  setStatus("live", statusText);
   startCountdown();
 }
 
-/* ════════════════════════════════════════════════════
-   카운트다운 & 자동 갱신
-════════════════════════════════════════════════════ */
-function startCountdown() {
-  clearInterval(countdownTimer);
-  clearTimeout(refreshTimer);
-  countdownSec = REFRESH_MS / 1000;
-
-  countdownTimer = setInterval(() => {
-    countdownSec--;
-    const m = Math.floor(countdownSec / 60);
-    const s = countdownSec % 60;
-    document.getElementById("next-refresh").textContent =
-      `다음 갱신 ${m}:${String(s).padStart(2,"0")}`;
-    if (countdownSec <= 0) clearInterval(countdownTimer);
-  }, 1000);
-
-  refreshTimer = setTimeout(() => fetchAllNews(), REFRESH_MS);
+function hardRefresh() {
+  try { localStorage.removeItem(CACHE_KEY); } catch {}
+  fetchAllNews(true);
 }
 
-/* ════════════════════════════════════════════════════
-   UI 헬퍼
-════════════════════════════════════════════════════ */
+/* ════════════════ 카운트다운 ════════════════ */
+function startCountdown() {
+  clearInterval(countdownTimer); clearTimeout(refreshTimer);
+  countdownSec = REFRESH_MS / 1000;
+  countdownTimer = setInterval(() => {
+    countdownSec--;
+    const m=Math.floor(countdownSec/60), s=countdownSec%60;
+    document.getElementById("next-refresh").textContent = `다음 갱신 ${m}:${String(s).padStart(2,"0")}`;
+    if(countdownSec<=0) clearInterval(countdownTimer);
+  }, 1000);
+  refreshTimer = setTimeout(() => fetchFresh(false), REFRESH_MS);
+}
+
+/* ════════════════ UI 헬퍼 ════════════════ */
 function setStatus(state, text) {
-  const dot = document.getElementById("status-dot");
-  dot.className = state;
+  document.getElementById("status-dot").className = state;
   document.getElementById("status-text").textContent = text;
 }
 
@@ -962,77 +677,201 @@ function showError(msg) {
   const el = document.getElementById("err-screen");
   el.style.display = "block";
   el.innerHTML = `<div style="font-size:36px;margin-bottom:12px">📭</div><h2>뉴스를 불러올 수 없습니다</h2><p>${esc(msg)}</p>`;
-  setStatus("", "오류");
+  setStatus("","오류");
 }
 
 function switchTab(btn, tab) {
-  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  document.querySelectorAll(".section").forEach(s => { s.style.display = "none"; s.classList.remove("active"); });
+  document.querySelectorAll(".section").forEach(s=>{s.style.display="none";s.classList.remove("active");});
   const sec = document.getElementById(`sec-${tab}`);
-  if (sec) { sec.style.display = "block"; sec.classList.add("active"); }
+  if(sec){sec.style.display="block";sec.classList.add("active");}
   activeTab = tab;
 }
-
-function switchTabByName(tab) {
-  const btn = document.querySelector(`[data-tab="${tab}"]`);
-  if (btn) switchTab(btn, tab);
+function switchTabByName(tab){
+  const btn=document.querySelector(`[data-tab="${tab}"]`);
+  if(btn) switchTab(btn,tab);
 }
 
-/* ════════════════════════════════════════════════════
-   언론사 패널
-════════════════════════════════════════════════════ */
+/* ════════════════ 언론사 패널 ════════════════ */
 function buildSourcePanel() {
   ["domestic","foreign"].forEach(type => {
-    const container = document.getElementById(`chips-${type}`);
-    container.innerHTML = SOURCES[type].map(src => `
-      <label class="source-chip ${selectedSrcs.has(src.id) ? "selected" : ""}" data-id="${src.id}">
-        <input type="checkbox" ${selectedSrcs.has(src.id) ? "checked" : ""} onchange="toggleSource('${src.id}', this.checked)">
+    document.getElementById(`chips-${type}`).innerHTML = SOURCES[type].map(src =>
+      `<label class="source-chip ${selectedSrcs.has(src.id)?"selected":""}" data-id="${src.id}">
+        <input type="checkbox" ${selectedSrcs.has(src.id)?"checked":""} onchange="toggleSource('${src.id}',this.checked)">
         ${esc(src.name)}
       </label>`).join("");
   });
 }
-
 function toggleSource(id, checked) {
-  if (checked) selectedSrcs.add(id);
-  else selectedSrcs.delete(id);
-  document.querySelector(`.source-chip[data-id="${id}"]`)
-    ?.classList.toggle("selected", checked);
-  saveSourcePrefs();
-  renderAll_tabs(); // 필터만 다시 적용 (재수집 X)
+  if(checked) selectedSrcs.add(id); else selectedSrcs.delete(id);
+  document.querySelector(`.source-chip[data-id="${id}"]`)?.classList.toggle("selected",checked);
+  saveSrcPrefs(); renderAllTabs();
 }
-
 function selectAllSources(all) {
-  ALL_SOURCES.forEach(s => {
-    if (all) selectedSrcs.add(s.id);
-    else selectedSrcs.delete(s.id);
-  });
-  buildSourcePanel();
-  saveSourcePrefs();
-  renderAll_tabs();
+  ALL_SOURCES.forEach(s=>{ if(all) selectedSrcs.add(s.id); else selectedSrcs.delete(s.id); });
+  buildSourcePanel(); saveSrcPrefs(); renderAllTabs();
 }
-
 function toggleSourcePanel() {
-  sourcePanelOpen = !sourcePanelOpen;
-  document.getElementById("source-panel").style.display = sourcePanelOpen ? "block" : "none";
+  sourcePanelOpen=!sourcePanelOpen;
+  document.getElementById("source-panel").style.display=sourcePanelOpen?"block":"none";
+}
+function saveSrcPrefs(){ try{localStorage.setItem("sel_srcs",JSON.stringify([...selectedSrcs]));}catch{} }
+function loadSrcPrefs(){ try{const s=JSON.parse(localStorage.getItem("sel_srcs")||"null");if(s)selectedSrcs=new Set(s);}catch{} }
+
+/* ════════════════ API Key ════════════════ */
+function saveApiKey() {
+  const key = document.getElementById("api-key-input").value.trim();
+  if (!key) return;
+  try { localStorage.setItem("anthropic_key", key); } catch {}
+  document.getElementById("api-saved-msg").style.display = "block";
+  document.getElementById("api-key-input").value = "";
+  setTimeout(() => document.getElementById("api-saved-msg").style.display="none", 3000);
+}
+function getApiKey() {
+  try { return localStorage.getItem("anthropic_key")||""; } catch { return ""; }
+}
+function loadApiKeyUi() {
+  const key = getApiKey();
+  if (key) {
+    document.getElementById("api-key-input").placeholder = "sk-ant-***" + key.slice(-6);
+    document.getElementById("api-key-box").style.borderColor = "var(--new-badge)";
+  }
 }
 
-function saveSourcePrefs() {
-  try { localStorage.setItem("selectedSrcs", JSON.stringify([...selectedSrcs])); } catch {}
-}
+/* ════════════════ AI 브리핑 ════════════════ */
+async function generateBriefing() {
+  const apiKey = getApiKey();
+  if (!apiKey) { alert("API Key를 먼저 입력해주세요"); return; }
+  if (!allArticles.length) { alert("뉴스를 먼저 불러와 주세요"); return; }
 
-function loadSourcePrefs() {
+  const btn = document.getElementById("btn-generate");
+  btn.disabled = true;
+  btn.innerHTML = `<span>⏳</span> 생성 중...`;
+
+  const area = document.getElementById("briefing-area");
+  area.innerHTML = `<div class="briefing-loading">
+    <div class="briefing-spinner"></div>
+    <p>Claude가 오늘의 뉴스를 분석하고 있습니다...</p>
+    <p class="progress-text">카테고리별 핵심 내용을 정리 중...</p>
+  </div>`;
+
+  // 카테고리별 상위 기사 추출
+  const filtered = getFiltered();
+  const cats = categorizeArticles(filtered);
+
+  // Claude에게 보낼 뉴스 요약 데이터
+  const newsInput = CAT_KEYS.map(cat => {
+    const arts = cats[cat].slice(0, 5);
+    if (!arts.length) return null;
+    return `[${CATS[cat].label}]\n` + arts.map((a,i) => `${i+1}. ${a.title} (${a.source})`).join("\n");
+  }).filter(Boolean).join("\n\n");
+
+  const now = new Date();
+  const dateStr = `${now.getFullYear()}년 ${now.getMonth()+1}월 ${now.getDate()}일`;
+
+  const prompt = `당신은 경제·금융 전문 뉴스 에디터입니다.
+아래는 ${dateStr} 오늘의 주요 뉴스 목록입니다. 카테고리별로 핵심 내용을 한국어로 브리핑해주세요.
+
+${newsInput}
+
+각 카테고리마다 다음 JSON 형식으로 응답하세요. JSON 외 다른 텍스트는 절대 포함하지 마세요:
+
+{
+  "overall": "오늘 전체 뉴스를 2~3문장으로 요약한 종합 브리핑",
+  "briefings": [
+    {
+      "cat": "카테고리명(예: 국내경제)",
+      "headline": "이 카테고리 핵심 제목 (15자 이내)",
+      "body": "3~4문장으로 핵심 내용 설명. 수치나 기업명 포함. 독자가 바로 이해할 수 있게.",
+      "takeaway": "한 줄 핵심 인사이트"
+    }
+  ]
+}`;
+
   try {
-    const saved = JSON.parse(localStorage.getItem("selectedSrcs") || "null");
-    if (saved) selectedSrcs = new Set(saved);
-  } catch {}
+    const resp = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+        "anthropic-dangerous-direct-browser-access": "true",
+      },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-5",
+        max_tokens: 2000,
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
+
+    if (!resp.ok) {
+      const err = await resp.json();
+      throw new Error(err.error?.message || `API 오류 ${resp.status}`);
+    }
+
+    const data = await resp.json();
+    const raw  = data.content?.[0]?.text || "";
+
+    // JSON 파싱
+    const jsonMatch = raw.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("응답 파싱 실패");
+    const result = JSON.parse(jsonMatch[0]);
+
+    renderBriefing(result, cats);
+
+  } catch (e) {
+    area.innerHTML = `<div class="error-screen">
+      <div style="font-size:36px;margin-bottom:12px">⚠️</div>
+      <h2>브리핑 생성 실패</h2>
+      <p>${esc(e.message)}</p>
+      <p style="margin-top:8px;font-size:12px;color:var(--muted)">API Key를 확인하거나 잠시 후 다시 시도해주세요</p>
+    </div>`;
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = `<span>✨</span> 브리핑 재생성`;
+  }
 }
 
-/* ════════════════════════════════════════════════════
-   초기화
-════════════════════════════════════════════════════ */
-loadSourcePrefs();
+function renderBriefing(result, cats) {
+  const now = new Date();
+  const timeStr = `${now.getHours()}:${String(now.getMinutes()).padStart(2,"0")}`;
+  const area = document.getElementById("briefing-area");
+
+  // 카테고리별 기사 링크 매핑
+  const filtered = getFiltered();
+  const catsMap  = categorizeArticles(filtered);
+
+  const cards = (result.briefings || []).map(b => {
+    const catKey = CAT_KEYS.find(k => b.cat && (k===b.cat || CATS[k]?.label.includes(b.cat))) || b.cat;
+    const arts   = catsMap[catKey]?.slice(0,3) || [];
+    const srcLinks = arts.map(a =>
+      `<a class="briefing-source-link" href="${esc(a.link)}" target="_blank">${esc(a.source)}: ${esc(a.title.slice(0,28))}...</a>`
+    ).join("");
+    return `<div class="briefing-card cat-${catKey||''}">
+      <div class="briefing-cat-label">${esc(CATS[catKey]?.label||b.cat||"")}</div>
+      <div class="briefing-headline">${esc(b.headline||"")}</div>
+      <div class="briefing-body"><p>${esc(b.body||"")}</p></div>
+      ${b.takeaway?`<div style="font-size:12px;background:#f8f9fb;border-left:3px solid var(--accent);padding:8px 10px;border-radius:0 6px 6px 0;color:var(--text);margin-bottom:12px">💡 ${esc(b.takeaway)}</div>`:""}
+      ${srcLinks?`<div class="briefing-sources">${srcLinks}</div>`:""}
+    </div>`;
+  }).join("");
+
+  area.innerHTML = `
+    <div class="briefing-summary-card">
+      <h3>📋 오늘의 종합 브리핑</h3>
+      <p>${esc(result.overall||"")}</p>
+      <div class="gen-time">생성: ${timeStr} · Claude AI</div>
+    </div>
+    <div class="briefing-grid">${cards}</div>`;
+
+  document.getElementById("ai-subtitle").textContent = `${timeStr} 기준 · Claude가 요약한 오늘의 핵심 뉴스`;
+}
+
+/* ════════════════ 초기화 ════════════════ */
+loadSrcPrefs();
 buildSourcePanel();
+loadApiKeyUi();
 fetchAllNews();
 </script>
 </body>
